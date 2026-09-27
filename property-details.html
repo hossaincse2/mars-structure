@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Apartments - Property Details | Mars Structure Limited</title>
+  <meta name="description" content="Explore details of our premium Luxury Apartments listing. 6 bedrooms, 4 bathrooms, 3250 sqft. Contact Mars Structure Limited for a private tour.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { mars: { maroon: '#7B1824', 'maroon-dark': '#60111A', 'maroon-deep': '#480B12', 'maroon-noir': '#14080B', gold: '#E5A922', 'bg-light': '#FAF7F2', card: '#FFFFFF', border: '#E8DFD3', main: '#2B2B2B', muted: '#6B6560', teal: '#184E42' } }, fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], serif: ['"Playfair Display"', 'serif'] } } } }
+  </script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; color: #2B2B2B; background: #fff; overflow-x: hidden; }
+    .font-serif-luxury { font-family: 'Playfair Display', serif; }
+    .glass-dark { background: rgba(20,8,11,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .reveal-on-scroll { opacity: 0; transition: opacity 0.85s cubic-bezier(0.16,1,0.3,1), transform 0.85s cubic-bezier(0.16,1,0.3,1); }
+    .reveal-fade-up { transform: translateY(40px); }
+    .reveal-fade-right { transform: translateX(40px); }
+    .reveal-delay-100 { transition-delay: 100ms; }
+    .reveal-delay-150 { transition-delay: 150ms; }
+    .reveal-delay-200 { transition-delay: 200ms; }
+    .reveal-delay-250 { transition-delay: 250ms; }
+    .reveal-delay-300 { transition-delay: 300ms; }
+    .reveal-on-scroll.is-revealed { opacity: 1 !important; transform: translate(0,0) !important; }
+    .info-pill { display:inline-flex; align-items:center; gap:6px; background:#FAF7F2; border:1px solid #E8DFD3; border-radius:8px; padding:8px 14px; font-size:12px; font-weight:700; color:#2B2B2B; }
+    .info-pill i { color:#7B1824; font-size:14px; }
+    /* Gallery: 2×2 thumbnails left + 1 tall main image right */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.7fr;
+      grid-template-rows: 205px 205px;
+      gap: 10px;
+      height: 420px;
+    }
+    .gallery-grid > div { overflow:hidden; border-radius:14px; position:relative; box-shadow:0 3px 14px rgba(0,0,0,0.11); cursor:pointer; }
+    .gallery-grid > div:nth-child(1) { grid-column:1; grid-row:1; }
+    .gallery-grid > div:nth-child(2) { grid-column:2; grid-row:1; }
+    .gallery-grid > div:nth-child(3) { grid-column:1; grid-row:2; }
+    .gallery-grid > div:nth-child(4) { grid-column:2; grid-row:2; }
+    .gallery-grid > div.main-img    { grid-column:3; grid-row:1 / 3; }
+    .gallery-grid img { width:100%; height:100%; object-fit:cover; border-radius:14px; transition:transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94); display:block; }
+    .gallery-grid > div:hover img { transform:scale(1.07); }
+    .gallery-grid > div::after { content:''; position:absolute; inset:0; background:linear-gradient(to top, rgba(20,8,11,0.32) 0%, transparent 55%); opacity:0; transition:opacity 0.35s; pointer-events:none; border-radius:14px; }
+    .gallery-grid > div:hover::after { opacity:1; }
+    .gallery-grid > div .zoom-icon { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) scale(0.7); opacity:0; transition:all 0.3s; background:rgba(255,255,255,0.96); width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#7B1824; font-size:17px; z-index:10; pointer-events:none; box-shadow:0 4px 16px rgba(0,0,0,0.18); }
+    .gallery-grid > div:hover .zoom-icon { opacity:1; transform:translate(-50%,-50%) scale(1); }
+    @media(max-width:767px) {
+      .gallery-grid { grid-template-columns:1fr 1fr; grid-template-rows:160px 160px 260px; height:auto; }
+      .gallery-grid > div:nth-child(1) { grid-column:1; grid-row:1; }
+      .gallery-grid > div:nth-child(2) { grid-column:2; grid-row:1; }
+      .gallery-grid > div:nth-child(3) { grid-column:1; grid-row:2; }
+      .gallery-grid > div:nth-child(4) { grid-column:2; grid-row:2; }
+      .gallery-grid > div.main-img    { grid-column:1/3; grid-row:3; }
+    }
+    .overview-list { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+    @media(min-width:768px){ .overview-list { grid-template-columns:repeat(3,1fr); } }
+    .overview-item { background:#FAF7F2; border:1px solid #E8DFD3; border-radius:14px; padding:16px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:8px; transition:all 0.2s; }
+    .overview-item:hover { border-color:#7B1824; box-shadow:0 4px 16px rgba(123,24,36,0.08); transform:translateY(-2px); }
+    .overview-item i { font-size:22px; color:#7B1824; }
+    .overview-item h4 { font-size:11px; font-weight:800; color:#14080B; text-transform:uppercase; letter-spacing:0.05em; }
+    .overview-item span { font-size:12px; color:#6B6560; font-weight:500; }
+    .features-col li { display:flex; align-items:center; gap:8px; font-size:13px; color:#2B2B2B; padding:6px 0; border-bottom:1px dashed #E8DFD3; font-weight:500; }
+    .features-col li:last-child { border-bottom:none; }
+    .features-col li i { color:#184E42; font-size:14px; flex-shrink:0; }
+    .section-heading { font-size:1.35rem; font-weight:800; color:#14080B; letter-spacing:-0.01em; margin-bottom:18px; padding-bottom:10px; border-bottom:2px solid #E8DFD3; position:relative; }
+    .section-heading::after { content:''; position:absolute; bottom:-2px; left:0; width:48px; height:2px; background:#7B1824; border-radius:2px; }
+    .video-wrapper { position:relative; border-radius:16px; overflow:hidden; aspect-ratio:16/9; cursor:pointer; }
+    .video-wrapper img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s; }
+    .video-wrapper:hover img { transform:scale(1.04); }
+    .video-play-btn { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:70px; height:70px; background:rgba(255,255,255,0.95); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; color:#7B1824; box-shadow:0 8px 32px rgba(0,0,0,0.25); transition:all 0.3s; z-index:10; }
+    .video-wrapper:hover .video-play-btn { background:#7B1824; color:#fff; transform:translate(-50%,-50%) scale(1.1); }
+    .comment-item { display:flex; gap:16px; padding:20px 0; border-bottom:1px solid #E8DFD3; }
+    .comment-item:last-child { border-bottom:none; }
+    .comment-item img { width:52px; height:52px; border-radius:50%; object-fit:cover; flex-shrink:0; border:2px solid #E8DFD3; }
+    .star-rating i { color:#E5A922; font-size:12px; }
+    .booking-form-group { position:relative; margin-bottom:14px; }
+    .booking-form-group label { font-size:11px; font-weight:700; color:#6B6560; text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:5px; }
+    .booking-form-group input, .booking-form-group textarea { width:100%; padding:10px 14px 10px 38px; border:1px solid #E8DFD3; border-radius:10px; font-size:12px; font-weight:500; color:#14080B; background:#FAF7F2; outline:none; transition:border-color 0.2s; }
+    .booking-form-group textarea { padding-left:14px; resize:vertical; }
+    .booking-form-group input:focus,.booking-form-group textarea:focus { border-color:#7B1824; background:#fff; }
+    .booking-form-group .field-icon { position:absolute; left:12px; top:35px; color:#7B1824; font-size:13px; }
+    .featured-mini-card { background:#FAF7F2; border:1px solid #E8DFD3; border-radius:14px; overflow:hidden; transition:all 0.3s; }
+    .featured-mini-card:hover { border-color:#7B1824; box-shadow:0 8px 24px rgba(123,24,36,0.1); transform:translateY(-2px); }
+    .newsletter-form { display:flex !important; align-items:stretch !important; height:44px !important; border-radius:8px !important; overflow:hidden !important; background:#fff !important; }
+    .newsletter-form input { flex:1 1 0% !important; min-width:0 !important; height:100% !important; border:none !important; outline:none !important; margin:0 !important; padding:0 16px !important; font-size:12px !important; box-sizing:border-box !important; }
+    .newsletter-form button { height:100% !important; border:none !important; outline:none !important; margin:0 !important; padding:0 20px !important; display:flex !important; align-items:center !important; justify-content:center !important; cursor:pointer !important; flex-shrink:0 !important; }
+    .map-wrapper iframe { width:100%; height:320px; border-radius:14px; border:none; }
+    .review-input { width:100%; padding:10px 14px; border:1px solid #E8DFD3; border-radius:10px; font-size:12px; font-weight:500; color:#14080B; background:#FAF7F2; outline:none; transition:border-color 0.2s; }
+    .review-input:focus { border-color:#7B1824; background:#fff; }
+  </style>
+</head>
+<body class="antialiased">
+<header class="w-full relative z-40">
+  <div class="bg-white border-b border-[#E8DFD3] py-2.5 px-4 sm:px-8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3"><img src="img/logo.jpeg" alt="Mars Structure Limited" class="h-11 w-auto object-contain"></a>
+      <div class="flex items-center flex-wrap gap-5 sm:gap-7 text-sm font-medium text-[#2B2B2B]">
+        <a href="property.html" class="flex items-center gap-1.5 hover:text-[#7B1824]"><i class="fa-regular fa-heart text-[#7B1824]"></i><span>Favorite</span></a>
+        <span class="text-gray-300">|</span>
+        <a href="contact.html" class="flex items-center gap-1.5 hover:text-[#7B1824]"><i class="fa-solid fa-cloud-arrow-up text-[#7B1824]"></i><span>Submit Property</span></a>
+        <span class="text-gray-300">|</span>
+        <a href="property.html" class="flex items-center gap-1.5 hover:text-[#7B1824]"><i class="fa-solid fa-hotel text-[#7B1824]"></i><span>My Property</span></a>
+        <button onclick="toggleModal('login-modal')" class="bg-[#7B1824] hover:bg-[#60111A] text-white px-5 py-2 rounded-md font-semibold text-xs tracking-wide flex items-center gap-2 shadow-md cursor-pointer"><i class="fa-solid fa-user-circle"></i><span>Login / Register</span></button>
+      </div>
+    </div>
+  </div>
+  <nav class="sticky top-0 z-50 glass-dark border-b border-[#480B12]/40 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between h-14">
+      <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-[#E5A922] p-2 cursor-pointer"><i class="fa-solid fa-bars text-xl"></i></button>
+      <div class="hidden lg:flex items-center space-x-9 text-[15px] font-bold">
+        <a href="index.html" class="text-white hover:text-[#E5A922] py-4">Home</a>
+        <a href="about.html" class="text-white hover:text-[#E5A922] py-4">About</a>
+        <div class="relative group">
+          <button type="button" class="flex items-center gap-1.5 py-4 text-[#E5A922] border-b-2 border-[#E5A922] focus:outline-none cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden');event.stopPropagation();"><span>Property</span><i class="fa-solid fa-chevron-down text-xs"></i></button>
+          <div class="absolute left-0 top-full hidden group-hover:block w-56 bg-white rounded-lg shadow-2xl py-2.5 border border-gray-100 z-50">
+            <a href="property.html" class="block px-5 py-2.5 text-sm font-semibold text-gray-700 hover:text-[#7B1824] hover:bg-[#FAF7F2]">Property</a>
+            <a href="property-details.html" class="block px-5 py-2.5 text-sm font-semibold text-[#7B1824] bg-[#FAF7F2]">Property Details</a>
+            <a href="property-location.html" class="block px-5 py-2.5 text-sm font-semibold text-gray-700 hover:text-[#7B1824] hover:bg-[#FAF7F2]">Property Location</a>
+          </div>
+        </div>
+        <a href="contact.html" class="text-white hover:text-[#E5A922] py-4">Contact Us</a>
+      </div>
+      <div class="flex items-center space-x-3">
+        <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] text-xs"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] text-xs"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] text-xs"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] text-xs"><i class="fa-brands fa-pinterest-p"></i></a>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#14080B] px-6 py-4 border-t border-[#480B12]/50 space-y-3 text-sm">
+      <a href="index.html" class="block text-white hover:text-[#E5A922] font-semibold py-1">Home</a>
+      <a href="about.html" class="block text-white hover:text-[#E5A922] font-semibold py-1">About</a>
+      <div class="py-1">
+        <div class="flex items-center justify-between text-[#E5A922] font-semibold py-1 cursor-pointer" onclick="document.getElementById('mobile-prop-submenu').classList.toggle('hidden');"><span>Property</span><i class="fa-solid fa-chevron-down text-xs"></i></div>
+        <div id="mobile-prop-submenu" class="pl-4 pt-1 space-y-2 border-l border-gray-700 mt-1">
+          <a href="property.html" class="block text-gray-300 hover:text-[#E5A922] text-xs py-1">Property</a>
+          <a href="property-details.html" class="block text-[#E5A922] font-semibold text-xs py-1">Property Details</a>
+          <a href="property-location.html" class="block text-gray-300 hover:text-[#E5A922] text-xs py-1">Property Location</a>
+        </div>
+      </div>
+      <a href="contact.html" class="block text-white hover:text-[#E5A922] py-1">Contact Us</a>
+    </div>
+  </nav>
+</header>
+
+<div class="relative py-16 lg:py-20 bg-[#14080B] text-white overflow-hidden" style="background-image:linear-gradient(rgba(20,8,11,0.88),rgba(20,8,11,0.92)),url('img/banner-4.jpg');background-size:cover;background-position:center;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
+    <span class="inline-block px-4 py-1.5 bg-[#7B1824] text-white text-xs font-bold uppercase tracking-widest rounded-full mb-4">Featured Listing</span>
+    <h1 class="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-4">Property Details</h1>
+    <p class="text-sm text-gray-300 max-w-xl mx-auto font-light leading-relaxed">Explore every detail of this premium luxury listing.</p>
+    <div class="flex items-center justify-center gap-2 text-xs font-semibold text-gray-400 mt-6">
+      <a href="index.html" class="hover:text-[#E5A922]">Home</a><span>/</span>
+      <a href="property.html" class="hover:text-[#E5A922]">Property</a><span>/</span>
+      <span class="text-[#E5A922]">Property Details</span>
+    </div>
+  </div>
+</div>
+<section class="py-14 lg:py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-gradient-to-br from-[#FAF7F2] to-white rounded-2xl border border-[#E8DFD3] p-6 sm:p-8 mb-8 reveal-on-scroll reveal-fade-up">
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-3 mb-3">
+            <h2 class="font-serif-luxury text-2xl sm:text-3xl lg:text-4xl font-black text-[#14080B] tracking-tight">Luxury Apartments</h2>
+            <span class="inline-block bg-[#184E42] text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-md tracking-wider shadow">Featured</span>
+          </div>
+          <p class="text-sm text-gray-500 mb-5 flex items-center gap-1.5"><i class="ri-map-pin-line text-[#7B1824]"></i>194 Mercer Street, NY 10012, USA</p>
+          <div class="flex flex-wrap gap-3 mb-5">
+            <div class="info-pill"><i class="ri-hotel-bed-line"></i><span>6 Bedrooms</span></div>
+            <div class="info-pill"><i class="fa-solid fa-bath" style="color:#7B1824"></i><span>4 Bathrooms</span></div>
+            <div class="info-pill"><i class="fa-solid fa-car" style="color:#7B1824"></i><span>1 Parking</span></div>
+            <div class="info-pill"><i class="fa-solid fa-vector-square" style="color:#7B1824"></i><span>3250 Sqft</span></div>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <div class="relative group">
+              <button class="flex items-center gap-2 px-4 py-2 bg-white border border-[#E8DFD3] rounded-lg text-xs font-bold text-gray-700 hover:border-[#7B1824] hover:text-[#7B1824] cursor-pointer"><i class="ri-share-line"></i> Share</button>
+              <div class="absolute left-0 top-full mt-1 hidden group-hover:flex flex-col bg-white border border-gray-100 rounded-xl shadow-2xl py-2 z-20 w-36">
+                <a href="https://www.facebook.com/" target="_blank" class="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-gray-700 hover:bg-[#FAF7F2]"><i class="ri-facebook-fill text-blue-600"></i> Facebook</a>
+                <a href="https://twitter.com/" target="_blank" class="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-gray-700 hover:bg-[#FAF7F2]"><i class="ri-twitter-x-line"></i> Twitter</a>
+                <a href="https://www.instagram.com/" target="_blank" class="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-gray-700 hover:bg-[#FAF7F2]"><i class="ri-instagram-fill text-pink-600"></i> Instagram</a>
+                <a href="https://bd.linkedin.com/" target="_blank" class="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-gray-700 hover:bg-[#FAF7F2]"><i class="ri-linkedin-fill text-blue-700"></i> LinkedIn</a>
+              </div>
+            </div>
+            <button onclick="this.classList.toggle('text-red-600');this.classList.toggle('border-red-500');" class="flex items-center gap-2 px-4 py-2 bg-white border border-[#E8DFD3] rounded-lg text-xs font-bold text-gray-700 hover:border-red-400 hover:text-red-600 cursor-pointer"><i class="ri-heart-line"></i> Favorite</button>
+            <button class="flex items-center gap-2 px-4 py-2 bg-white border border-[#E8DFD3] rounded-lg text-xs font-bold text-gray-700 hover:border-[#184E42] hover:text-[#184E42] cursor-pointer"><i class="ri-arrow-left-right-line"></i> Compare</button>
+          </div>
+        </div>
+        <div class="flex flex-col items-start lg:items-end gap-4">
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-[#14080B] text-white text-[10px] font-bold uppercase px-3 py-1.5 rounded-lg tracking-wider">Apartment</span>
+            
+          </div>
+          
+          <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" alt="Agent" class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-md">
+            <div>
+              <p class="text-[10px] text-gray-500 font-semibold uppercase tracking-wider">Listing Agent</p>
+              <a href="#" class="text-sm font-bold text-[#14080B] hover:text-[#7B1824]">Thomas Klarck</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 xl:grid-cols-12 gap-10 items-start">
+      <div class="xl:col-span-8 space-y-12">
+        <div class="reveal-on-scroll reveal-fade-up">
+          <div class="gallery-grid">
+            <!-- Thumbnail 1: top-left -->
+            <div onclick="openLightbox('img/gallery8.png','Exterior View')">
+              <span class="zoom-icon"><i class="ri-zoom-in-line"></i></span>
+              <img src="img/gallery8.png" alt="Exterior View" style="object-position:center;">
+            </div>
+            <!-- Thumbnail 2: top-right of left group -->
+            <div onclick="openLightbox('img/gallery10.png','Interior View')">
+              <span class="zoom-icon"><i class="ri-zoom-in-line"></i></span>
+              <img src="img/gallery10.png" alt="Interior View" style="object-position:center;">
+            </div>
+            <!-- Thumbnail 3: bottom-left -->
+            <div onclick="openLightbox('img/gallery6.png','Living Area')">
+              <span class="zoom-icon"><i class="ri-zoom-in-line"></i></span>
+              <img src="img/gallery6.png" alt="Living Area" style="object-position:center top;">
+            </div>
+            <!-- Thumbnail 4: bottom-right of left group -->
+            <div onclick="openLightbox('img/gallery7.png','Dining Area')">
+              <span class="zoom-icon"><i class="ri-zoom-in-line"></i></span>
+              <img src="img/gallery7.png" alt="Dining Area" style="object-position:center;">
+            </div>
+            <!-- Main image: right column, spans both rows -->
+            <div class="main-img" onclick="openLightbox('img/living-room-left.png','Property Main View')">
+              <span class="zoom-icon"><i class="ri-zoom-in-line"></i></span>
+              <img src="img/living-room-left.png" alt="Property Main View" style="object-position:center;">
+              <div class="absolute bottom-4 right-4 bg-black/70 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1.5 rounded-lg flex items-center gap-2 z-10">
+                <i class="ri-image-line"></i> View All Photos
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-on-scroll reveal-fade-up">
+          <h3 class="section-heading">Property Description</h3>
+          <div class="space-y-4 text-sm text-gray-600 leading-relaxed font-light">
+            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin quis bibendum auctor, nisilit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+            <p>Gravida nibh vel velit auctor aliquet. Aenean sollicitudin quis bibendum auctor, nisilit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>
+          </div>
+        </div>
+        <div class="reveal-on-scroll reveal-fade-up">
+          <h3 class="section-heading">Property Overview</h3>
+          <div class="overview-list">
+            <div class="overview-item"><i class="ri-hotel-bed-line"></i><h4>Bedrooms</h4><span>4 Bedrooms / 1 Guestroom</span></div>
+            <div class="overview-item"><i class="fa-solid fa-bath" style="color:#7B1824;font-size:22px"></i><h4>Bathrooms</h4><span>4 Bathrooms / 1 Powder</span></div>
+            <div class="overview-item"><i class="fa-solid fa-car" style="color:#7B1824;font-size:22px"></i><h4>Parking</h4><span>Free Parking for 4 Cars</span></div>
+            <div class="overview-item"><i class="fa-solid fa-vector-square" style="color:#7B1824;font-size:22px"></i><h4>Accommodation</h4><span>6 Guests / 2980 Sq Ft</span></div>
+            <div class="overview-item"><i class="ri-building-2-line"></i><h4>Property Type</h4><span>Entire Place / Apartment</span></div>
+            <div class="overview-item"><i class="ri-calendar-line"></i><h4>Year Built</h4><span>2024 / New Construction</span></div>
+          </div>
+        </div>
+        <div class="reveal-on-scroll reveal-fade-up">
+          <h3 class="section-heading">Facts And Features</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-x-8">
+            <ul class="features-col"><li><i class="ri-check-double-fill"></i>Air Conditioning</li><li><i class="ri-check-double-fill"></i>Dishwasher</li><li><i class="ri-check-double-fill"></i>High-Speed Internet</li><li><i class="ri-check-double-fill"></i>Supermarket / Store</li><li><i class="ri-check-double-fill"></i>Built-In Wardrobes</li></ul>
+            <ul class="features-col"><li><i class="ri-check-double-fill"></i>Perimeter Fencing</li><li><i class="ri-check-double-fill"></i>Landscaped Park</li><li><i class="ri-check-double-fill"></i>Swimming Pool</li><li><i class="ri-check-double-fill"></i>Medical Clinic</li><li><i class="ri-check-double-fill"></i>Premium Flooring</li></ul>
+            <ul class="features-col"><li><i class="ri-check-double-fill"></i>School Nearby</li><li><i class="ri-check-double-fill"></i>Transportation Hub</li><li><i class="ri-check-double-fill"></i>Gym Availability</li><li><i class="ri-check-double-fill"></i>Private Lawn</li><li><i class="ri-check-double-fill"></i>24/7 Security Guard</li></ul>
+          </div>
+        </div>
+        <div class="reveal-on-scroll reveal-fade-up">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+            <h3 class="text-xl font-extrabold text-[#14080B]">Floor Plan</h3>
+            <div class="flex flex-wrap gap-2">
+              <div class="info-pill text-[11px]"><i class="ri-hotel-bed-line"></i><span>6 Bed</span></div>
+              <div class="info-pill text-[11px]"><i class="fa-solid fa-bath" style="color:#7B1824;font-size:12px"></i><span>4 Bath</span></div>
+              <div class="info-pill text-[11px]"><i class="fa-solid fa-car" style="color:#7B1824;font-size:12px"></i><span>1 Car</span></div>
+              <div class="info-pill text-[11px]"><i class="fa-solid fa-vector-square" style="color:#7B1824;font-size:12px"></i><span>3250 Sqft</span></div>
+            </div>
+          </div>
+          <div class="border-b-2 border-[#E8DFD3] relative mb-6"><span class="absolute bottom-[-2px] left-0 w-12 h-0.5 bg-[#7B1824] rounded-full"></span></div>
+          <div class="bg-[#FAF7F2] border border-[#E8DFD3] rounded-2xl p-4 sm:p-6 relative group cursor-pointer" onclick="openLightbox('img/floorplan.png','Property Floor Plan')">
+            <img src="img/floorplan.png" alt="Floor Plan" class="w-full max-h-72 object-contain mx-auto transition-transform duration-500 group-hover:scale-[1.02]">
+            <div class="absolute top-4 right-4 bg-white/90 text-[#7B1824] w-9 h-9 rounded-lg flex items-center justify-center shadow border border-[#E8DFD3] hover:bg-[#7B1824] hover:text-white transition-all"><i class="fa-solid fa-expand text-xs"></i></div>
+          </div>
+        </div>
+        <div class="reveal-on-scroll reveal-fade-up">
+          <h3 class="section-heading">Property Video</h3>
+          <div class="video-wrapper" onclick="openVideoLightbox()">
+            <img src="img/banner-7.jpg" alt="Property Video Preview">
+            <div class="video-play-btn"><i class="ri-play-fill"></i></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-2xl pointer-events-none"></div>
+            <div class="absolute bottom-4 left-4 text-white text-sm font-bold z-10 flex items-center gap-2"><i class="ri-vidicon-fill text-[#E5A922]"></i> Watch Property Tour</div>
+          </div>
+        </div>
+        <div class="reveal-on-scroll reveal-fade-up">
+          <h3 class="section-heading">Location</h3>
+          <p class="text-sm text-gray-500 flex items-center gap-1.5 mb-4 -mt-3"><i class="ri-map-pin-line text-[#7B1824]"></i>194 Mercer Street, NY 10012, USA</p>
+          <div class="map-wrapper rounded-2xl overflow-hidden border border-[#E8DFD3] shadow-sm">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.6247953285215!2d-73.99921922358588!3d40.726275536740864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598fc76faf1d%3A0x8e82ec28918ad76e!2s194%20Mercer%20Street%2C%20New%20York%2C%20NY%2010012%2C%20USA!5e0!3m2!1sen!2sbd!4v1703668602409!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Property Location Map"></iframe>
+          </div>
+        </div>
+        <div class="reveal-on-scroll reveal-fade-up">
+          <h3 class="section-heading">Conclusion</h3>
+          <div class="space-y-4 text-sm text-gray-600 leading-relaxed font-light">
+            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin quis bibendum auctor, nisilit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.</p>
+            <p>Gravida nibh vel velit auctor aliquet. Aenean sollicitudin quis bibendum auctor, nisilit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi ac nec tellus a odio tincidunt auctor a ornare odio.</p>
+          </div>
+        </div>
+        <div class="reveal-on-scroll reveal-fade-up">
+          <h3 class="section-heading">3 Comments</h3>
+          <div>
+            <div class="comment-item"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" alt="Thomas"><div class="flex-1"><div class="flex flex-wrap items-center justify-between gap-2 mb-1"><h4 class="text-sm font-extrabold text-[#14080B]">Thomas Markdanel</h4><span class="text-xs text-gray-400">26th February 2026</span></div><div class="star-rating flex gap-0.5 mb-2"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div><p class="text-xs text-gray-600 font-light leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut amet tortor, libero blandit pharetra ornare faucibus ultricies sollicitudin.</p></div></div>
+            <div class="comment-item"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" alt="Sarah"><div class="flex-1"><div class="flex flex-wrap items-center justify-between gap-2 mb-1"><h4 class="text-sm font-extrabold text-[#14080B]">Sarah Karly</h4><span class="text-xs text-gray-400">26th February 2026</span></div><div class="star-rating flex gap-0.5 mb-2"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div><p class="text-xs text-gray-600 font-light leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut amet tortor, libero blandit pharetra ornare faucibus ultricies sollicitudin.</p></div></div>
+            <div class="comment-item"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&h=100&q=80" alt="Alson"><div class="flex-1"><div class="flex flex-wrap items-center justify-between gap-2 mb-1"><h4 class="text-sm font-extrabold text-[#14080B]">Alson Meklen</h4><span class="text-xs text-gray-400">26th February 2026</span></div><div class="star-rating flex gap-0.5 mb-2"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i></div><p class="text-xs text-gray-600 font-light leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut amet tortor, libero blandit pharetra ornare faucibus ultricies sollicitudin.</p></div></div>
+          </div>
+          <div class="mt-10 bg-[#FAF7F2] border border-[#E8DFD3] rounded-2xl p-6 sm:p-8">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-6"><h3 class="text-lg font-extrabold text-[#14080B]">Add A Review</h3><div class="star-rating flex gap-1 cursor-pointer"><i class="ri-star-fill text-lg"></i><i class="ri-star-fill text-lg"></i><i class="ri-star-fill text-lg"></i><i class="ri-star-fill text-lg"></i><i class="ri-star-line text-lg"></i></div></div>
+            <form onsubmit="event.preventDefault();this.reset();alert('Thank you for your review!');" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div><label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wide">Your Name</label><input type="text" required placeholder="Enter your name" class="review-input"></div>
+                <div><label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wide">Email Address</label><input type="email" required placeholder="Enter email address" class="review-input"></div>
+              </div>
+              <div><label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wide">Your Review</label><textarea required rows="4" placeholder="Share your experience..." class="review-input"></textarea></div>
+              <div class="flex items-start gap-2"><input type="checkbox" id="save-review" class="mt-0.5 accent-[#7B1824]"><label for="save-review" class="text-xs text-gray-500 font-medium">Save my name and email in this browser for the next time I review.</label></div>
+              <button type="submit" class="px-8 py-3 bg-[#7B1824] hover:bg-[#60111A] text-white font-bold text-xs uppercase tracking-widest rounded-lg shadow-lg cursor-pointer">Submit Review</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="xl:col-span-4 space-y-8">
+        <div class="bg-white border border-[#E8DFD3] rounded-2xl p-6 shadow-lg reveal-on-scroll reveal-fade-right">
+          <h3 class="text-lg font-extrabold text-[#14080B] mb-5 pb-3 border-b border-[#E8DFD3]">Schedule a Viewing</h3>
+          <form onsubmit="event.preventDefault();alert('Your request has been submitted! Our team will contact you shortly.');this.reset();" class="space-y-1">
+            <div class="booking-form-group"><label>Name</label><i class="ri-user-3-line field-icon"></i><input type="text" required placeholder="Your full name"></div>
+            <div class="booking-form-group"><label>Email</label><i class="ri-mail-send-line field-icon"></i><input type="email" required placeholder="Your email address"></div>
+            <div class="booking-form-group"><label>Phone No.</label><i class="ri-phone-line field-icon"></i><input type="tel" placeholder="+1 234 567 8900"></div>
+            <div class="booking-form-group"><label>Description</label><textarea rows="4" placeholder="I am interested in this property and would like to schedule a private viewing..." style="padding-left:14px;"></textarea></div>
+            <button type="submit" class="w-full py-3.5 bg-[#7B1824] hover:bg-[#60111A] text-white font-extrabold text-xs uppercase tracking-widest rounded-xl shadow-lg cursor-pointer flex items-center justify-center gap-2"><i class="ri-send-plane-fill"></i> Submit Request</button>
+          </form>
+        </div>
+        <div class="bg-[#FAF7F2] border border-[#E8DFD3] rounded-2xl p-6 reveal-on-scroll reveal-fade-right reveal-delay-100">
+          <h3 class="text-lg font-extrabold text-[#14080B] mb-5 pb-3 border-b border-[#E8DFD3]">Featured Properties</h3>
+          <div class="space-y-4">
+            <a href="property-details.html" class="featured-mini-card block group">
+              <div class="overflow-hidden"><img src="img/gallery1-crop.png" alt="Single Family" class="w-full h-36 object-cover transition-transform duration-500 group-hover:scale-105"></div>
+              <div class="p-4"><div class="flex items-start justify-between gap-2 mb-2"><div><h4 class="text-sm font-bold text-[#14080B] group-hover:text-[#7B1824]">Single-Family Homes</h4><p class="text-[11px] text-gray-500 mt-0.5 flex items-center gap-1"><i class="ri-map-pin-line text-[#7B1824] text-xs"></i> NY 10012, USA</p></div></div><div class="flex items-center gap-3 text-[11px] text-gray-500 font-semibold border-t border-[#E8DFD3] pt-2"><span class="flex items-center gap-1"><i class="ri-hotel-bed-line text-[#7B1824]"></i> 6</span><span class="flex items-center gap-1"><i class="fa-solid fa-bath text-[#7B1824] text-[10px]"></i> 4</span><span class="flex items-center gap-1"><i class="fa-solid fa-car text-[#7B1824] text-[10px]"></i> 1</span><span class="flex items-center gap-1"><i class="fa-solid fa-vector-square text-[#7B1824] text-[10px]"></i> 3250</span></div></div>
+            </a>
+            <a href="property-details.html" class="featured-mini-card block group">
+              <div class="overflow-hidden"><img src="img/gallery8.png" alt="Senior Apartments" class="w-full h-36 object-cover transition-transform duration-500 group-hover:scale-105"></div>
+              <div class="p-4"><div class="flex items-start justify-between gap-2 mb-2"><div><h4 class="text-sm font-bold text-[#14080B] group-hover:text-[#7B1824]">Senior Apartments</h4><p class="text-[11px] text-gray-500 mt-0.5 flex items-center gap-1"><i class="ri-map-pin-line text-[#7B1824] text-xs"></i> NY 10012, USA</p></div></div><div class="flex items-center gap-3 text-[11px] text-gray-500 font-semibold border-t border-[#E8DFD3] pt-2"><span class="flex items-center gap-1"><i class="ri-hotel-bed-line text-[#7B1824]"></i> 6</span><span class="flex items-center gap-1"><i class="fa-solid fa-bath text-[#7B1824] text-[10px]"></i> 4</span><span class="flex items-center gap-1"><i class="fa-solid fa-car text-[#7B1824] text-[10px]"></i> 1</span><span class="flex items-center gap-1"><i class="fa-solid fa-vector-square text-[#7B1824] text-[10px]"></i> 3250</span></div></div>
+            </a>
+            <a href="property-details.html" class="featured-mini-card block group">
+              <div class="overflow-hidden"><img src="img/gallery10.png" alt="Vacation Homes" class="w-full h-36 object-cover transition-transform duration-500 group-hover:scale-105"></div>
+              <div class="p-4"><div class="flex items-start justify-between gap-2 mb-2"><div><h4 class="text-sm font-bold text-[#14080B] group-hover:text-[#7B1824]">Vacation Homes</h4><p class="text-[11px] text-gray-500 mt-0.5 flex items-center gap-1"><i class="ri-map-pin-line text-[#7B1824] text-xs"></i> NY 10012, USA</p></div></div><div class="flex items-center gap-3 text-[11px] text-gray-500 font-semibold border-t border-[#E8DFD3] pt-2"><span class="flex items-center gap-1"><i class="ri-hotel-bed-line text-[#7B1824]"></i> 6</span><span class="flex items-center gap-1"><i class="fa-solid fa-bath text-[#7B1824] text-[10px]"></i> 4</span><span class="flex items-center gap-1"><i class="fa-solid fa-car text-[#7B1824] text-[10px]"></i> 1</span><span class="flex items-center gap-1"><i class="fa-solid fa-vector-square text-[#7B1824] text-[10px]"></i> 3250</span></div></div>
+            </a>
+          </div>
+        </div>
+        <div class="bg-[#14080B] text-white rounded-2xl p-6 shadow-xl reveal-on-scroll reveal-fade-right reveal-delay-200">
+          <h3 class="text-base font-extrabold text-white mb-5 pb-3 border-b border-white/20">Contact Details</h3>
+          <ul class="space-y-4 text-sm">
+            <li class="flex items-start gap-3"><div class="w-8 h-8 bg-[#7B1824] rounded-lg flex items-center justify-center shrink-0 mt-0.5"><i class="ri-mail-line text-white text-xs"></i></div><div><span class="block text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-0.5">Email</span><a href="mailto:info@marsproperties.com" class="text-xs font-semibold text-gray-300 hover:text-[#E5A922]">info@marsproperties.com</a></div></li>
+            <li class="flex items-start gap-3"><div class="w-8 h-8 bg-[#7B1824] rounded-lg flex items-center justify-center shrink-0 mt-0.5"><i class="ri-phone-line text-white text-xs"></i></div><div><span class="block text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-0.5">Phone</span><a href="tel:+8801700000000" class="text-xs font-semibold text-gray-300 hover:text-[#E5A922]">+880 1700-000000</a></div></li>
+            <li class="flex items-start gap-3"><div class="w-8 h-8 bg-[#7B1824] rounded-lg flex items-center justify-center shrink-0 mt-0.5"><i class="ri-map-pin-line text-white text-xs"></i></div><div><span class="block text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-0.5">Location</span><span class="text-xs font-semibold text-gray-300">Jolshiri Abashon, Sector 12, Dhaka</span></div></li>
+          </ul>
+          <div class="mt-5 pt-5 border-t border-white/20"><a href="contact.html" class="w-full flex items-center justify-center gap-2 py-3 bg-[#7B1824] hover:bg-[#60111A] text-white font-bold text-xs uppercase tracking-widest rounded-xl cursor-pointer"><i class="ri-customer-service-2-line"></i> Contact Agent</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-[#7B1824] text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="font-serif-luxury text-3xl sm:text-4xl font-extrabold mb-4">Interested in This Property?</h2>
+    <p class="text-gray-200 text-sm max-w-2xl mx-auto mb-8 font-light">Connect with our senior private client concierge for bespoke consultation, floor plan customizations, and site visits.</p>
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a href="contact.html" class="px-8 py-3.5 bg-white text-[#7B1824] hover:bg-[#FAF7F2] font-bold text-sm tracking-wide rounded-lg shadow-lg">Contact Concierge</a>
+      <a href="property.html" class="px-8 py-3.5 bg-transparent border-2 border-white hover:bg-white/10 text-white font-bold text-sm tracking-wide rounded-lg">Browse More Properties</a>
+    </div>
+  </div>
+</section>
+
+<div class="relative w-full pt-16">
+  <div class="relative -mb-16 z-30 max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="bg-gradient-to-r from-[#7B1824] to-[#A82536] text-white p-8 sm:p-12 rounded-2xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+      <div><h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Looking for a dream home?</h3><p class="text-xs sm:text-sm text-gray-200 mt-2 font-light">We can help you realize your dream of a new home</p></div>
+      <a href="property.html" class="shrink-0 px-8 py-3.5 bg-white text-gray-900 hover:bg-gray-100 font-bold text-sm tracking-wide rounded-md shadow-lg flex items-center gap-2"><span>Explore Properties</span><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+  <footer class="bg-[#14080B] text-gray-300 pt-28 pb-12 border-t border-[#480B12]/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-14 border-b border-gray-800">
+        <div class="lg:col-span-1 space-y-4">
+          <a href="index.html" class="inline-block bg-white p-2 rounded-md shadow"><img src="img/logo.jpeg" alt="Mars Structure Limited" class="h-9 w-auto object-contain"></a>
+          <p class="text-xs text-gray-400 leading-relaxed font-light">Pioneering luxury real estate development, bespoke duplex residences, and architectural masterworks with uncompromising integrity.</p>
+          <div class="space-y-2 text-xs text-gray-400">
+            <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-[#E5A922] w-4"></i><span>Plot: 007, Road: 409A, Sector: 12, Jolshiri Abashon, Dhaka</span></div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-phone text-[#E5A922] w-4"></i><span>+880 1700-000000</span></div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-envelope text-[#E5A922] w-4"></i><span>info@marsproperties.com</span></div>
+          </div>
+          <div class="flex items-center space-x-3 pt-2">
+            <a href="#" class="text-gray-400 hover:text-[#E5A922]"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-[#E5A922]"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-[#E5A922]"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="text-gray-400 hover:text-[#E5A922]"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div><h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">Company</h4><ul class="space-y-2.5 text-xs text-gray-400"><li><a href="about.html" class="hover:text-[#E5A922]">About Us</a></li><li><a href="property.html" class="hover:text-[#E5A922]">All Properties</a></li><li><a href="property-location.html" class="hover:text-[#E5A922]">Locations Map</a></li><li><a href="contact.html" class="hover:text-[#E5A922]">Contact us</a></li></ul></div>
+        <div><h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">Services</h4><ul class="space-y-2.5 text-xs text-gray-400"><li><a href="property.html" class="hover:text-[#E5A922]">Luxury Houses</a></li><li><a href="property.html" class="hover:text-[#E5A922]">Wish List</a></li><li><a href="#" onclick="toggleModal('login-modal')" class="hover:text-[#E5A922]">Login</a></li><li><a href="property.html" class="hover:text-[#E5A922]">Floor Plans</a></li><li><a href="#" class="hover:text-[#E5A922]">Terms &amp; Conditions</a></li></ul></div>
+        <div><h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">Customer Care</h4><ul class="space-y-2.5 text-xs text-gray-400"><li><a href="#" onclick="toggleModal('login-modal')" class="hover:text-[#E5A922]">Login / Register</a></li><li><a href="contact.html" class="hover:text-[#E5A922]">Private Tour Booking</a></li><li><a href="contact.html" class="hover:text-[#E5A922]">VIP Consultation</a></li><li><a href="contact.html" class="hover:text-[#E5A922]">FAQ</a></li><li><a href="contact.html" class="hover:text-[#E5A922]">Contact us</a></li></ul></div>
+        <div class="space-y-4">
+          <h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">Newsletter</h4>
+          <p class="text-xs text-gray-400 leading-relaxed">Subscribe to our weekly Newsletter and receive updates via email.</p>
+          <form onsubmit="event.preventDefault();alert('Thank you for subscribing!');this.reset();" class="newsletter-form flex items-stretch w-full h-11 rounded-lg overflow-hidden shadow-sm mt-3 border border-transparent focus-within:border-[#E5A922] bg-white">
+            <input type="email" required placeholder="Email*" class="flex-1 min-w-0 bg-white text-gray-900 px-4 text-xs focus:outline-none border-0 h-full m-0">
+            <button type="submit" class="bg-[#7B1824] hover:bg-[#60111A] text-white px-5 flex items-center justify-center h-full shrink-0 cursor-pointer border-0 m-0"><i class="fa-solid fa-paper-plane text-xs"></i></button>
+          </form>
+          <div class="pt-3"><div class="text-xs font-bold text-white mb-2">We Accept</div><div class="bg-white rounded-md p-2 flex items-center justify-between text-gray-700 text-lg px-3 shadow-sm"><i class="fa-brands fa-paypal text-[#003087]"></i><i class="fa-brands fa-cc-visa text-[#1A1F71]"></i><i class="fa-brands fa-cc-discover text-[#FF6000]"></i><i class="fa-brands fa-cc-mastercard text-[#EB001B]"></i><i class="fa-brands fa-cc-amex text-[#006FCF]"></i></div></div>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+        <div>All Rights Reserved @ Mars Structure Limited 2026</div>
+        <div class="flex items-center space-x-6"><a href="#" class="hover:text-white">Terms &amp; Conditions</a><a href="#" class="hover:text-white">Claim</a><a href="#" class="hover:text-white">Privacy &amp; Policy</a></div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<button id="scroll-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed right-6 bottom-6 z-50 w-11 h-11 bg-[#7B1824] hover:bg-[#60111A] text-white rounded-md shadow-2xl flex items-center justify-center opacity-0 pointer-events-none transform translate-y-4 cursor-pointer" title="Scroll to Top"><i class="fa-solid fa-chevron-up"></i></button>
+
+<div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-md p-4">
+  <div class="relative w-full max-w-4xl">
+    <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white text-3xl hover:text-[#E5A922] cursor-pointer z-10"><i class="fa-solid fa-xmark"></i></button>
+    <img id="lightbox-img" src="" alt="" class="max-h-[80vh] w-auto max-w-full mx-auto rounded-xl shadow-2xl object-contain">
+    <p id="lightbox-caption" class="text-center text-gray-300 text-sm mt-3 font-medium"></p>
+  </div>
+</div>
+
+<div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/95 backdrop-blur-md p-4">
+  <div class="relative w-full max-w-4xl">
+    <button onclick="closeVideoModal()" class="absolute -top-12 right-0 text-white text-3xl hover:text-[#E5A922] cursor-pointer z-10"><i class="fa-solid fa-xmark"></i></button>
+    <div style="position:relative;padding-bottom:56.25%;height:0;border-radius:16px;overflow:hidden;"><iframe id="video-iframe" src="" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
+  </div>
+</div>
+
+<div id="login-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+  <div class="relative w-full max-w-md bg-white rounded-2xl p-8 shadow-2xl">
+    <button onclick="toggleModal('login-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
+    <h3 class="text-2xl font-extrabold text-gray-900 mb-2">Client Portal</h3>
+    <p class="text-xs text-gray-500 mb-6">Sign in to access VIP property portfolios and schedules</p>
+    <form onsubmit="event.preventDefault();alert('Signed in successfully!');toggleModal('login-modal');" class="space-y-4 text-xs">
+      <div><label class="block font-bold text-gray-700 mb-1">Email</label><input type="email" required placeholder="name@domain.com" class="w-full px-3.5 py-2.5 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#7B1824]"></div>
+      <div><label class="block font-bold text-gray-700 mb-1">Password</label><input type="password" required placeholder="Password" class="w-full px-3.5 py-2.5 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#7B1824]"></div>
+      <button type="submit" class="w-full py-3 bg-[#7B1824] hover:bg-[#60111A] text-white font-bold rounded-lg cursor-pointer uppercase tracking-wider">Sign In</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (mobileMenuBtn && mobileMenu) mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  function toggleModal(id) { const m = document.getElementById(id); if (m) { m.classList.toggle('hidden'); m.classList.toggle('flex'); } }
+  function openLightbox(src, caption) { const modal = document.getElementById('lightbox-modal'); document.getElementById('lightbox-img').src = src; document.getElementById('lightbox-caption').textContent = caption || ''; modal.classList.remove('hidden'); modal.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+  function closeLightbox() { const m = document.getElementById('lightbox-modal'); m.classList.add('hidden'); m.classList.remove('flex'); document.body.style.overflow = ''; }
+  document.getElementById('lightbox-modal').addEventListener('click', function(e) { if (e.target === this) closeLightbox(); });
+  function openVideoLightbox() { const modal = document.getElementById('video-modal'); document.getElementById('video-iframe').src = 'https://www.youtube.com/embed/bHubVrfgFK8?autoplay=1&rel=0'; modal.classList.remove('hidden'); modal.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+  function closeVideoModal() { const modal = document.getElementById('video-modal'); document.getElementById('video-iframe').src = ''; modal.classList.add('hidden'); modal.classList.remove('flex'); document.body.style.overflow = ''; }
+  document.getElementById('video-modal').addEventListener('click', function(e) { if (e.target === this) closeVideoModal(); });
+  const scrollBtn = document.getElementById('scroll-to-top');
+  window.addEventListener('scroll', () => { if (window.scrollY > 400) { scrollBtn.classList.remove('opacity-0','pointer-events-none','translate-y-4'); } else { scrollBtn.classList.add('opacity-0','pointer-events-none','translate-y-4'); } });
+  function initScrollReveal() {
+    const els = document.querySelectorAll('.reveal-on-scroll');
+    if (!els.length) return;
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-revealed'); observer.unobserve(entry.target); } }); }, { threshold: 0.08 });
+      els.forEach(el => obs.observe(el));
+    } else { els.forEach(el => el.classList.add('is-revealed')); }
+  }
+  document.addEventListener('DOMContentLoaded', initScrollReveal);
+</script>
+</body>
+</html>
+

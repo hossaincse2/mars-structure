@@ -549,573 +549,744 @@
       </div>
     </div>
   </div>
-  <section id="latest-properties" class="py-20 lg:py-28 bg-[#FAF7F2]/50 border-t border-[#E8DFD3]">
-    <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- ==========================================
+       SECTION: PROPERTIES CATALOG WITH SIDEBAR
+       (Matching Reference Image & User Markup)
+       ========================================== -->
+  <section id="properties-catalog" class="py-16 lg:py-24 bg-[#FAF7F2]/40 border-t border-[#E8DFD3]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Section Title & Tabs (Design matching user reference) -->
-      <div class="section-title reveal-on-scroll reveal-fade-up">
-        <div>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#14080B] leading-tight">
-            Latest Properties
-          </h2>
-        </div>
-        <div>
-          <div class="properties-wrap-tabs">
-            <ul class="nav nav-tabs" id="properties_wrap_tab" role="tablist">
-              <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="houses-tab" data-bs-toggle="tab" href="#houses" role="tab" aria-controls="houses" aria-selected="true" onclick="switchPropertyTab('#houses', this); return false;">Houses</a>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        
+        <!-- ==========================================
+             LEFT SIDEBAR: 6 FILTER WIDGETS
+             ========================================== -->
+        <aside class="lg:col-span-4 xl:col-span-4 space-y-6 properties-widget-area wrap-left">
+          
+          <!-- Widget 1: Search Form -->
+          <div class="widget widget_search bg-[#FAF7F2] p-5 sm:p-6 rounded-2xl border border-[#E8DFD3] shadow-sm">
+            <form class="search-form relative" onsubmit="event.preventDefault(); applyPropertySearch();">
+              <input type="text" id="prop-keyword-input" placeholder="Search property" onkeyup="applyPropertySearch()" class="search-field w-full bg-white text-gray-800 pl-11 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-[#184E42] text-xs font-semibold placeholder-gray-400 shadow-sm transition-all">
+              <button type="submit" class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#184E42] transition-colors cursor-pointer" aria-label="Search">
+                <i class="ri-search-line text-base text-[#184E42]"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Widget 2: Property Type -->
+          <div class="widget widget_categories bg-[#FAF7F2] p-5 sm:p-6 rounded-2xl border border-[#E8DFD3] shadow-sm">
+            <h3 class="widget-title text-base sm:text-lg font-black text-[#14080B] mb-4 pb-2 border-b border-gray-200/80 flex items-center justify-between">
+              <span>Property Type</span>
+              <i class="ri-community-line text-sm text-[#7B1824]"></i>
+            </h3>
+            <ul class="list space-y-2 text-xs font-bold list-none p-0 m-0">
+              <li>
+                <a href="#properties-catalog" onclick="filterPropertyType('all', this); return false;" class="prop-type-filter active flex items-center justify-between py-2 px-3 rounded-xl text-white bg-[#184E42] transition-all">
+                  <span>All Properties</span>
+                  <span class="px-2 py-0.5 rounded-full bg-white/20 text-white text-[10px]">27</span>
+                </a>
               </li>
-              <li class="nav-item" role="presentation">
-                <a class="nav-link" id="villas-tab" data-bs-toggle="tab" href="#villas" role="tab" aria-controls="villas" aria-selected="false" onclick="switchPropertyTab('#villas', this); return false;">Villas</a>
+              <li>
+                <a href="#properties-catalog" onclick="filterPropertyType('Apartments', this); return false;" class="prop-type-filter flex items-center justify-between py-2 px-3 rounded-xl text-gray-700 hover:text-[#184E42] hover:bg-white transition-all group">
+                  <span>Apartments</span>
+                  <span class="px-2 py-0.5 rounded-full bg-white text-gray-600 border border-gray-200 text-[10px] group-hover:border-[#184E42] group-hover:text-[#184E42]">9</span>
+                </a>
               </li>
-              <li class="nav-item" role="presentation">
-                <a class="nav-link" id="rental-tab" data-bs-toggle="tab" href="#rental" role="tab" aria-controls="rental" aria-selected="false" onclick="switchPropertyTab('#rental', this); return false;">Rental</a>
+              <li>
+                <a href="#properties-catalog" onclick="filterPropertyType('Bungalow', this); return false;" class="prop-type-filter flex items-center justify-between py-2 px-3 rounded-xl text-gray-700 hover:text-[#184E42] hover:bg-white transition-all group">
+                  <span>Bungalow</span>
+                  <span class="px-2 py-0.5 rounded-full bg-white text-gray-600 border border-gray-200 text-[10px] group-hover:border-[#184E42] group-hover:text-[#184E42]">12</span>
+                </a>
               </li>
-              <li class="nav-item" role="presentation">
-                <a class="nav-link" id="apartment-tab" data-bs-toggle="tab" href="#apartment" role="tab" aria-controls="apartment" aria-selected="false" onclick="switchPropertyTab('#apartment', this); return false;">Apartment</a>
+              <li>
+                <a href="#properties-catalog" onclick="filterPropertyType('Houses', this); return false;" class="prop-type-filter flex items-center justify-between py-2 px-3 rounded-xl text-gray-700 hover:text-[#184E42] hover:bg-white transition-all group">
+                  <span>Houses</span>
+                  <span class="px-2 py-0.5 rounded-full bg-white text-gray-600 border border-gray-200 text-[10px] group-hover:border-[#184E42] group-hover:text-[#184E42]">5</span>
+                </a>
               </li>
-              <li class="nav-item" role="presentation">
-                <a class="nav-link" id="condos-tab" data-bs-toggle="tab" href="#condos" role="tab" aria-controls="condos" aria-selected="false" onclick="switchPropertyTab('#condos', this); return false;">Condos</a>
+              <li>
+                <a href="#properties-catalog" onclick="filterPropertyType('Loft', this); return false;" class="prop-type-filter flex items-center justify-between py-2 px-3 rounded-xl text-gray-700 hover:text-[#184E42] hover:bg-white transition-all group">
+                  <span>Loft</span>
+                  <span class="px-2 py-0.5 rounded-full bg-white text-gray-600 border border-gray-200 text-[10px] group-hover:border-[#184E42] group-hover:text-[#184E42]">3</span>
+                </a>
               </li>
-              <li class="nav-item" role="presentation">
-                <a class="nav-link" id="commercial-tab" data-bs-toggle="tab" href="#commercial" role="tab" aria-controls="commercial" aria-selected="false" onclick="switchPropertyTab('#commercial', this); return false;">Commercial</a>
+              <li>
+                <a href="#properties-catalog" onclick="filterPropertyType('Office', this); return false;" class="prop-type-filter flex items-center justify-between py-2 px-3 rounded-xl text-gray-700 hover:text-[#184E42] hover:bg-white transition-all group">
+                  <span>Office</span>
+                  <span class="px-2 py-0.5 rounded-full bg-white text-gray-600 border border-gray-200 text-[10px] group-hover:border-[#184E42] group-hover:text-[#184E42]">20</span>
+                </a>
               </li>
             </ul>
           </div>
-        </div>
-      </div>
 
-      <!-- Tab Content Area -->
-      <div class="tab-content" id="properties_tab_wrap_content">
-        
-        <!-- Tab Pane 1: Houses (Active) -->
-        <div class="tab-pane fade show active" id="houses" role="tabpanel" aria-labelledby="houses-tab">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+          <!-- Widget 3: Property Status -->
+          <div class="widget widget_property_status bg-[#FAF7F2] p-5 sm:p-6 rounded-2xl border border-[#E8DFD3] shadow-sm">
+            <h3 class="widget-title text-base sm:text-lg font-black text-[#14080B] mb-4 pb-2 border-b border-gray-200/80">
+              Property Status
+            </h3>
+            <ul class="list space-y-2.5 text-xs font-bold text-gray-700 list-none p-0 m-0">
+              <li>
+                <label class="form-check flex items-center gap-3 p-2.5 rounded-xl bg-white border border-gray-200 cursor-pointer hover:border-[#184E42] transition-all">
+                  <input class="form-check-input w-4 h-4 text-[#184E42] rounded-full focus:ring-[#184E42] accent-[#184E42]" type="checkbox" id="check1" onchange="applyPropertyFilters()">
+                  <span class="form-check-label text-xs font-semibold text-gray-800">For Rent</span>
+                </label>
+              </li>
+              <li>
+                <label class="form-check flex items-center gap-3 p-2.5 rounded-xl bg-white border border-gray-200 cursor-pointer hover:border-[#184E42] transition-all">
+                  <input class="form-check-input w-4 h-4 text-[#184E42] rounded-full focus:ring-[#184E42] accent-[#184E42]" type="checkbox" id="check2" checked onchange="applyPropertyFilters()">
+                  <span class="form-check-label text-xs font-semibold text-gray-800">For Sale</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Widget 4: Price Range -->
+          <div class="widget widget_price_range bg-[#FAF7F2] p-5 sm:p-6 rounded-2xl border border-[#E8DFD3] shadow-sm">
+            <h3 class="widget-title text-base sm:text-lg font-black text-[#14080B] mb-3 pb-2 border-b border-gray-200/80">
+              Price Range
+            </h3>
+            <div class="range-slider py-2">
+              <input type="range" id="price-range-slider" min="20000" max="100000" value="75000" step="1000" oninput="updatePriceSlider(this.value)" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#184E42]">
+            </div>
+            <div class="price-input grid grid-cols-2 gap-3 mt-3">
+              <div class="field bg-white py-2 px-3 rounded-xl border border-gray-200 text-center shadow-sm">
+                <span class="text-[10px] text-gray-400 block uppercase font-bold">Min</span>
+                <input type="text" class="input-min w-full text-center bg-transparent border-0 outline-none text-xs font-extrabold text-[#184E42]" value="$ 2,500" readonly>
+              </div>
+              <div class="field bg-white py-2 px-3 rounded-xl border border-gray-200 text-center shadow-sm">
+                <span class="text-[10px] text-gray-400 block uppercase font-bold">Max</span>
+                <input type="text" id="price-max-display" class="input-max w-full text-center bg-transparent border-0 outline-none text-xs font-extrabold text-[#184E42]" value="$ 75,000" readonly>
+              </div>
+            </div>
+          </div>
+
+          <!-- Widget 5: Home Area Range -->
+          <div class="widget widget_home_area_range bg-[#FAF7F2] p-5 sm:p-6 rounded-2xl border border-[#E8DFD3] shadow-sm">
+            <h3 class="widget-title text-base sm:text-lg font-black text-[#14080B] mb-3 pb-2 border-b border-gray-200/80">
+              Home Area
+            </h3>
+            <div class="home-range-slider py-2">
+              <input type="range" id="area-range-slider" min="1000" max="6000" value="3250" step="50" oninput="updateAreaSlider(this.value)" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#184E42]">
+            </div>
+            <div class="home-price-input grid grid-cols-2 gap-3 mt-3">
+              <div class="field bg-white py-2 px-3 rounded-xl border border-gray-200 text-center shadow-sm">
+                <span class="text-[10px] text-gray-400 block uppercase font-bold">Min</span>
+                <input type="text" class="input-min w-full text-center bg-transparent border-0 outline-none text-xs font-extrabold text-[#184E42]" value="2500 SQFT" readonly>
+              </div>
+              <div class="field bg-white py-2 px-3 rounded-xl border border-gray-200 text-center shadow-sm">
+                <span class="text-[10px] text-gray-400 block uppercase font-bold">Max</span>
+                <input type="text" id="area-max-display" class="input-max w-full text-center bg-transparent border-0 outline-none text-xs font-extrabold text-[#184E42]" value="7500 SQFT" readonly>
+              </div>
+            </div>
+          </div>
+
+          <!-- Widget 6: Advanced Search -->
+          <div class="widget widget_advanced_search bg-[#FAF7F2] p-5 sm:p-6 rounded-2xl border border-[#E8DFD3] shadow-sm">
+            <h3 class="widget-title text-base sm:text-lg font-black text-[#14080B] mb-4 pb-2 border-b border-gray-200/80">
+              Advanced Search
+            </h3>
+            <form class="advanced-search-form space-y-3" onsubmit="event.preventDefault(); applyPropertySearch();">
+              <div class="form-group">
+                <input type="text" id="adv-keyword" class="form-control w-full bg-white text-gray-800 px-4 py-2.5 rounded-xl border border-gray-200 text-xs font-semibold focus:outline-none focus:border-[#184E42] placeholder-gray-400 shadow-sm" placeholder="Keyword">
+              </div>
+              <div class="form-group">
+                <select id="adv-bed" class="form-select form-control w-full bg-white text-gray-700 px-4 py-2.5 rounded-xl border border-gray-200 text-xs font-semibold focus:outline-none focus:border-[#184E42] shadow-sm cursor-pointer">
+                  <option selected value="">Bedroom</option>
+                  <option value="3">3 Bedrooms</option>
+                  <option value="4">4 Bedrooms</option>
+                  <option value="5">5 Bedrooms</option>
+                  <option value="6">6 Bedrooms</option>
+                  <option value="10">10+ Bedrooms</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select id="adv-bath" class="form-select form-control w-full bg-white text-gray-700 px-4 py-2.5 rounded-xl border border-gray-200 text-xs font-semibold focus:outline-none focus:border-[#184E42] shadow-sm cursor-pointer">
+                  <option selected value="">Bathroom</option>
+                  <option value="2">2 Bathrooms</option>
+                  <option value="3">3 Bathrooms</option>
+                  <option value="4">4 Bathrooms</option>
+                  <option value="5">5 Bathrooms</option>
+                  <option value="7">7+ Bathrooms</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select id="adv-garage" class="form-select form-control w-full bg-white text-gray-700 px-4 py-2.5 rounded-xl border border-gray-200 text-xs font-semibold focus:outline-none focus:border-[#184E42] shadow-sm cursor-pointer">
+                  <option selected value="">Garages</option>
+                  <option value="1">1 Garage</option>
+                  <option value="2">2 Garages</option>
+                  <option value="3">3 Garages</option>
+                  <option value="4">4+ Garages</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select id="adv-city" class="form-select form-control w-full bg-white text-gray-700 px-4 py-2.5 rounded-xl border border-gray-200 text-xs font-semibold focus:outline-none focus:border-[#184E42] shadow-sm cursor-pointer">
+                  <option selected value="">All City / Zone</option>
+                  <option value="jolshiri">Jolshiri Abashon (Sec 12)</option>
+                  <option value="gulshan">Gulshan Diplomatic Enclave</option>
+                  <option value="banani">Banani Sky Suites</option>
+                  <option value="baridhara">Baridhara Embassy Point</option>
+                  <option value="mirpur">Mirpur City Point</option>
+                </select>
+              </div>
+              <div class="form-group pt-2">
+                <button type="submit" class="default-btn w-full py-3.5 bg-[#184E42] hover:bg-[#133E35] text-white font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2">
+                  <i class="ri-search-2-line"></i>
+                  <span>Search Property</span>
+                </button>
+              </div>
+              <div class="text-center pt-1">
+                <button type="button" onclick="resetPropertyFilters()" class="reset-search-btn text-xs font-bold text-gray-500 hover:text-[#7B1824] transition-colors inline-flex items-center gap-1.5 cursor-pointer">
+                  <i class="ri-refresh-line"></i>
+                  <span>Reset Search</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </aside>
+
+
+        <!-- ==========================================
+             RIGHT COLUMN: RESULTS HEADER & 8 PROPERTY CARDS
+             ========================================== -->
+        <main class="lg:col-span-8 xl:col-span-8">
+          
+          <!-- Top Results Bar -->
+          <div class="properties-grid-box bg-white p-4 sm:p-5 rounded-2xl border border-gray-200/80 shadow-sm mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <p class="text-xs sm:text-sm font-semibold text-gray-600 m-0">
+                Showing <span class="font-extrabold text-[#14080B]">1-8</span> Of <span class="font-extrabold text-[#14080B]">27</span> Results
+              </p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-bold text-gray-500 hidden sm:inline">Sort By:</span>
+              <select id="prop-sort-select" onchange="sortProperties(this.value)" class="form-select bg-[#FAF7F2] text-gray-800 text-xs font-bold py-2 px-3.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#184E42] cursor-pointer shadow-sm">
+                <option selected value="recommend">Recommend</option>
+                <option value="newest">Sort by newest</option>
+                <option value="latest">Sort by latest</option>
+                <option value="popularity">Sort by popularity</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 2-Column Grid of 8 Properties -->
+          <div id="properties-grid-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7">
             
-            <!-- Card 1: Industrial Spaces -->
-            <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-100">
-              <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
-                <div class="media">
-                  <span><i class="ri-vidicon-fill"></i></span>
-                  <span><i class="ri-image-line"></i> 5</span>
-                </div>
-                <img src="img/property1.jpg" alt="Industrial Spaces" class="w-full h-full object-cover">
+            <!-- Card 1: Vacation Homes (,000) -->
+            <div class="properties-item bg-white rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="Apartments" data-price="95000" data-beds="6">
+              <div class="properties-image relative h-64 sm:h-72 w-full overflow-hidden">
+                <a href="property-details.html" class="block w-full h-full">
+                  <img src="img/product-1.jpg" alt="Vacation Homes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </a>
+                <ul class="action absolute top-3.5 left-3.5 flex items-center gap-2 z-10 list-none p-0 m-0">
+                  <li><span class="featured-btn bg-[#184E42] text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md tracking-wider shadow">Featured</span></li>
+                  <li>
+                    <div class="media bg-black/65 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-md flex items-center gap-1.5 shadow">
+                      <span><i class="ri-vidicon-fill text-xs"></i></span>
+                      <span><i class="ri-image-line text-xs"></i> 5</span>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="link-list absolute top-3.5 right-3.5 flex items-center gap-1.5 z-10 list-none p-0 m-0">
+                  <li><span class="link-btn bg-black/85 backdrop-blur-md text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md tracking-wider shadow">Apartment</span></li>
+                  
+                </ul>
+                <ul class="info-list absolute bottom-3 inset-x-3 flex items-center justify-between gap-1 z-10 list-none p-0 m-0">
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="ri-hotel-bed-line text-[#E5A922] text-xs"></i>
+                    <span>6</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-bath text-[#E5A922] text-[10px]"></i>
+                    <span>4</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-car text-[#E5A922] text-[10px]"></i>
+                    <span>1</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-vector-square text-[#E5A922] text-[10px]"></i>
+                    <span>3250</span>
+                  </li>
+                </ul>
               </div>
-              <div class="properties-content">
-                <div>
-                  <div class="info">
-                    <ul class="link-list">
-                      <li><a href="#latest-properties" class="link-btn">Apartment</a></li>
-                    </ul>
-                    <ul class="group-info">
-                      <li>
-                        <div class="dropdown">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" onclick="this.nextElementSibling.classList.toggle('hidden'); event.stopPropagation();" aria-label="Share">
-                            <i class="ri-share-line"></i>
-                          </button>
-                          <ul class="dropdown-menu hidden">
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i> Facebook</a></li>
-                            <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-x-line"></i> Twitter</a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-fill"></i> Instagram</a></li>
-                            <li><a href="https://bd.linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i> LinkedIn</a></li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li>
-                        <button type="button" aria-label="Add To Favorites"><i class="ri-heart-line"></i></button>
-                      </li>
-                      <li>
-                        <button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button>
-                      </li>
-                    </ul>
+              <div class="properties-content p-5 flex flex-col flex-1 justify-between">
+                <div class="top flex items-start justify-between gap-3 mb-4">
+                  <div class="title flex-1">
+                    <h3 class="text-base sm:text-lg font-bold text-[#14080B] leading-snug group-hover:text-[#7B1824] transition-colors">
+                      <a href="property-details.html">Vacation Homes</a>
+                    </h3>
+                    <span class="text-xs text-gray-500 block mt-1"><i class="ri-map-pin-line text-[#7B1824] mr-1"></i> 194 Mercer Street, NY 10012, USA</span>
                   </div>
-                  <div class="title">
-                    <h3><a href="#contact-deal">Industrial Spaces</a></h3>
-                    <span>194 Mercer Street, NY 10012, USA</span>
+                  
+                </div>
+                <div class="bottom pt-3 border-t border-gray-100 flex items-center justify-between">
+                  <div class="user flex items-center gap-2.5">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" alt="Thomas Klarck" class="w-7 h-7 rounded-full object-cover border border-white shadow-sm shrink-0">
+                    <a href="property-details.html" class="text-xs font-bold text-gray-800 hover:text-[#7B1824] transition-colors">Thomas Klarck</a>
                   </div>
-                  <ul class="info-list">
-                    <li>
-                      <div class="icon"><i class="ri-hotel-bed-line"></i></div>
-                      <span>6</span>
-                    </li>
-                    <li>
-                      <div class="icon"><i class="fa-solid fa-bath"></i></div>
-                      <span>4</span>
-                    </li>
-                    <li>
-                      <div class="icon"><i class="fa-solid fa-car"></i></div>
-                      <span>1</span>
-                    </li>
-                    <li>
-                      <div class="icon"><i class="fa-solid fa-vector-square"></i></div>
-                      <span>3250</span>
-                    </li>
+                  <ul class="group-info flex items-center gap-1.5 list-none p-0 m-0">
+                    <li><button type="button" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-[#7B1824] hover:border-[#7B1824] flex items-center justify-center text-xs transition-colors cursor-pointer" title="Share"><i class="ri-share-line"></i></button></li>
+                    <li><button type="button" onclick="this.classList.toggle('text-red-600'); this.classList.toggle('border-red-500');" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-red-600 hover:border-red-500 flex items-center justify-center text-xs transition-colors cursor-pointer" title="Add To Favorites"><i class="ri-heart-line"></i></button></li>
+                    <li><button type="button" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-[#184E42] hover:border-[#184E42] flex items-center justify-center text-xs transition-colors cursor-pointer" title="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
                   </ul>
                 </div>
-                <div class="price-and-user">
-                  <div class="user">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Thomas Klarck">
-                    <a href="#contact-deal">Thomas Klarck</a>
-                  </div>
-                  <div class="price hidden">$95,000</div>
-                </div>
               </div>
             </div>
 
-            <!-- Card 2: Beach Front Property -->
-            <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-200">
-              <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
-                <div class="media">
-                  <span><i class="ri-vidicon-fill"></i></span>
-                  <span><i class="ri-image-line"></i> 5</span>
-                </div>
-                <img src="img/gallery7.png" alt="Beach Front Property" class="w-full h-full object-cover">
+            <!-- Card 2: Industrial Spaces (,000) -->
+            <div class="properties-item bg-white rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="Office" data-price="55000" data-beds="6">
+              <div class="properties-image relative h-64 sm:h-72 w-full overflow-hidden">
+                <a href="property-details.html" class="block w-full h-full">
+                  <img src="img/property1.jpg" alt="Industrial Spaces" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </a>
+                <ul class="action absolute top-3.5 left-3.5 flex items-center gap-2 z-10 list-none p-0 m-0">
+                  <li>
+                    <div class="media bg-black/65 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-md flex items-center gap-1.5 shadow">
+                      <span><i class="ri-vidicon-fill text-xs"></i></span>
+                      <span><i class="ri-image-line text-xs"></i> 5</span>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="link-list absolute top-3.5 right-3.5 flex items-center gap-1.5 z-10 list-none p-0 m-0">
+                  <li><span class="link-btn bg-black/85 backdrop-blur-md text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md tracking-wider shadow">Apartment</span></li>
+                  
+                </ul>
+                <ul class="info-list absolute bottom-3 inset-x-3 flex items-center justify-between gap-1 z-10 list-none p-0 m-0">
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="ri-hotel-bed-line text-[#E5A922] text-xs"></i>
+                    <span>6</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-bath text-[#E5A922] text-[10px]"></i>
+                    <span>4</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-car text-[#E5A922] text-[10px]"></i>
+                    <span>1</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-vector-square text-[#E5A922] text-[10px]"></i>
+                    <span>3250</span>
+                  </li>
+                </ul>
               </div>
-              <div class="properties-content">
-                <div>
-                  <div class="info">
-                    <ul class="link-list">
-                      <li><a href="#latest-properties" class="link-btn">Apartment</a></li>
-                    </ul>
-                    <ul class="group-info">
-                      <li>
-                        <div class="dropdown">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" onclick="this.nextElementSibling.classList.toggle('hidden'); event.stopPropagation();" aria-label="Share">
-                            <i class="ri-share-line"></i>
-                          </button>
-                          <ul class="dropdown-menu hidden">
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i> Facebook</a></li>
-                            <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-x-line"></i> Twitter</a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-fill"></i> Instagram</a></li>
-                            <li><a href="https://bd.linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i> LinkedIn</a></li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li>
-                        <button type="button" aria-label="Add To Favorites"><i class="ri-heart-line"></i></button>
-                      </li>
-                      <li>
-                        <button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button>
-                      </li>
-                    </ul>
+              <div class="properties-content p-5 flex flex-col flex-1 justify-between">
+                <div class="top flex items-start justify-between gap-3 mb-4">
+                  <div class="title flex-1">
+                    <h3 class="text-base sm:text-lg font-bold text-[#14080B] leading-snug group-hover:text-[#7B1824] transition-colors">
+                      <a href="property-details.html">Industrial Spaces</a>
+                    </h3>
+                    <span class="text-xs text-gray-500 block mt-1"><i class="ri-map-pin-line text-[#7B1824] mr-1"></i> 194 Mercer Street, NY 10012, USA</span>
                   </div>
-                  <div class="title">
-                    <h3><a href="#contact-deal">Beach Front Property</a></h3>
-                    <span>194 Mercer Street, NY 10012, USA</span>
+                  
+                </div>
+                <div class="bottom pt-3 border-t border-gray-100 flex items-center justify-between">
+                  <div class="user flex items-center gap-2.5">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&h=100&q=80" alt="Walter White" class="w-7 h-7 rounded-full object-cover border border-white shadow-sm shrink-0">
+                    <a href="property-details.html" class="text-xs font-bold text-gray-800 hover:text-[#7B1824] transition-colors">Walter White</a>
                   </div>
-                  <ul class="info-list">
-                    <li>
-                      <div class="icon"><i class="ri-hotel-bed-line"></i></div>
-                      <span>6</span>
-                    </li>
-                    <li>
-                      <div class="icon"><i class="fa-solid fa-bath"></i></div>
-                      <span>4</span>
-                    </li>
-                    <li>
-                      <div class="icon"><i class="fa-solid fa-car"></i></div>
-                      <span>1</span>
-                    </li>
-                    <li>
-                      <div class="icon"><i class="fa-solid fa-vector-square"></i></div>
-                      <span>3250</span>
-                    </li>
+                  <ul class="group-info flex items-center gap-1.5 list-none p-0 m-0">
+                    <li><button type="button" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-[#7B1824] hover:border-[#7B1824] flex items-center justify-center text-xs transition-colors cursor-pointer" title="Share"><i class="ri-share-line"></i></button></li>
+                    <li><button type="button" onclick="this.classList.toggle('text-red-600'); this.classList.toggle('border-red-500');" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-red-600 hover:border-red-500 flex items-center justify-center text-xs transition-colors cursor-pointer" title="Add To Favorites"><i class="ri-heart-line"></i></button></li>
+                    <li><button type="button" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-[#184E42] hover:border-[#184E42] flex items-center justify-center text-xs transition-colors cursor-pointer" title="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
                   </ul>
                 </div>
-                <div class="price-and-user">
-                  <div class="user">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Walter White">
-                    <a href="#contact-deal">Walter White</a>
-                  </div>
-                  <div class="price hidden">$77,000</div>
-                </div>
               </div>
             </div>
 
-            <!-- Card 3: Vacation Homes -->
-            <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-300">
-              <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
-                <div class="media">
-                  <span><i class="ri-vidicon-fill"></i></span>
-                  <span><i class="ri-image-line"></i> 5</span>
-                </div>
-                <img src="img/gallery8.png" alt="Vacation Homes" class="w-full h-full object-cover">
+            <!-- Card 3: Single-Family Homes (,000) -->
+            <div class="properties-item bg-white rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="Houses" data-price="77000" data-beds="6">
+              <div class="properties-image relative h-64 sm:h-72 w-full overflow-hidden">
+                <a href="property-details.html" class="block w-full h-full">
+                  <img src="img/product-3.jpg" alt="Single-Family Homes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </a>
+                <ul class="action absolute top-3.5 left-3.5 flex items-center gap-2 z-10 list-none p-0 m-0">
+                  <li><span class="featured-btn bg-[#184E42] text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md tracking-wider shadow">Featured</span></li>
+                  <li>
+                    <div class="media bg-black/65 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-md flex items-center gap-1.5 shadow">
+                      <span><i class="ri-vidicon-fill text-xs"></i></span>
+                      <span><i class="ri-image-line text-xs"></i> 5</span>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="link-list absolute top-3.5 right-3.5 flex items-center gap-1.5 z-10 list-none p-0 m-0">
+                  <li><span class="link-btn bg-black/85 backdrop-blur-md text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md tracking-wider shadow">Apartment</span></li>
+                  
+                </ul>
+                <ul class="info-list absolute bottom-3 inset-x-3 flex items-center justify-between gap-1 z-10 list-none p-0 m-0">
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="ri-hotel-bed-line text-[#E5A922] text-xs"></i>
+                    <span>6</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-bath text-[#E5A922] text-[10px]"></i>
+                    <span>4</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-car text-[#E5A922] text-[10px]"></i>
+                    <span>1</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-vector-square text-[#E5A922] text-[10px]"></i>
+                    <span>3250</span>
+                  </li>
+                </ul>
               </div>
-              <div class="properties-content">
-                <div>
-                  <div class="info">
-                    <ul class="link-list">
-                      <li><a href="#latest-properties" class="link-btn">Apartment</a></li>
-                    </ul>
-                    <ul class="group-info">
-                      <li>
-                        <div class="dropdown">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" onclick="this.nextElementSibling.classList.toggle('hidden'); event.stopPropagation();" aria-label="Share">
-                            <i class="ri-share-line"></i>
-                          </button>
-                          <ul class="dropdown-menu hidden">
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i> Facebook</a></li>
-                            <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-x-line"></i> Twitter</a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-fill"></i> Instagram</a></li>
-                            <li><a href="https://bd.linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i> LinkedIn</a></li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li>
-                        <button type="button" aria-label="Add To Favorites"><i class="ri-heart-line"></i></button>
-                      </li>
-                      <li>
-                        <button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button>
-                      </li>
-                    </ul>
+              <div class="properties-content p-5 flex flex-col flex-1 justify-between">
+                <div class="top flex items-start justify-between gap-3 mb-4">
+                  <div class="title flex-1">
+                    <h3 class="text-base sm:text-lg font-bold text-[#14080B] leading-snug group-hover:text-[#7B1824] transition-colors">
+                      <a href="property-details.html">Single-Family Homes</a>
+                    </h3>
+                    <span class="text-xs text-gray-500 block mt-1"><i class="ri-map-pin-line text-[#7B1824] mr-1"></i> 194 Mercer Street, NY 10012, USA</span>
                   </div>
-                  <div class="title">
-                    <h3><a href="#contact-deal">Vacation Homes</a></h3>
-                    <span>194 Mercer Street, NY 10012, USA</span>
+                  
+                </div>
+                <div class="bottom pt-3 border-t border-gray-100 flex items-center justify-between">
+                  <div class="user flex items-center gap-2.5">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80" alt="Jane Ronan" class="w-7 h-7 rounded-full object-cover border border-white shadow-sm shrink-0">
+                    <a href="property-details.html" class="text-xs font-bold text-gray-800 hover:text-[#7B1824] transition-colors">Jane Ronan</a>
                   </div>
-                  <ul class="info-list">
-                    <li>
-                      <div class="icon"><i class="ri-hotel-bed-line"></i></div>
-                      <span>6</span>
-                    </li>
-                    <li>
-                      <div class="icon"><i class="fa-solid fa-bath"></i></div>
-                      <span>4</span>
-                    </li>
-                    <li>
-                      <div class="icon"><i class="fa-solid fa-car"></i></div>
-                      <span>1</span>
-                    </li>
-                    <li>
-                      <div class="icon"><i class="fa-solid fa-vector-square"></i></div>
-                      <span>3250</span>
-                    </li>
+                  <ul class="group-info flex items-center gap-1.5 list-none p-0 m-0">
+                    <li><button type="button" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-[#7B1824] hover:border-[#7B1824] flex items-center justify-center text-xs transition-colors cursor-pointer" title="Share"><i class="ri-share-line"></i></button></li>
+                    <li><button type="button" onclick="this.classList.toggle('text-red-600'); this.classList.toggle('border-red-500');" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-red-600 hover:border-red-500 flex items-center justify-center text-xs transition-colors cursor-pointer" title="Add To Favorites"><i class="ri-heart-line"></i></button></li>
+                    <li><button type="button" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-[#184E42] hover:border-[#184E42] flex items-center justify-center text-xs transition-colors cursor-pointer" title="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
                   </ul>
                 </div>
-                <div class="price-and-user">
-                  <div class="user">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Jenny Loren">
-                    <a href="#contact-deal">Jenny Loren</a>
-                  </div>
-                  <div class="price hidden">$99,000</div>
-                </div>
               </div>
             </div>
 
-            <!-- Card 4: Middle Town House -->
-            <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-400">
-              <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
-                <div class="media">
-                  <span><i class="ri-vidicon-fill"></i></span>
-                  <span><i class="ri-image-line"></i> 5</span>
-                </div>
-                <img src="img/banner-4.jpg" alt="Middle Town House" class="w-full h-full object-cover">
+            <!-- Card 4: Newly Built Homes (,000) -->
+            <div class="properties-item bg-white rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="Houses" data-price="33000" data-beds="6">
+              <div class="properties-image relative h-64 sm:h-72 w-full overflow-hidden">
+                <a href="property-details.html" class="block w-full h-full">
+                  <img src="img/product-4.jpg" alt="Newly Built Homes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </a>
+                <ul class="action absolute top-3.5 left-3.5 flex items-center gap-2 z-10 list-none p-0 m-0">
+                  <li>
+                    <div class="media bg-black/65 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-md flex items-center gap-1.5 shadow">
+                      <span><i class="ri-vidicon-fill text-xs"></i></span>
+                      <span><i class="ri-image-line text-xs"></i> 5</span>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="link-list absolute top-3.5 right-3.5 flex items-center gap-1.5 z-10 list-none p-0 m-0">
+                  <li><span class="link-btn bg-black/85 backdrop-blur-md text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md tracking-wider shadow">Apartment</span></li>
+                  
+                </ul>
+                <ul class="info-list absolute bottom-3 inset-x-3 flex items-center justify-between gap-1 z-10 list-none p-0 m-0">
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="ri-hotel-bed-line text-[#E5A922] text-xs"></i>
+                    <span>6</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-bath text-[#E5A922] text-[10px]"></i>
+                    <span>4</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-car text-[#E5A922] text-[10px]"></i>
+                    <span>1</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-vector-square text-[#E5A922] text-[10px]"></i>
+                    <span>3250</span>
+                  </li>
+                </ul>
               </div>
-              <div class="properties-content">
-                <div>
-                  <div class="info">
-                    <ul class="link-list">
-                      <li><a href="#latest-properties" class="link-btn">Apartment</a></li>
-                    </ul>
-                    <ul class="group-info">
-                      <li>
-                        <div class="dropdown">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" onclick="this.nextElementSibling.classList.toggle('hidden'); event.stopPropagation();" aria-label="Share">
-                            <i class="ri-share-line"></i>
-                          </button>
-                          <ul class="dropdown-menu hidden">
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i> Facebook</a></li>
-                            <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-x-line"></i> Twitter</a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-fill"></i> Instagram</a></li>
-                            <li><a href="https://bd.linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i> LinkedIn</a></li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li>
-                        <button type="button" aria-label="Add To Favorites"><i class="ri-heart-line"></i></button>
-                      </li>
-                      <li>
-                        <button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button>
-                      </li>
-                    </ul>
+              <div class="properties-content p-5 flex flex-col flex-1 justify-between">
+                <div class="top flex items-start justify-between gap-3 mb-4">
+                  <div class="title flex-1">
+                    <h3 class="text-base sm:text-lg font-bold text-[#14080B] leading-snug group-hover:text-[#7B1824] transition-colors">
+                      <a href="property-details.html">Newly Built Homes</a>
+                    </h3>
+                    <span class="text-xs text-gray-500 block mt-1"><i class="ri-map-pin-line text-[#7B1824] mr-1"></i> 194 Mercer Street, NY 10012, USA</span>
                   </div>
-                  <div class="title">
-                    <h3><a href="#contact-deal">Middle Town House</a></h3>
-                    <span>194 Mercer Street, NY 10012, USA</span>
+                  
+                </div>
+                <div class="bottom pt-3 border-t border-gray-100 flex items-center justify-between">
+                  <div class="user flex items-center gap-2.5">
+                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=100&h=100&q=80" alt="Jack Smith" class="w-7 h-7 rounded-full object-cover border border-white shadow-sm shrink-0">
+                    <a href="property-details.html" class="text-xs font-bold text-gray-800 hover:text-[#7B1824] transition-colors">Jack Smith</a>
                   </div>
-                  <ul class="info-list">
-                    <li>
-                      <div class="icon"><i class="ri-hotel-bed-line"></i></div>
-                      <span>6</span>
-                    </li>
-                    <li>
-                      <div class="icon"><i class="fa-solid fa-bath"></i></div>
-                      <span>4</span>
-                    </li>
-                    <li>
-                      <div class="icon"><i class="fa-solid fa-car"></i></div>
-                      <span>1</span>
-                    </li>
-                    <li>
-                      <div class="icon"><i class="fa-solid fa-vector-square"></i></div>
-                      <span>3250</span>
-                    </li>
+                  <ul class="group-info flex items-center gap-1.5 list-none p-0 m-0">
+                    <li><button type="button" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-[#7B1824] hover:border-[#7B1824] flex items-center justify-center text-xs transition-colors cursor-pointer" title="Share"><i class="ri-share-line"></i></button></li>
+                    <li><button type="button" onclick="this.classList.toggle('text-red-600'); this.classList.toggle('border-red-500');" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-red-600 hover:border-red-500 flex items-center justify-center text-xs transition-colors cursor-pointer" title="Add To Favorites"><i class="ri-heart-line"></i></button></li>
+                    <li><button type="button" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-[#184E42] hover:border-[#184E42] flex items-center justify-center text-xs transition-colors cursor-pointer" title="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
                   </ul>
                 </div>
-                <div class="price-and-user">
-                  <div class="user">
-                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=100&q=80" alt="Jack Smith">
-                    <a href="#contact-deal">Jack Smith</a>
+              </div>
+            </div>
+
+            <!-- Card 5: Senior Apartments (,000) -->
+            <div class="properties-item bg-white rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="Apartments" data-price="65000" data-beds="6">
+              <div class="properties-image relative h-64 sm:h-72 w-full overflow-hidden">
+                <a href="property-details.html" class="block w-full h-full">
+                  <img src="img/product-5.jpg" alt="Senior Apartments" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </a>
+                <ul class="action absolute top-3.5 left-3.5 flex items-center gap-2 z-10 list-none p-0 m-0">
+                  <li><span class="featured-btn bg-[#184E42] text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md tracking-wider shadow">Featured</span></li>
+                  <li>
+                    <div class="media bg-black/65 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-md flex items-center gap-1.5 shadow">
+                      <span><i class="ri-vidicon-fill text-xs"></i></span>
+                      <span><i class="ri-image-line text-xs"></i> 5</span>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="link-list absolute top-3.5 right-3.5 flex items-center gap-1.5 z-10 list-none p-0 m-0">
+                  <li><span class="link-btn bg-black/85 backdrop-blur-md text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md tracking-wider shadow">Apartment</span></li>
+                  
+                </ul>
+                <ul class="info-list absolute bottom-3 inset-x-3 flex items-center justify-between gap-1 z-10 list-none p-0 m-0">
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="ri-hotel-bed-line text-[#E5A922] text-xs"></i>
+                    <span>6</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-bath text-[#E5A922] text-[10px]"></i>
+                    <span>4</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-car text-[#E5A922] text-[10px]"></i>
+                    <span>1</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-vector-square text-[#E5A922] text-[10px]"></i>
+                    <span>3250</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="properties-content p-5 flex flex-col flex-1 justify-between">
+                <div class="top flex items-start justify-between gap-3 mb-4">
+                  <div class="title flex-1">
+                    <h3 class="text-base sm:text-lg font-bold text-[#14080B] leading-snug group-hover:text-[#7B1824] transition-colors">
+                      <a href="property-details.html">Senior Apartments</a>
+                    </h3>
+                    <span class="text-xs text-gray-500 block mt-1"><i class="ri-map-pin-line text-[#7B1824] mr-1"></i> 194 Mercer Street, NY 10012, USA</span>
                   </div>
-                  <div class="price hidden">$55,000</div>
+                  
+                </div>
+                <div class="bottom pt-3 border-t border-gray-100 flex items-center justify-between">
+                  <div class="user flex items-center gap-2.5">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" alt="Jenny Loren" class="w-7 h-7 rounded-full object-cover border border-white shadow-sm shrink-0">
+                    <a href="property-details.html" class="text-xs font-bold text-gray-800 hover:text-[#7B1824] transition-colors">Jenny Loren</a>
+                  </div>
+                  <ul class="group-info flex items-center gap-1.5 list-none p-0 m-0">
+                    <li><button type="button" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-[#7B1824] hover:border-[#7B1824] flex items-center justify-center text-xs transition-colors cursor-pointer" title="Share"><i class="ri-share-line"></i></button></li>
+                    <li><button type="button" onclick="this.classList.toggle('text-red-600'); this.classList.toggle('border-red-500');" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-red-600 hover:border-red-500 flex items-center justify-center text-xs transition-colors cursor-pointer" title="Add To Favorites"><i class="ri-heart-line"></i></button></li>
+                    <li><button type="button" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-[#184E42] hover:border-[#184E42] flex items-center justify-center text-xs transition-colors cursor-pointer" title="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6: Luxury Apartments (,000) -->
+            <div class="properties-item bg-white rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="Apartments" data-price="89000" data-beds="6">
+              <div class="properties-image relative h-64 sm:h-72 w-full overflow-hidden">
+                <a href="property-details.html" class="block w-full h-full">
+                  <img src="img/banner-4.jpg" alt="Luxury Apartments" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </a>
+                <ul class="action absolute top-3.5 left-3.5 flex items-center gap-2 z-10 list-none p-0 m-0">
+                  <li>
+                    <div class="media bg-black/65 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-md flex items-center gap-1.5 shadow">
+                      <span><i class="ri-vidicon-fill text-xs"></i></span>
+                      <span><i class="ri-image-line text-xs"></i> 5</span>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="link-list absolute top-3.5 right-3.5 flex items-center gap-1.5 z-10 list-none p-0 m-0">
+                  <li><span class="link-btn bg-black/85 backdrop-blur-md text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md tracking-wider shadow">Apartment</span></li>
+                  
+                </ul>
+                <ul class="info-list absolute bottom-3 inset-x-3 flex items-center justify-between gap-1 z-10 list-none p-0 m-0">
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="ri-hotel-bed-line text-[#E5A922] text-xs"></i>
+                    <span>6</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-bath text-[#E5A922] text-[10px]"></i>
+                    <span>4</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-car text-[#E5A922] text-[10px]"></i>
+                    <span>1</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-vector-square text-[#E5A922] text-[10px]"></i>
+                    <span>3250</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="properties-content p-5 flex flex-col flex-1 justify-between">
+                <div class="top flex items-start justify-between gap-3 mb-4">
+                  <div class="title flex-1">
+                    <h3 class="text-base sm:text-lg font-bold text-[#14080B] leading-snug group-hover:text-[#7B1824] transition-colors">
+                      <a href="property-details.html">Luxury Apartments</a>
+                    </h3>
+                    <span class="text-xs text-gray-500 block mt-1"><i class="ri-map-pin-line text-[#7B1824] mr-1"></i> 194 Mercer Street, NY 10012, USA</span>
+                  </div>
+                  
+                </div>
+                <div class="bottom pt-3 border-t border-gray-100 flex items-center justify-between">
+                  <div class="user flex items-center gap-2.5">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=100&h=100&q=80" alt="Bella Loren" class="w-7 h-7 rounded-full object-cover border border-white shadow-sm shrink-0">
+                    <a href="property-details.html" class="text-xs font-bold text-gray-800 hover:text-[#7B1824] transition-colors">Bella Loren</a>
+                  </div>
+                  <ul class="group-info flex items-center gap-1.5 list-none p-0 m-0">
+                    <li><button type="button" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-[#7B1824] hover:border-[#7B1824] flex items-center justify-center text-xs transition-colors cursor-pointer" title="Share"><i class="ri-share-line"></i></button></li>
+                    <li><button type="button" onclick="this.classList.toggle('text-red-600'); this.classList.toggle('border-red-500');" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-red-600 hover:border-red-500 flex items-center justify-center text-xs transition-colors cursor-pointer" title="Add To Favorites"><i class="ri-heart-line"></i></button></li>
+                    <li><button type="button" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-[#184E42] hover:border-[#184E42] flex items-center justify-center text-xs transition-colors cursor-pointer" title="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 7: Heritage Buildings (,000) -->
+            <div class="properties-item bg-white rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="Bungalow" data-price="95000" data-beds="6">
+              <div class="properties-image relative h-64 sm:h-72 w-full overflow-hidden">
+                <a href="property-details.html" class="block w-full h-full">
+                  <img src="img/featured-1.png" alt="Heritage Buildings" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </a>
+                <ul class="action absolute top-3.5 left-3.5 flex items-center gap-2 z-10 list-none p-0 m-0">
+                  <li><span class="featured-btn bg-[#184E42] text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md tracking-wider shadow">Featured</span></li>
+                  <li>
+                    <div class="media bg-black/65 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-md flex items-center gap-1.5 shadow">
+                      <span><i class="ri-vidicon-fill text-xs"></i></span>
+                      <span><i class="ri-image-line text-xs"></i> 5</span>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="link-list absolute top-3.5 right-3.5 flex items-center gap-1.5 z-10 list-none p-0 m-0">
+                  <li><span class="link-btn bg-black/85 backdrop-blur-md text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md tracking-wider shadow">Apartment</span></li>
+                  
+                </ul>
+                <ul class="info-list absolute bottom-3 inset-x-3 flex items-center justify-between gap-1 z-10 list-none p-0 m-0">
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="ri-hotel-bed-line text-[#E5A922] text-xs"></i>
+                    <span>6</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-bath text-[#E5A922] text-[10px]"></i>
+                    <span>4</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-car text-[#E5A922] text-[10px]"></i>
+                    <span>1</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-vector-square text-[#E5A922] text-[10px]"></i>
+                    <span>3250</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="properties-content p-5 flex flex-col flex-1 justify-between">
+                <div class="top flex items-start justify-between gap-3 mb-4">
+                  <div class="title flex-1">
+                    <h3 class="text-base sm:text-lg font-bold text-[#14080B] leading-snug group-hover:text-[#7B1824] transition-colors">
+                      <a href="property-details.html">Heritage Buildings</a>
+                    </h3>
+                    <span class="text-xs text-gray-500 block mt-1"><i class="ri-map-pin-line text-[#7B1824] mr-1"></i> 194 Mercer Street, NY 10012, USA</span>
+                  </div>
+                  
+                </div>
+                <div class="bottom pt-3 border-t border-gray-100 flex items-center justify-between">
+                  <div class="user flex items-center gap-2.5">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" alt="Thomas Klarck" class="w-7 h-7 rounded-full object-cover border border-white shadow-sm shrink-0">
+                    <a href="property-details.html" class="text-xs font-bold text-gray-800 hover:text-[#7B1824] transition-colors">Thomas Klarck</a>
+                  </div>
+                  <ul class="group-info flex items-center gap-1.5 list-none p-0 m-0">
+                    <li><button type="button" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-[#7B1824] hover:border-[#7B1824] flex items-center justify-center text-xs transition-colors cursor-pointer" title="Share"><i class="ri-share-line"></i></button></li>
+                    <li><button type="button" onclick="this.classList.toggle('text-red-600'); this.classList.toggle('border-red-500');" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-red-600 hover:border-red-500 flex items-center justify-center text-xs transition-colors cursor-pointer" title="Add To Favorites"><i class="ri-heart-line"></i></button></li>
+                    <li><button type="button" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-[#184E42] hover:border-[#184E42] flex items-center justify-center text-xs transition-colors cursor-pointer" title="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 8: Beachfront Properties (,000) -->
+            <div class="properties-item bg-white rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="Loft" data-price="55000" data-beds="6">
+              <div class="properties-image relative h-64 sm:h-72 w-full overflow-hidden">
+                <a href="property-details.html" class="block w-full h-full">
+                  <img src="img/banner-8.jpg" alt="Beachfront Properties" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </a>
+                <ul class="action absolute top-3.5 left-3.5 flex items-center gap-2 z-10 list-none p-0 m-0">
+                  <li>
+                    <div class="media bg-black/65 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-md flex items-center gap-1.5 shadow">
+                      <span><i class="ri-vidicon-fill text-xs"></i></span>
+                      <span><i class="ri-image-line text-xs"></i> 5</span>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="link-list absolute top-3.5 right-3.5 flex items-center gap-1.5 z-10 list-none p-0 m-0">
+                  <li><span class="link-btn bg-black/85 backdrop-blur-md text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md tracking-wider shadow">Apartment</span></li>
+                  
+                </ul>
+                <ul class="info-list absolute bottom-3 inset-x-3 flex items-center justify-between gap-1 z-10 list-none p-0 m-0">
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="ri-hotel-bed-line text-[#E5A922] text-xs"></i>
+                    <span>6</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-bath text-[#E5A922] text-[10px]"></i>
+                    <span>4</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-car text-[#E5A922] text-[10px]"></i>
+                    <span>1</span>
+                  </li>
+                  <li class="flex-1 bg-black/65 backdrop-blur-md text-white py-1 px-1.5 rounded-lg flex items-center justify-center gap-1 text-[11px] font-bold shadow-sm">
+                    <i class="fa-solid fa-vector-square text-[#E5A922] text-[10px]"></i>
+                    <span>3250</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="properties-content p-5 flex flex-col flex-1 justify-between">
+                <div class="top flex items-start justify-between gap-3 mb-4">
+                  <div class="title flex-1">
+                    <h3 class="text-base sm:text-lg font-bold text-[#14080B] leading-snug group-hover:text-[#7B1824] transition-colors">
+                      <a href="property-details.html">Beachfront Properties</a>
+                    </h3>
+                    <span class="text-xs text-gray-500 block mt-1"><i class="ri-map-pin-line text-[#7B1824] mr-1"></i> 194 Mercer Street, NY 10012, USA</span>
+                  </div>
+                  
+                </div>
+                <div class="bottom pt-3 border-t border-gray-100 flex items-center justify-between">
+                  <div class="user flex items-center gap-2.5">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&h=100&q=80" alt="Walter White" class="w-7 h-7 rounded-full object-cover border border-white shadow-sm shrink-0">
+                    <a href="property-details.html" class="text-xs font-bold text-gray-800 hover:text-[#7B1824] transition-colors">Walter White</a>
+                  </div>
+                  <ul class="group-info flex items-center gap-1.5 list-none p-0 m-0">
+                    <li><button type="button" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-[#7B1824] hover:border-[#7B1824] flex items-center justify-center text-xs transition-colors cursor-pointer" title="Share"><i class="ri-share-line"></i></button></li>
+                    <li><button type="button" onclick="this.classList.toggle('text-red-600'); this.classList.toggle('border-red-500');" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-red-600 hover:border-red-500 flex items-center justify-center text-xs transition-colors cursor-pointer" title="Add To Favorites"><i class="ri-heart-line"></i></button></li>
+                    <li><button type="button" class="w-7 h-7 rounded-lg border border-gray-200 bg-[#FAF7F2] text-gray-600 hover:text-[#184E42] hover:border-[#184E42] flex items-center justify-center text-xs transition-colors cursor-pointer" title="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
+                  </ul>
                 </div>
               </div>
             </div>
 
           </div>
-        </div>
 
-        <!-- Tab Panes for Villas, Rental, Apartment, Condos, Commercial (All equal height) -->
-        <div class="tab-pane fade hidden" id="villas" role="tabpanel" aria-labelledby="villas-tab">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-            <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-100">
-              <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
-                <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
-                <img src="img/gallery8.png" alt="Vacation Homes" class="w-full h-full object-cover">
-              </div>
-              <div class="properties-content">
-                <div>
-                  <div class="info">
-                    <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Villa</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
-                  </div>
-                  <div class="title"><h3><a href="#contact-deal">Luxury Mediterranean Villa</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
-                  <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>6</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>2</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>4100</span></li></ul>
-                </div>
-                <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Jenny Loren"><a href="#contact-deal">Jenny Loren</a></div>
-                  <div class="price hidden">$145,000</div>
-                </div>
-              </div>
-            </div>
-            <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-200">
-              <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
-                <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
-                <img src="img/gallery7.png" alt="Beach Front Property" class="w-full h-full object-cover">
-              </div>
-              <div class="properties-content">
-                <div>
-                  <div class="info">
-                    <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Villa</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
-                  </div>
-                  <div class="title"><h3><a href="#contact-deal">Beach Front Villa</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
-                  <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>5</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>3500</span></li></ul>
-                </div>
-                <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Walter White"><a href="#contact-deal">Walter White</a></div>
-                  <div class="price hidden">$120,000</div>
-                </div>
-              </div>
+          <!-- Pagination Area (Matching User Reference) -->
+          <div class="pagination-area mt-12 flex justify-center">
+            <div class="nav-links inline-flex items-center gap-2 bg-white p-2 rounded-2xl border border-gray-200/90 shadow-sm">
+              <a href="#properties-catalog" class="prev page-numbers w-9 h-9 rounded-xl flex items-center justify-center text-gray-500 hover:bg-[#FAF7F2] hover:text-[#184E42] transition-colors text-sm font-bold">
+                <i class="ri-arrow-left-s-line text-lg"></i>
+              </a>
+              <span class="page-numbers current w-9 h-9 rounded-xl bg-[#184E42] text-white flex items-center justify-center text-xs font-black shadow-md">1</span>
+              <a href="#properties-catalog" class="page-numbers w-9 h-9 rounded-xl flex items-center justify-center text-gray-700 hover:bg-[#FAF7F2] hover:text-[#184E42] transition-colors text-xs font-bold">2</a>
+              <a href="#properties-catalog" class="page-numbers w-9 h-9 rounded-xl flex items-center justify-center text-gray-700 hover:bg-[#FAF7F2] hover:text-[#184E42] transition-colors text-xs font-bold">3</a>
+              <a href="#properties-catalog" class="next page-numbers w-9 h-9 rounded-xl flex items-center justify-center text-gray-500 hover:bg-[#FAF7F2] hover:text-[#184E42] transition-colors text-sm font-bold">
+                <i class="ri-arrow-right-s-line text-lg"></i>
+              </a>
             </div>
           </div>
-        </div>
 
-        <div class="tab-pane fade hidden" id="rental" role="tabpanel" aria-labelledby="rental-tab">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-            <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-100">
-              <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
-                <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
-                <img src="img/property1.jpg" alt="Industrial Spaces" class="w-full h-full object-cover">
-              </div>
-              <div class="properties-content">
-                <div>
-                  <div class="info">
-                    <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Rental</a></li><li><a href="#latest-properties" class="link-btn">For Rent</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
-                  </div>
-                  <div class="title"><h3><a href="#contact-deal">Executive Penthouse Rental</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
-                  <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>3</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>2800</span></li></ul>
-                </div>
-                <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Thomas Klarck"><a href="#contact-deal">Thomas Klarck</a></div>
-                  <div class="price hidden">$4,500 <span class="text-xs font-normal text-gray-500">/mo</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-200">
-              <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
-                <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
-                <img src="img/banner-4.jpg" alt="Middle Town House" class="w-full h-full object-cover">
-              </div>
-              <div class="properties-content">
-                <div>
-                  <div class="info">
-                    <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Rental</a></li><li><a href="#latest-properties" class="link-btn">For Rent</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
-                  </div>
-                  <div class="title"><h3><a href="#contact-deal">Urban Residence Suite</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
-                  <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>3</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>2</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>2100</span></li></ul>
-                </div>
-                <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=100&q=80" alt="Jack Smith"><a href="#contact-deal">Jack Smith</a></div>
-                  <div class="price hidden">$3,200 <span class="text-xs font-normal text-gray-500">/mo</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-pane fade hidden" id="apartment" role="tabpanel" aria-labelledby="apartment-tab">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-            <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-100">
-              <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
-                <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
-                <img src="img/property1.jpg" alt="Industrial Spaces" class="w-full h-full object-cover">
-              </div>
-              <div class="properties-content">
-                <div>
-                  <div class="info">
-                    <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Apartment</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
-                  </div>
-                  <div class="title"><h3><a href="#contact-deal">Industrial Spaces</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
-                  <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>6</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>3250</span></li></ul>
-                </div>
-                <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Thomas Klarck"><a href="#contact-deal">Thomas Klarck</a></div>
-                  <div class="price hidden">$95,000</div>
-                </div>
-              </div>
-            </div>
-            <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-200">
-              <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
-                <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
-                <img src="img/gallery7.png" alt="Beach Front Property" class="w-full h-full object-cover">
-              </div>
-              <div class="properties-content">
-                <div>
-                  <div class="info">
-                    <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Apartment</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
-                  </div>
-                  <div class="title"><h3><a href="#contact-deal">Beach Front Property</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
-                  <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>6</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>3250</span></li></ul>
-                </div>
-                <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Walter White"><a href="#contact-deal">Walter White</a></div>
-                  <div class="price hidden">$77,000</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-pane fade hidden" id="condos" role="tabpanel" aria-labelledby="condos-tab">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-            <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-100">
-              <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
-                <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
-                <img src="img/gallery8.png" alt="Vacation Homes" class="w-full h-full object-cover">
-              </div>
-              <div class="properties-content">
-                <div>
-                  <div class="info">
-                    <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Condo</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
-                  </div>
-                  <div class="title"><h3><a href="#contact-deal">Skyline Heights Condo</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
-                  <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>3</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>2900</span></li></ul>
-                </div>
-                <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Jenny Loren"><a href="#contact-deal">Jenny Loren</a></div>
-                  <div class="price hidden">$88,000</div>
-                </div>
-              </div>
-            </div>
-            <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-200">
-              <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
-                <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
-                <img src="img/property1.jpg" alt="Industrial Spaces" class="w-full h-full object-cover">
-              </div>
-              <div class="properties-content">
-                <div>
-                  <div class="info">
-                    <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Condo</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
-                  </div>
-                  <div class="title"><h3><a href="#contact-deal">Modern Horizon Penthouse</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
-                  <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>5</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>2</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>3400</span></li></ul>
-                </div>
-                <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Thomas Klarck"><a href="#contact-deal">Thomas Klarck</a></div>
-                  <div class="price hidden">$105,000</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-pane fade hidden" id="commercial" role="tabpanel" aria-labelledby="commercial-tab">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-            <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-100">
-              <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
-                <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
-                <img src="img/property1.jpg" alt="Industrial Spaces" class="w-full h-full object-cover">
-              </div>
-              <div class="properties-content">
-                <div>
-                  <div class="info">
-                    <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Commercial</a></li><li><a href="#latest-properties" class="link-btn">For Lease</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
-                  </div>
-                  <div class="title"><h3><a href="#contact-deal">Prime Financial Tower Office</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
-                  <ul class="info-list"><li><div class="icon"><i class="fa-solid fa-building"></i></div><span>Floor 12</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>6</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>5800</span></li></ul>
-                </div>
-                <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=100&q=80" alt="Jack Smith"><a href="#contact-deal">Jack Smith</a></div>
-                  <div class="price hidden">$180,000</div>
-                </div>
-              </div>
-            </div>
-            <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-200">
-              <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
-                <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
-                <img src="img/banner-4.jpg" alt="Middle Town House" class="w-full h-full object-cover">
-              </div>
-              <div class="properties-content">
-                <div>
-                  <div class="info">
-                    <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Commercial</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
-                  </div>
-                  <div class="title"><h3><a href="#contact-deal">Corporate Innovation Hub</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
-                  <ul class="info-list"><li><div class="icon"><i class="fa-solid fa-building"></i></div><span>Floor 8</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>3</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>4200</span></li></ul>
-                </div>
-                <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Thomas Klarck"><a href="#contact-deal">Thomas Klarck</a></div>
-                  <div class="price hidden">$150,000</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        </main>
 
       </div>
+
     </div>
   </section>
 
@@ -1896,7 +2067,138 @@
       }
     }
 
+    // ==========================================
+    // INTERACTIVE PROPERTY SEARCH & FILTER LOGIC
+    // ==========================================
+    let activeTypeFilter = 'all';
+
+    function filterPropertyType(type, element) {
+      activeTypeFilter = type;
+      document.querySelectorAll('.prop-type-filter').forEach(btn => {
+        btn.classList.remove('bg-[#184E42]', 'text-white', 'active');
+        btn.classList.add('text-gray-700', 'hover:bg-white');
+        const badge = btn.querySelector('span:last-child');
+        if (badge) {
+          badge.className = 'px-2 py-0.5 rounded-full bg-white text-gray-600 border border-gray-200 text-[10px]';
+        }
+      });
+
+      if (element) {
+        element.classList.add('bg-[#184E42]', 'text-white', 'active');
+        element.classList.remove('text-gray-700', 'hover:bg-white');
+        const badge = element.querySelector('span:last-child');
+        if (badge) {
+          badge.className = 'px-2 py-0.5 rounded-full bg-white/20 text-white text-[10px]';
+        }
+      }
+
+      applyPropertyFilters();
+    }
+
+    function updatePriceSlider(val) {
+      const display = document.getElementById('price-max-display');
+      if (display) {
+        display.value = '$ ' + Number(val).toLocaleString();
+      }
+      applyPropertyFilters();
+    }
+
+    function updateAreaSlider(val) {
+      const display = document.getElementById('area-max-display');
+      if (display) {
+        display.value = Number(val).toLocaleString() + ' SQFT';
+      }
+      applyPropertyFilters();
+    }
+
+    function applyPropertySearch() {
+      applyPropertyFilters();
+    }
+
+    function applyPropertyFilters() {
+      const searchVal = (document.getElementById('prop-keyword-input')?.value || document.getElementById('adv-keyword')?.value || '').toLowerCase().trim();
+      const maxPrice = Number(document.getElementById('price-range-slider')?.value || 100000);
+      const bedFilter = document.getElementById('adv-bed')?.value;
+
+      const items = document.querySelectorAll('#properties-grid-container .properties-item');
+      let visibleCount = 0;
+
+      items.forEach(item => {
+        const itemCategory = item.getAttribute('data-category') || '';
+        const itemPrice = Number(item.getAttribute('data-price') || 0);
+        const itemBeds = item.getAttribute('data-beds') || '';
+        const textContent = item.textContent.toLowerCase();
+
+        let matchesType = (activeTypeFilter === 'all' || itemCategory.toLowerCase() === activeTypeFilter.toLowerCase());
+        let matchesSearch = (!searchVal || textContent.includes(searchVal));
+        let matchesPrice = (itemPrice <= maxPrice);
+        let matchesBeds = (!bedFilter || itemBeds === bedFilter || Number(itemBeds) >= Number(bedFilter));
+
+        if (matchesType && matchesSearch && matchesPrice && matchesBeds) {
+          item.style.display = 'flex';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      const countEl = document.querySelector('.properties-grid-box p');
+      if (countEl) {
+        countEl.innerHTML = `Showing <span class="font-extrabold text-[#14080B]">${visibleCount > 0 ? '1-' + visibleCount : '0'}</span> Of <span class="font-extrabold text-[#14080B]">${items.length}</span> Results`;
+      }
+    }
+
+    function resetPropertyFilters() {
+      const kw1 = document.getElementById('prop-keyword-input');
+      const kw2 = document.getElementById('adv-keyword');
+      const bed = document.getElementById('adv-bed');
+      const bath = document.getElementById('adv-bath');
+      const garage = document.getElementById('adv-garage');
+      const city = document.getElementById('adv-city');
+      const priceSlider = document.getElementById('price-range-slider');
+      const checkRent = document.getElementById('check1');
+      const checkSale = document.getElementById('check2');
+
+      if (kw1) kw1.value = '';
+      if (kw2) kw2.value = '';
+      if (bed) bed.selectedIndex = 0;
+      if (bath) bath.selectedIndex = 0;
+      if (garage) garage.selectedIndex = 0;
+      if (city) city.selectedIndex = 0;
+      if (checkRent) checkRent.checked = false;
+      if (checkSale) checkSale.checked = true;
+
+      if (priceSlider) {
+        priceSlider.value = 75000;
+        updatePriceSlider(75000);
+      }
+
+      const allBtn = document.querySelector('.prop-type-filter');
+      filterPropertyType('all', allBtn);
+    }
+
+    function sortProperties(criteria) {
+      const container = document.getElementById('properties-grid-container');
+      if (!container) return;
+      const cards = Array.from(container.querySelectorAll('.properties-item'));
+
+      cards.sort((a, b) => {
+        const priceA = Number(a.getAttribute('data-price') || 0);
+        const priceB = Number(b.getAttribute('data-price') || 0);
+        const titleA = a.querySelector('.title h3')?.textContent || '';
+        const titleB = b.querySelector('.title h3')?.textContent || '';
+
+        if (criteria === 'price-asc') return priceA - priceB;
+        if (criteria === 'price-desc') return priceB - priceA;
+        if (criteria === 'newest') return titleB.localeCompare(titleA);
+        return titleA.localeCompare(titleB);
+      });
+
+      cards.forEach(card => container.appendChild(card));
+    }
+
     document.addEventListener('DOMContentLoaded', initScrollReveal);
   </script>
 </body>
 </html>
+

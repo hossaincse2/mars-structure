@@ -178,6 +178,12 @@
       -webkit-text-fill-color: transparent;
       animation: heroTextShimmer 4s ease-in-out infinite;
       display: inline-block;
+      padding-bottom: 0.28em;
+      margin-bottom: -0.28em;
+      padding-right: 0.08em;
+      line-height: normal;
+      overflow: visible;
+      vertical-align: baseline;
       filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.9));
     }
 
@@ -794,14 +800,14 @@
 
       <!-- Hero Content Container -->
       <div class="relative z-20 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 w-full py-20">
-        <div id="hero-content-box" class="max-w-2xl text-left border-l-4 border-[#7B1824] pl-6 sm:pl-8 bg-black/25 backdrop-blur-[2px] py-6 rounded-r-2xl transition-all duration-500">
+        <div id="hero-content-box" class="max-w-2xl text-left border-l-4 border-[#7B1824] pl-6 sm:pl-8 bg-black/25 backdrop-blur-[2px] py-6 rounded-r-2xl transition-all duration-500 overflow-visible">
           <!-- Subtitle -->
           <p id="hero-subtitle" class="hero-anim-subtitle text-[#E5A922] font-semibold italic text-lg sm:text-2xl tracking-wide mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] flex items-center gap-2">
             <span class="inline-block w-6 h-0.5 bg-[#E5A922]"></span>
             <span id="hero-subtitle-text">The Best Theme For</span>
           </p>
           <!-- Main Title with Animated Text -->
-          <h1 id="hero-title" class="hero-anim-title text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)]">
+          <h1 id="hero-title" class="hero-anim-title text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-[1.2] tracking-tight drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)] pb-2 overflow-visible">
             <span id="hero-title-prefix">Real Estate </span><span id="hero-title-animated" class="hero-title-animated">Agency</span>
           </h1>
           <!-- Description -->
@@ -1114,7 +1120,7 @@
             <!-- Card 1: Industrial Spaces -->
             <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-100">
               <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
+                <a href="property-details.html" class="featured-btn">Featured</a>
                 <div class="media">
                   <span><i class="ri-vidicon-fill"></i></span>
                   <span><i class="ri-image-line"></i> 5</span>
@@ -1150,7 +1156,7 @@
                     </ul>
                   </div>
                   <div class="title">
-                    <h3><a href="#contact-deal">Industrial Spaces</a></h3>
+                    <h3><a href="property-details.html">Industrial Spaces</a></h3>
                     <span>194 Mercer Street, NY 10012, USA</span>
                   </div>
                   <ul class="info-list">
@@ -1175,7 +1181,7 @@
                 <div class="price-and-user">
                   <div class="user">
                     <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Thomas Klarck">
-                    <a href="#contact-deal">Thomas Klarck</a>
+                    <a href="property-details.html">Thomas Klarck</a>
                   </div>
                   <div class="price hidden">$95,000</div>
                 </div>
@@ -1185,7 +1191,7 @@
             <!-- Card 2: Beach Front Property -->
             <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-200">
               <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
+                <a href="property-details.html" class="featured-btn">Featured</a>
                 <div class="media">
                   <span><i class="ri-vidicon-fill"></i></span>
                   <span><i class="ri-image-line"></i> 5</span>
@@ -1221,7 +1227,7 @@
                     </ul>
                   </div>
                   <div class="title">
-                    <h3><a href="#contact-deal">Beach Front Property</a></h3>
+                    <h3><a href="property-details.html">Beach Front Property</a></h3>
                     <span>194 Mercer Street, NY 10012, USA</span>
                   </div>
                   <ul class="info-list">
@@ -1246,7 +1252,7 @@
                 <div class="price-and-user">
                   <div class="user">
                     <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Walter White">
-                    <a href="#contact-deal">Walter White</a>
+                    <a href="property-details.html">Walter White</a>
                   </div>
                   <div class="price hidden">$77,000</div>
                 </div>
@@ -1256,7 +1262,7 @@
             <!-- Card 3: Vacation Homes -->
             <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-300">
               <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
+                <a href="property-details.html" class="featured-btn">Featured</a>
                 <div class="media">
                   <span><i class="ri-vidicon-fill"></i></span>
                   <span><i class="ri-image-line"></i> 5</span>
@@ -1292,7 +1298,7 @@
                     </ul>
                   </div>
                   <div class="title">
-                    <h3><a href="#contact-deal">Vacation Homes</a></h3>
+                    <h3><a href="property-details.html">Vacation Homes</a></h3>
                     <span>194 Mercer Street, NY 10012, USA</span>
                   </div>
                   <ul class="info-list">
@@ -1317,7 +1323,7 @@
                 <div class="price-and-user">
                   <div class="user">
                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Jenny Loren">
-                    <a href="#contact-deal">Jenny Loren</a>
+                    <a href="property-details.html">Jenny Loren</a>
                   </div>
                   <div class="price hidden">$99,000</div>
                 </div>
@@ -1327,7 +1333,7 @@
             <!-- Card 4: Middle Town House -->
             <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-400">
               <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
+                <a href="property-details.html" class="featured-btn">Featured</a>
                 <div class="media">
                   <span><i class="ri-vidicon-fill"></i></span>
                   <span><i class="ri-image-line"></i> 5</span>
@@ -1363,7 +1369,7 @@
                     </ul>
                   </div>
                   <div class="title">
-                    <h3><a href="#contact-deal">Middle Town House</a></h3>
+                    <h3><a href="property-details.html">Middle Town House</a></h3>
                     <span>194 Mercer Street, NY 10012, USA</span>
                   </div>
                   <ul class="info-list">
@@ -1388,7 +1394,7 @@
                 <div class="price-and-user">
                   <div class="user">
                     <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=100&q=80" alt="Jack Smith">
-                    <a href="#contact-deal">Jack Smith</a>
+                    <a href="property-details.html">Jack Smith</a>
                   </div>
                   <div class="price hidden">$55,000</div>
                 </div>
@@ -1403,7 +1409,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-100">
               <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
+                <a href="property-details.html" class="featured-btn">Featured</a>
                 <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
                 <img src="img/gallery8.png" alt="Vacation Homes" class="w-full h-full object-cover">
               </div>
@@ -1413,18 +1419,18 @@
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Villa</a></li></ul>
                     <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
                   </div>
-                  <div class="title"><h3><a href="#contact-deal">Luxury Mediterranean Villa</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
+                  <div class="title"><h3><a href="property-details.html">Luxury Mediterranean Villa</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>6</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>2</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>4100</span></li></ul>
                 </div>
                 <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Jenny Loren"><a href="#contact-deal">Jenny Loren</a></div>
+                  <div class="user"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Jenny Loren"><a href="property-details.html">Jenny Loren</a></div>
                   <div class="price hidden">$145,000</div>
                 </div>
               </div>
             </div>
             <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-200">
               <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
+                <a href="property-details.html" class="featured-btn">Featured</a>
                 <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
                 <img src="img/gallery7.png" alt="Beach Front Property" class="w-full h-full object-cover">
               </div>
@@ -1434,11 +1440,11 @@
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Villa</a></li></ul>
                     <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
                   </div>
-                  <div class="title"><h3><a href="#contact-deal">Beach Front Villa</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
+                  <div class="title"><h3><a href="property-details.html">Beach Front Villa</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>5</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>3500</span></li></ul>
                 </div>
                 <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Walter White"><a href="#contact-deal">Walter White</a></div>
+                  <div class="user"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Walter White"><a href="property-details.html">Walter White</a></div>
                   <div class="price hidden">$120,000</div>
                 </div>
               </div>
@@ -1450,7 +1456,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-100">
               <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
+                <a href="property-details.html" class="featured-btn">Featured</a>
                 <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
                 <img src="img/property1.jpg" alt="Industrial Spaces" class="w-full h-full object-cover">
               </div>
@@ -1460,18 +1466,18 @@
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Rental</a></li><li><a href="#latest-properties" class="link-btn">For Rent</a></li></ul>
                     <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
                   </div>
-                  <div class="title"><h3><a href="#contact-deal">Executive Penthouse Rental</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
+                  <div class="title"><h3><a href="property-details.html">Executive Penthouse Rental</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>3</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>2800</span></li></ul>
                 </div>
                 <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Thomas Klarck"><a href="#contact-deal">Thomas Klarck</a></div>
+                  <div class="user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Thomas Klarck"><a href="property-details.html">Thomas Klarck</a></div>
                   <div class="price hidden">$4,500 <span class="text-xs font-normal text-gray-500">/mo</span></div>
                 </div>
               </div>
             </div>
             <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-200">
               <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
+                <a href="property-details.html" class="featured-btn">Featured</a>
                 <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
                 <img src="img/banner-4.jpg" alt="Middle Town House" class="w-full h-full object-cover">
               </div>
@@ -1481,11 +1487,11 @@
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Rental</a></li><li><a href="#latest-properties" class="link-btn">For Rent</a></li></ul>
                     <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
                   </div>
-                  <div class="title"><h3><a href="#contact-deal">Urban Residence Suite</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
+                  <div class="title"><h3><a href="property-details.html">Urban Residence Suite</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>3</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>2</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>2100</span></li></ul>
                 </div>
                 <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=100&q=80" alt="Jack Smith"><a href="#contact-deal">Jack Smith</a></div>
+                  <div class="user"><img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=100&q=80" alt="Jack Smith"><a href="property-details.html">Jack Smith</a></div>
                   <div class="price hidden">$3,200 <span class="text-xs font-normal text-gray-500">/mo</span></div>
                 </div>
               </div>
@@ -1497,7 +1503,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-100">
               <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
+                <a href="property-details.html" class="featured-btn">Featured</a>
                 <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
                 <img src="img/property1.jpg" alt="Industrial Spaces" class="w-full h-full object-cover">
               </div>
@@ -1507,18 +1513,18 @@
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Apartment</a></li></ul>
                     <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
                   </div>
-                  <div class="title"><h3><a href="#contact-deal">Industrial Spaces</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
+                  <div class="title"><h3><a href="property-details.html">Industrial Spaces</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>6</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>3250</span></li></ul>
                 </div>
                 <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Thomas Klarck"><a href="#contact-deal">Thomas Klarck</a></div>
+                  <div class="user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Thomas Klarck"><a href="property-details.html">Thomas Klarck</a></div>
                   <div class="price hidden">$95,000</div>
                 </div>
               </div>
             </div>
             <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-200">
               <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
+                <a href="property-details.html" class="featured-btn">Featured</a>
                 <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
                 <img src="img/gallery7.png" alt="Beach Front Property" class="w-full h-full object-cover">
               </div>
@@ -1528,11 +1534,11 @@
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Apartment</a></li></ul>
                     <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
                   </div>
-                  <div class="title"><h3><a href="#contact-deal">Beach Front Property</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
+                  <div class="title"><h3><a href="property-details.html">Beach Front Property</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>6</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>3250</span></li></ul>
                 </div>
                 <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Walter White"><a href="#contact-deal">Walter White</a></div>
+                  <div class="user"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Walter White"><a href="property-details.html">Walter White</a></div>
                   <div class="price hidden">$77,000</div>
                 </div>
               </div>
@@ -1544,7 +1550,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-100">
               <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
+                <a href="property-details.html" class="featured-btn">Featured</a>
                 <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
                 <img src="img/gallery8.png" alt="Vacation Homes" class="w-full h-full object-cover">
               </div>
@@ -1554,18 +1560,18 @@
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Condo</a></li></ul>
                     <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
                   </div>
-                  <div class="title"><h3><a href="#contact-deal">Skyline Heights Condo</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
+                  <div class="title"><h3><a href="property-details.html">Skyline Heights Condo</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>3</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>2900</span></li></ul>
                 </div>
                 <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Jenny Loren"><a href="#contact-deal">Jenny Loren</a></div>
+                  <div class="user"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Jenny Loren"><a href="property-details.html">Jenny Loren</a></div>
                   <div class="price hidden">$88,000</div>
                 </div>
               </div>
             </div>
             <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-200">
               <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
+                <a href="property-details.html" class="featured-btn">Featured</a>
                 <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
                 <img src="img/property1.jpg" alt="Industrial Spaces" class="w-full h-full object-cover">
               </div>
@@ -1575,11 +1581,11 @@
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Condo</a></li></ul>
                     <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
                   </div>
-                  <div class="title"><h3><a href="#contact-deal">Modern Horizon Penthouse</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
+                  <div class="title"><h3><a href="property-details.html">Modern Horizon Penthouse</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>5</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>2</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>3400</span></li></ul>
                 </div>
                 <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Thomas Klarck"><a href="#contact-deal">Thomas Klarck</a></div>
+                  <div class="user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Thomas Klarck"><a href="property-details.html">Thomas Klarck</a></div>
                   <div class="price hidden">$105,000</div>
                 </div>
               </div>
@@ -1591,7 +1597,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-100">
               <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
+                <a href="property-details.html" class="featured-btn">Featured</a>
                 <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
                 <img src="img/property1.jpg" alt="Industrial Spaces" class="w-full h-full object-cover">
               </div>
@@ -1601,18 +1607,18 @@
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Commercial</a></li><li><a href="#latest-properties" class="link-btn">For Lease</a></li></ul>
                     <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
                   </div>
-                  <div class="title"><h3><a href="#contact-deal">Prime Financial Tower Office</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
+                  <div class="title"><h3><a href="property-details.html">Prime Financial Tower Office</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="fa-solid fa-building"></i></div><span>Floor 12</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>6</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>5800</span></li></ul>
                 </div>
                 <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=100&q=80" alt="Jack Smith"><a href="#contact-deal">Jack Smith</a></div>
+                  <div class="user"><img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=100&q=80" alt="Jack Smith"><a href="property-details.html">Jack Smith</a></div>
                   <div class="price hidden">$180,000</div>
                 </div>
               </div>
             </div>
             <div class="properties-inner-card reveal-on-scroll reveal-fade-up reveal-delay-200">
               <div class="properties-image">
-                <a href="#contact-deal" class="featured-btn">Featured</a>
+                <a href="property-details.html" class="featured-btn">Featured</a>
                 <div class="media"><span><i class="ri-vidicon-fill"></i></span><span><i class="ri-image-line"></i> 5</span></div>
                 <img src="img/banner-4.jpg" alt="Middle Town House" class="w-full h-full object-cover">
               </div>
@@ -1622,11 +1628,11 @@
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Commercial</a></li></ul>
                     <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
                   </div>
-                  <div class="title"><h3><a href="#contact-deal">Corporate Innovation Hub</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
+                  <div class="title"><h3><a href="property-details.html">Corporate Innovation Hub</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="fa-solid fa-building"></i></div><span>Floor 8</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>3</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>4200</span></li></ul>
                 </div>
                 <div class="price-and-user">
-                  <div class="user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Thomas Klarck"><a href="#contact-deal">Thomas Klarck</a></div>
+                  <div class="user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Thomas Klarck"><a href="property-details.html">Thomas Klarck</a></div>
                   <div class="price hidden">$150,000</div>
                 </div>
               </div>
@@ -3704,7 +3710,7 @@
 
         <!-- Action Links -->
         <div class="mt-3.5 pt-3 border-t border-gray-100 flex items-center gap-2">
-          <a href="#contact-deal" class="flex-1 text-center py-2 bg-[#7B1824] hover:bg-[#60111A] text-white rounded-lg font-bold text-xs shadow transition-all">
+          <a href="property-details.html" class="flex-1 text-center py-2 bg-[#7B1824] hover:bg-[#60111A] text-white rounded-lg font-bold text-xs shadow transition-all">
             Inquire Property
           </a>
           <a id="open-in-google-maps" href="https://www.google.com/maps/search/Gulshan+Avenue,+Dhaka,+Bangladesh" target="_blank" rel="noopener" class="px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg font-bold text-xs transition-all flex items-center gap-1.5" title="Open in Google Maps">
@@ -4973,3 +4979,4 @@
   </script>
 </body>
 </html>
+
