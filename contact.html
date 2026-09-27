@@ -1,0 +1,1180 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Mars Structure Limited - Premier Real Estate & Client Advisory</title>
+  <meta name="description" content="Get in touch with Mars Structure Limited. Schedule private site visits, inquire about luxury properties in Jolshiri, Gulshan, and Banani.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- RemixIcon CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
+  
+  <!-- LordIcon Animated Icons CDN -->
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Configuration with Mars Brand Palette -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            mars: {
+              maroon: '#7B1824',
+              'maroon-dark': '#60111A',
+              'maroon-deep': '#480B12',
+              'maroon-noir': '#14080B',
+              gold: '#E5A922',
+              'gold-light': '#F3C843',
+              'gold-glow': 'rgba(229, 169, 34, 0.4)',
+              'gold-subtle': 'rgba(229, 169, 34, 0.15)',
+              'gold-border': 'rgba(229, 169, 34, 0.25)',
+              'bg-light': '#FAF7F2',
+              card: '#FFFFFF',
+              border: '#E8DFD3',
+              main: '#2B2B2B',
+              muted: '#6B6560',
+              light: '#FAF7F2',
+              white: '#FFFFFF',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --mars-maroon: #7B1824;
+      --mars-maroon-dark: #60111A;
+      --mars-gold: #E5A922;
+      --mars-bg-light: #FAF7F2;
+      --mars-text-main: #2B2B2B;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--mars-text-main);
+      background-color: #FFFFFF;
+      overflow-x: hidden;
+    }
+
+    .font-serif-luxury {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .glass-dark {
+      background: rgba(20, 8, 11, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* Scroll Reveal Animations */
+    .reveal-on-scroll {
+      opacity: 0;
+      will-change: transform, opacity;
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-fade-up { transform: translateY(40px); }
+    .reveal-fade-left { transform: translateX(-40px); }
+    .reveal-fade-right { transform: translateX(40px); }
+    .reveal-delay-50  { transition-delay: 50ms; }
+    .reveal-delay-100 { transition-delay: 100ms; }
+    .reveal-delay-150 { transition-delay: 150ms; }
+    .reveal-delay-200 { transition-delay: 200ms; }
+    .reveal-delay-250 { transition-delay: 250ms; }
+    .reveal-delay-300 { transition-delay: 300ms; }
+    .reveal-on-scroll.is-revealed {
+      opacity: 1 !important;
+      transform: translate(0, 0) !important;
+    }
+    /* Smooth FAQ Accordion Transition */
+    .faq-wrapper {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .faq-wrapper.is-open {
+      grid-template-rows: 1fr;
+    }
+    .faq-inner {
+      overflow: hidden;
+    }
+      /* Newsletter Form Button & Input Synchronization */
+    .newsletter-form {
+      display: flex !important;
+      align-items: stretch !important;
+      height: 44px !important;
+      border-radius: 8px !important;
+      overflow: hidden !important;
+      background: #FFFFFF !important;
+    }
+    .newsletter-form input {
+      flex: 1 1 0% !important;
+      min-width: 0 !important;
+      height: 100% !important;
+      border: none !important;
+      outline: none !important;
+      margin: 0 !important;
+      padding: 0 16px !important;
+      font-size: 12px !important;
+      line-height: 44px !important;
+      box-sizing: border-box !important;
+    }
+    .newsletter-form button {
+      height: 100% !important;
+      border: none !important;
+      outline: none !important;
+      margin: 0 !important;
+      padding: 0 20px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      flex-shrink: 0 !important;
+      box-sizing: border-box !important;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-[#7B1824] selection:text-white">
+
+  <!-- Top Bar & Navigation -->
+  <header class="w-full relative z-40">
+    <!-- Top Information Bar -->
+    <div class="bg-white border-b border-[#E8DFD3] py-2.5 px-4 sm:px-8">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="img/logo.jpeg" alt="Mars Structure Limited" class="h-11 sm:h-13 w-auto object-contain transition-transform group-hover:scale-102">
+        </a>
+
+        <div class="flex items-center flex-wrap gap-5 sm:gap-7 text-sm font-medium text-[#2B2B2B]">
+          <a href="property.html" class="flex items-center gap-1.5 hover:text-[#7B1824] transition-colors">
+            <i class="fa-regular fa-heart text-[#7B1824]"></i>
+            <span>Favorite</span>
+          </a>
+          <span class="text-gray-300">|</span>
+          <a href="contact.html" class="flex items-center gap-1.5 hover:text-[#7B1824] transition-colors">
+            <i class="fa-solid fa-cloud-arrow-up text-[#7B1824]"></i>
+            <span>Submit Property</span>
+          </a>
+          <span class="text-gray-300">|</span>
+          <a href="property.html" class="flex items-center gap-1.5 hover:text-[#7B1824] transition-colors">
+            <i class="fa-solid fa-hotel text-[#7B1824]"></i>
+            <span>My Property</span>
+          </a>
+          <button onclick="toggleModal('login-modal')" class="bg-[#7B1824] hover:bg-[#60111A] text-white px-5 py-2 rounded-md font-semibold text-xs sm:text-sm tracking-wide flex items-center gap-2 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer">
+            <i class="fa-solid fa-user-circle"></i>
+            <span>Login / Register</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar (Matches Given Image) -->
+    <nav class="sticky top-0 z-50 glass-dark border-b border-[#480B12]/40 text-white transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between h-14">
+        <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-[#E5A922] focus:outline-none p-2 cursor-pointer">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+
+        <!-- Desktop Menu Links (Given Image Design) -->
+        <div class="hidden lg:flex items-center space-x-9 text-[15px] font-bold tracking-normal">
+          <a href="index.html" class="text-white hover:text-[#E5A922] transition-colors py-4">Home</a>
+          <a href="about.html" class="text-white hover:text-[#E5A922] transition-colors py-4">About</a>
+          
+          <!-- Property with Dropdown -->
+          <div class="relative group">
+            <button type="button" class="flex items-center gap-1.5 py-4 text-white hover:text-[#E5A922] transition-colors focus:outline-none cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden'); event.stopPropagation();">
+              <span>Property</span>
+              <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute left-0 top-full hidden group-hover:block w-52 bg-white rounded-lg shadow-2xl py-2.5 border border-gray-100 z-50 transition-all duration-200">
+              <a href="property.html" class="block px-5 py-2.5 text-sm font-semibold text-[#184E42] hover:text-[#7B1824] hover:bg-[#FAF7F2] transition-colors">Property</a>
+              <a href="property-location.html" class="block px-5 py-2.5 text-sm font-semibold text-[#184E42] hover:text-[#7B1824] hover:bg-[#FAF7F2] transition-colors">Property Location</a>
+            </div>
+          </div>
+
+          <!-- Contact Us (Active on Contact Page) -->
+          <a href="contact.html" class="text-[#E5A922] border-b-2 border-[#E5A922] transition-colors py-4">Contact Us</a>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="flex items-center space-x-3">
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden bg-[#14080B] px-6 py-4 border-t border-[#480B12]/50 space-y-3 text-sm">
+        <a href="index.html" class="block text-white hover:text-[#E5A922] font-semibold py-1">Home</a>
+        <a href="about.html" class="block text-white hover:text-[#E5A922] font-semibold py-1">About</a>
+        <div class="py-1">
+          <div class="flex items-center justify-between text-white font-semibold py-1 cursor-pointer" onclick="document.getElementById('mobile-prop-submenu').classList.toggle('hidden');">
+            <span>Property</span>
+            <i class="fa-solid fa-chevron-down text-xs"></i>
+          </div>
+          <div id="mobile-prop-submenu" class="pl-4 pt-1 space-y-2 border-l border-gray-700 mt-1">
+            <a href="property.html" class="block text-gray-300 hover:text-[#E5A922] text-xs py-1">Property</a>
+            <a href="property-location.html" class="block text-gray-300 hover:text-[#E5A922] text-xs py-1">Property Location</a>
+          </div>
+        </div>
+        <a href="contact.html" class="block text-[#E5A922] font-semibold py-1">Contact Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Header Banner / Breadcrumb -->
+  <div class="relative py-20 lg:py-28 bg-[#14080B] text-white overflow-hidden bg-cover bg-center" style="background-image: linear-gradient(rgba(20, 8, 11, 0.85), rgba(20, 8, 11, 0.9)), url('img/banner-8.jpg');">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
+      <span class="inline-block px-4 py-1.5 bg-[#7B1824] text-white text-xs font-bold uppercase tracking-widest rounded-full mb-4">Private Client Advisory</span>
+      <h1 class="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-4">Contact Us</h1>
+      <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
+        Reach out to schedule private site viewings, bespoke architectural consultations, or portfolio inquiries with our executive team.
+      </p>
+      <div class="flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-gray-400 mt-6">
+        <a href="index.html" class="hover:text-[#E5A922] transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-[#E5A922]">Contact Us</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Info Cards -->
+  <section class="py-16 bg-[#FAF7F2]/60 border-b border-[#E8DFD3]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1: Office -->
+        <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 reveal-on-scroll reveal-fade-up reveal-delay-50">
+          <div class="w-12 h-12 rounded-xl bg-[#7B1824]/10 text-[#7B1824] flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <h3 class="font-serif-luxury text-lg font-bold text-[#14080B] mb-2">Corporate Office</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Plot: 007, Road: 409A, Sector: 12, Jolshiri Abashon, Dhaka, Bangladesh
+          </p>
+        </div>
+
+        <!-- Card 2: Phone -->
+        <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 reveal-on-scroll reveal-fade-up reveal-delay-100">
+          <div class="w-12 h-12 rounded-xl bg-[#7B1824]/10 text-[#7B1824] flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <h3 class="font-serif-luxury text-lg font-bold text-[#14080B] mb-2">Direct Phone</h3>
+          <p class="text-xs text-gray-600 leading-relaxed space-y-1">
+            <span class="block font-semibold">+880 1700-000000</span>
+            <span class="block">+880 1800-000000</span>
+          </p>
+        </div>
+
+        <!-- Card 3: Email -->
+        <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 reveal-on-scroll reveal-fade-up reveal-delay-150">
+          <div class="w-12 h-12 rounded-xl bg-[#7B1824]/10 text-[#7B1824] flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <h3 class="font-serif-luxury text-lg font-bold text-[#14080B] mb-2">Email Inquiries</h3>
+          <p class="text-xs text-gray-600 leading-relaxed space-y-1">
+            <span class="block font-semibold">info@marsproperties.com</span>
+            <span class="block">concierge@marsproperties.com</span>
+          </p>
+        </div>
+
+        <!-- Card 4: Hours -->
+        <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 reveal-on-scroll reveal-fade-up reveal-delay-200">
+          <div class="w-12 h-12 rounded-xl bg-[#7B1824]/10 text-[#7B1824] flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <h3 class="font-serif-luxury text-lg font-bold text-[#14080B] mb-2">Advisory Hours</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Sat - Thu: 9:00 AM - 7:00 PM<br>
+            <span class="text-[#7B1824] font-semibold">Friday: By Private Appointment</span>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 11: LOOKING FOR TO BUY A PROPERTY? (CONTACT US FORM)
+       ========================================== -->
+  <section id="contact-deal" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Subtitle & Title Centered -->
+      <div class="text-center mb-16 reveal-on-scroll reveal-fade-up">
+        <div class="flex items-center justify-center gap-1.5 text-xs font-extrabold uppercase text-[#7B1824] tracking-widest mb-2">
+          <i class="fa-solid fa-house"></i>
+          <span>REAL ESTATE AGENCY</span>
+        </div>
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#14080B] tracking-tight">
+          Looking for to buy a property?
+        </h2>
+      </div>
+
+      <!-- 2 Columns: Description & Overlapping Photos + Form -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Column: Copy, Checkmarks, Overlapping Photos -->
+        <div class="lg:col-span-6 space-y-6 reveal-on-scroll reveal-fade-left reveal-delay-150">
+          <p class="text-[#6B6560] text-sm sm:text-base leading-relaxed">
+            Browse our property listing and find your best with premier luxury homes and duplex apartments available across Dhaka. Discover residences you will truly want to call home.
+          </p>
+
+          <!-- Checklists -->
+          <ul class="space-y-3 font-semibold text-sm text-[#2B2B2B]">
+            <li class="flex items-center gap-3">
+              <i class="fa-solid fa-check text-[#7B1824] text-base"></i>
+              <span>Living rooms are pre-wired for acoustic surround sound</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="fa-solid fa-check text-[#7B1824] text-base"></i>
+              <span>Luxurious interior design, smart fixtures, and amenities</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="fa-solid fa-check text-[#7B1824] text-base"></i>
+              <span>Nestled in prestigious diplomatic & eco township zones</span>
+            </li>
+          </ul>
+
+          <!-- Artistic Overlapping Photos Montage with Geometric Blocks -->
+          <div class="relative pt-6 min-h-[300px] sm:min-h-[350px]">
+            <!-- Decorative colored squares -->
+            <div class="absolute top-0 right-1/3 w-16 h-16 bg-[#7B1824] rounded-lg z-0"></div>
+            <div class="absolute -top-3 right-1/4 w-10 h-10 bg-[#14080B] rounded-md z-0"></div>
+
+            <!-- Overlapping Photo 1 (Estate) -->
+            <div class="absolute top-4 left-0 w-3/5 rounded-2xl overflow-hidden shadow-xl z-10 border-4 border-white">
+              <img src="img/property3.jpg" alt="Estate Architecture" class="w-full h-44 sm:h-52 object-cover">
+            </div>
+
+            <!-- Overlapping Photo 2 (Modern Villa) -->
+            <div class="relative ml-auto mt-16 w-4/5 rounded-2xl overflow-hidden shadow-2xl z-20 border-4 border-white">
+              <img src="img/property2.png" alt="Modern Luxury Property" class="w-full h-52 sm:h-64 object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Contact Form Card -->
+        <div class="lg:col-span-6 bg-[#F4F6F8] p-8 sm:p-12 rounded-3xl shadow-sm border border-gray-100 reveal-on-scroll reveal-fade-right reveal-delay-200">
+          <h3 class="font-serif-luxury text-2xl font-extrabold text-[#14080B] mb-2">
+            Send an Inquiry
+          </h3>
+          <p class="text-xs text-gray-500 mb-6">Our senior advisory team will respond within 24 hours.</p>
+
+          <form onsubmit="handleContactSubmit(event)" class="space-y-4 text-xs sm:text-sm">
+            <div>
+              <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Name *</label>
+              <input type="text" required placeholder="Enter your full name" class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#7B1824] focus:ring-1 focus:ring-[#7B1824] transition-all">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Email *</label>
+                <input type="email" required placeholder="name@domain.com" class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#7B1824] focus:ring-1 focus:ring-[#7B1824] transition-all">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Phone Number *</label>
+                <input type="tel" required placeholder="+880 1..." class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#7B1824] focus:ring-1 focus:ring-[#7B1824] transition-all">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Preferred Location / Interest</label>
+              <select class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-sm text-gray-800 focus:outline-none focus:border-[#7B1824] focus:ring-1 focus:ring-[#7B1824] transition-all">
+                <option value="jolshiri">Jolshiri Abashon (Tayeb Residency / Nur-Anu Oasis)</option>
+                <option value="gulshan">Gulshan Diplomatic Enclave (CNS Grand Residence)</option>
+                <option value="banani">Banani Sky Suites & Penthouses</option>
+                <option value="baridhara">Baridhara Embassy Point</option>
+                <option value="mirpur">Mirpur City Point</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Message *</label>
+              <textarea rows="4" required placeholder="Tell us about your requirements or preferred viewing dates..." class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#7B1824] focus:ring-1 focus:ring-[#7B1824] transition-all resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full sm:w-auto px-8 py-3.5 bg-[#7B1824] hover:bg-[#60111A] text-white font-bold text-sm tracking-wide rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 cursor-pointer">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Google Map Office Embed -->
+  <section class="w-full h-96 relative border-t border-[#E8DFD3] overflow-hidden">
+    <iframe 
+      src="https://maps.google.com/maps?q=Jolshiri+Abashon+Dhaka+Bangladesh&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+      class="w-full h-full border-0 filter contrast-[1.02]" 
+      loading="lazy" 
+      allowfullscreen="" 
+      referrerpolicy="no-referrer-when-downgrade" 
+      title="Mars Structure Limited Headquarters Map">
+    </iframe>
+    <div class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-xl shadow-xl border border-gray-200 text-xs font-bold text-[#14080B] flex items-center gap-2">
+      <i class="fa-solid fa-location-dot text-[#7B1824]"></i>
+      <span>Mars Headquarters - Sector 12, Jolshiri</span>
+      <a href="https://www.google.com/maps/search/Jolshiri+Abashon+Dhaka+Bangladesh" target="_blank" class="ml-2 text-[#7B1824] hover:underline flex items-center gap-1">
+        Directions <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+      </a>
+    </div>
+  </section>
+
+        <!-- ==========================================
+       SECTION: ELEVATED CLIENT ADVISORY & FAQ
+       ========================================== -->
+  <section id="faq-section" class="py-20 lg:py-28 bg-[#FAF7F2]/70 border-t border-[#E8DFD3] relative overflow-hidden">
+    <!-- Subtle Background Glows -->
+    <div class="absolute -top-32 -right-32 w-96 h-96 bg-[#E5A922]/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-[#7B1824]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16 reveal-on-scroll reveal-fade-up">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7B1824]/10 text-[#7B1824] text-xs font-extrabold uppercase tracking-widest border border-[#7B1824]/15 shadow-sm">
+          <i class="fa-solid fa-circle-question text-[#E5A922]"></i> FREQUENTLY ASKED QUESTIONS
+        </span>
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-black text-[#14080B] tracking-tight mt-3">
+          Client Questions & Answers
+        </h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-[#7B1824] to-[#E5A922] mx-auto mt-4 rounded-full"></div>
+        <p class="text-xs sm:text-sm md:text-base text-gray-600 mt-4 leading-relaxed font-light">
+          Comprehensive guidance on private site inspections, custom architectural modifications, statutory legal clearances, and flexible investment milestone schedules.
+        </p>
+
+        <!-- Category Filter Pills -->
+        <div class="flex items-center justify-center flex-wrap gap-2 pt-6">
+          <button type="button" onclick="filterFaq('all', this)" class="faq-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#7B1824] text-white border border-[#7B1824] shadow-md cursor-pointer">
+            All Questions (6)
+          </button>
+          <button type="button" onclick="filterFaq('tours', this)" class="faq-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-gray-700 border border-gray-200 hover:border-[#7B1824] hover:text-[#7B1824] cursor-pointer">
+            <i class="fa-solid fa-car-side mr-1 text-[#7B1824]"></i> Site Tours
+          </button>
+          <button type="button" onclick="filterFaq('architecture', this)" class="faq-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-gray-700 border border-gray-200 hover:border-[#7B1824] hover:text-[#7B1824] cursor-pointer">
+            <i class="fa-solid fa-compass-drafting mr-1 text-[#7B1824]"></i> Customization
+          </button>
+          <button type="button" onclick="filterFaq('legal', this)" class="faq-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-gray-700 border border-gray-200 hover:border-[#7B1824] hover:text-[#7B1824] cursor-pointer">
+            <i class="fa-solid fa-certificate mr-1 text-[#7B1824]"></i> Legal & Clearances
+          </button>
+          <button type="button" onclick="filterFaq('financing', this)" class="faq-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-gray-700 border border-gray-200 hover:border-[#7B1824] hover:text-[#7B1824] cursor-pointer">
+            <i class="fa-solid fa-coins mr-1 text-[#7B1824]"></i> Financing & Handover
+          </button>
+        </div>
+      </div>
+
+      <!-- 2-Column Grid: Left Concierge Hub, Right Accordion -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        
+        <!-- Left Column: Senior Advisory Card & Direct Help -->
+        <div class="lg:col-span-4 space-y-6 reveal-on-scroll reveal-fade-left">
+          
+          <!-- Concierge Card (Noir Luxury Theme) -->
+          <div class="bg-gradient-to-br from-[#14080B] via-[#240B10] to-[#14080B] text-white p-7 sm:p-8 rounded-3xl shadow-2xl border border-white/10 relative overflow-hidden group">
+            <div class="absolute -right-12 -top-12 w-44 h-44 bg-[#E5A922]/15 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-700"></div>
+
+            <div class="flex items-center justify-between mb-5">
+              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/10 text-[#E5A922] border border-white/10 backdrop-blur-sm">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Concierge Online
+              </span>
+              <i class="fa-solid fa-headset text-xl text-[#E5A922]"></i>
+            </div>
+
+            <h3 class="font-serif-luxury text-xl sm:text-2xl font-bold text-white mb-2 leading-snug">
+              Have a Specific Question?
+            </h3>
+            <p class="text-xs text-gray-300 leading-relaxed font-light mb-6">
+              Our Senior Client Advisory Director is on standby to assist with custom floor plans, technical engineering questions, or private appointment scheduling.
+            </p>
+
+            <!-- Advisor Quick Identity -->
+            <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-white/5 border border-white/10 mb-6">
+              <div class="w-12 h-12 rounded-full bg-[#7B1824] flex items-center justify-center text-white font-bold text-base border-2 border-[#E5A922] shadow">
+                MS
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Private Client Desk</h4>
+                <p class="text-[11px] text-[#E5A922] font-semibold">Mars Structure Limited</p>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="space-y-2.5">
+              <a href="tel:+8801700000000" class="w-full py-3 px-4 bg-[#7B1824] hover:bg-[#60111A] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-lg transition-all transform hover:-translate-y-0.5">
+                <i class="fa-solid fa-phone"></i>
+                <span>Direct Call: +880 1700-000000</span>
+              </a>
+              <a href="https://wa.me/8801700000000" target="_blank" rel="noopener" class="w-full py-3 px-4 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow transition-all transform hover:-translate-y-0.5">
+                <i class="fa-brands fa-whatsapp text-sm"></i>
+                <span>Chat via WhatsApp</span>
+              </a>
+              <a href="#contact-deal" class="w-full py-2.5 px-4 bg-white/10 hover:bg-white/15 text-gray-200 hover:text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition-all">
+                <i class="fa-solid fa-envelope-open-text text-xs text-[#E5A922]"></i>
+                <span>Send Inquiry via Form</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Brochure Download Card -->
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3.5 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center text-lg shadow-inner">
+                <i class="fa-solid fa-file-pdf"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-[#14080B]">Jolshiri Brochure</h4>
+                <p class="text-[11px] text-gray-500">Official architectural layout (4.7 MB)</p>
+              </div>
+            </div>
+            <p class="text-xs text-gray-600 leading-relaxed mb-4">
+              Download the comprehensive architectural brochure for Nur-Anu Oasis & Tayeb Residency in Sector 12.
+            </p>
+            <a href="Mr. Tayeb, Jolshiri brochure draft.pdf" target="_blank" download class="inline-flex items-center justify-center w-full py-2.5 bg-[#FAF7F2] hover:bg-[#7B1824] text-[#7B1824] hover:text-white rounded-xl text-xs font-bold border border-[#E8DFD3] hover:border-[#7B1824] transition-all gap-2">
+              <i class="fa-solid fa-download"></i>
+              <span>Download PDF Brochure</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Accordion Cards (Elevated Luxury Design) -->
+        <div class="lg:col-span-8 space-y-4 reveal-on-scroll reveal-fade-right">
+          
+          <!-- FAQ Item 1 (Open by Default) -->
+          <div class="faq-card bg-white rounded-2xl border-2 border-[#7B1824] ring-2 ring-[#7B1824]/10 shadow-lg transition-all duration-300 overflow-hidden" data-category="tours">
+            <button type="button" onclick="toggleFaq(this)" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none">
+              <div class="flex items-center gap-3.5 sm:gap-4">
+                <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#7B1824] text-white flex items-center justify-center font-extrabold text-xs shrink-0 shadow-sm">
+                  01
+                </span>
+                <div>
+                  <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider text-[#7B1824] bg-[#7B1824]/10 px-2.5 py-0.5 rounded-full mb-1">
+                    Private Tours & Visits
+                  </span>
+                  <h3 class="text-base sm:text-lg font-bold text-[#14080B] leading-snug">
+                    How do I arrange a private site visit?
+                  </h3>
+                </div>
+              </div>
+              <div class="faq-icon w-9 h-9 rounded-full bg-[#7B1824] text-white flex items-center justify-center text-xs shrink-0 transition-all duration-300 rotate-180 shadow-sm">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </button>
+            <div class="faq-wrapper is-open">
+              <div class="faq-inner px-5 sm:px-6 pb-6 pt-0 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                <div class="pt-4 pl-3 border-l-2 border-[#7B1824] bg-[#FAF7F2]/60 p-4 rounded-r-xl space-y-3 mt-2">
+                  <p>
+                    We provide an exclusive, chauffeured private tour service for prospective clients and families. Our luxury vehicle will pick you up from your designated residence in Dhaka and escort you directly to our project sites in Jolshiri Abashon (Sector 12), Gulshan, or Banani. During the tour, a senior structural architect will guide you through the layouts, ambient lighting studies, and surrounding green boulevards.
+                  </p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-gray-800 pt-1">
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Complimentary VIP Chauffeur Transfer</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Accompanied by Senior Structural Architect</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Full Daylight & Ventilation Inspection</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Blueprint & Material Specs Walkthrough</span>
+                    </div>
+                  </div>
+                  <div class="pt-2">
+                    <a href="#contact-deal" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#7B1824] hover:underline">
+                      Schedule Your Private Viewing Now <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-card bg-white rounded-2xl border border-gray-200 hover:border-gray-300 shadow-sm transition-all duration-300 overflow-hidden" data-category="architecture">
+            <button type="button" onclick="toggleFaq(this)" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none">
+              <div class="flex items-center gap-3.5 sm:gap-4">
+                <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gray-100 text-gray-600 flex items-center justify-center font-extrabold text-xs shrink-0">
+                  02
+                </span>
+                <div>
+                  <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider text-[#184E42] bg-[#184E42]/10 px-2.5 py-0.5 rounded-full mb-1">
+                    Floor Plans & Architecture
+                  </span>
+                  <h3 class="text-base sm:text-lg font-bold text-[#14080B] leading-snug">
+                    Are the apartment floor plans customizable during construction?
+                  </h3>
+                </div>
+              </div>
+              <div class="faq-icon w-9 h-9 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center text-xs shrink-0 transition-all duration-300 shadow-sm">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </button>
+            <div class="faq-wrapper">
+              <div class="faq-inner px-5 sm:px-6 pb-6 pt-0 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                <div class="pt-4 pl-3 border-l-2 border-[#7B1824] bg-[#FAF7F2]/60 p-4 rounded-r-xl space-y-3 mt-2">
+                  <p>
+                    Yes! Absolute architectural flexibility is a cornerstone of Mars Structure Limited. For reservations made during the structural phase, our senior architectural team conducts personalized 1-on-1 design sessions to customize partition walls, en-suite dressing areas, chef's kitchen boundaries, and acoustic surround provisions without compromising structural load-bearing integrity.
+                  </p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-gray-800 pt-1">
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>1-on-1 Consultation with Chief Architect</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Custom Room Boundaries & Dressing Zones</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Pre-Wiring for Smart Home Automation</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Tailored Sanitaryware & Tile Selections</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-card bg-white rounded-2xl border border-gray-200 hover:border-gray-300 shadow-sm transition-all duration-300 overflow-hidden" data-category="legal">
+            <button type="button" onclick="toggleFaq(this)" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none">
+              <div class="flex items-center gap-3.5 sm:gap-4">
+                <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gray-100 text-gray-600 flex items-center justify-center font-extrabold text-xs shrink-0">
+                  03
+                </span>
+                <div>
+                  <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider text-[#7B1824] bg-[#7B1824]/10 px-2.5 py-0.5 rounded-full mb-1">
+                    Legal & Approvals
+                  </span>
+                  <h3 class="text-base sm:text-lg font-bold text-[#14080B] leading-snug">
+                    What are the legal approvals and documentation standards?
+                  </h3>
+                </div>
+              </div>
+              <div class="faq-icon w-9 h-9 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center text-xs shrink-0 transition-all duration-300 shadow-sm">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </button>
+            <div class="faq-wrapper">
+              <div class="faq-inner px-5 sm:px-6 pb-6 pt-0 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                <div class="pt-4 pl-3 border-l-2 border-[#7B1824] bg-[#FAF7F2]/60 p-4 rounded-r-xl space-y-3 mt-2">
+                  <p>
+                    Every Mars Structure Limited development is built on 100% verified, mutation-completed freehold land with clear unencumbered titles. All masterplans are approved by RAJUK and civil aviation authorities, and structural calculations are peer-vetted by BUET professors adhering to the Bangladesh National Building Code (BNBC).
+                  </p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-gray-800 pt-1">
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Freehold Land with Zero Legal Encumbrances</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Statutory RAJUK Approved Layouts</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Earthquake & Wind Resistance (BNBC Vetted)</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Full Documentation File Available for Review</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-card bg-white rounded-2xl border border-gray-200 hover:border-gray-300 shadow-sm transition-all duration-300 overflow-hidden" data-category="financing">
+            <button type="button" onclick="toggleFaq(this)" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none">
+              <div class="flex items-center gap-3.5 sm:gap-4">
+                <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gray-100 text-gray-600 flex items-center justify-center font-extrabold text-xs shrink-0">
+                  04
+                </span>
+                <div>
+                  <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider text-[#184E42] bg-[#184E42]/10 px-2.5 py-0.5 rounded-full mb-1">
+                    Financing & Milestones
+                  </span>
+                  <h3 class="text-base sm:text-lg font-bold text-[#14080B] leading-snug">
+                    What payment schedules and milestone structures are available?
+                  </h3>
+                </div>
+              </div>
+              <div class="faq-icon w-9 h-9 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center text-xs shrink-0 transition-all duration-300 shadow-sm">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </button>
+            <div class="faq-wrapper">
+              <div class="faq-inner px-5 sm:px-6 pb-6 pt-0 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                <div class="pt-4 pl-3 border-l-2 border-[#7B1824] bg-[#FAF7F2]/60 p-4 rounded-r-xl space-y-3 mt-2">
+                  <p>
+                    We provide transparent, construction-linked milestone payment schedules across foundation, floor slab casting, brickwork, and final handover. Furthermore, Mars Structure Limited maintains official tripartite agreements with leading financial institutions (e.g. Standard Chartered, BRAC Bank, IDLC, City Bank) offering expedited processing and competitive home loan interest rates.
+                  </p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-gray-800 pt-1">
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Construction-Linked Installment Milestones</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Pre-Approved Home Loan Partnerships</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Zero Hidden Transfer or Processing Charges</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Personalized Financial Advisor Assistance</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-card bg-white rounded-2xl border border-gray-200 hover:border-gray-300 shadow-sm transition-all duration-300 overflow-hidden" data-category="architecture">
+            <button type="button" onclick="toggleFaq(this)" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none">
+              <div class="flex items-center gap-3.5 sm:gap-4">
+                <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gray-100 text-gray-600 flex items-center justify-center font-extrabold text-xs shrink-0">
+                  05
+                </span>
+                <div>
+                  <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider text-[#E5A922] bg-[#E5A922]/15 text-gray-900 px-2.5 py-0.5 rounded-full mb-1">
+                    Smart Homes & Amenities
+                  </span>
+                  <h3 class="text-base sm:text-lg font-bold text-[#14080B] leading-snug">
+                    What emergency backup power, security, and smart features are standard?
+                  </h3>
+                </div>
+              </div>
+              <div class="faq-icon w-9 h-9 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center text-xs shrink-0 transition-all duration-300 shadow-sm">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </button>
+            <div class="faq-wrapper">
+              <div class="faq-inner px-5 sm:px-6 pb-6 pt-0 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                <div class="pt-4 pl-3 border-l-2 border-[#7B1824] bg-[#FAF7F2]/60 p-4 rounded-r-xl space-y-3 mt-2">
+                  <p>
+                    Every Mars residence comes outfitted with 100% full electrical backup via soundproof European diesel generators powering all lights, fans, refrigerators, and air conditioning units. The building is secured with multi-tier biometric access, 24/7 high-definition perimeter CCTV surveillance, and solar-integrated communal lighting.
+                  </p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-gray-800 pt-1">
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>100% Redundant Generator Power (Inc. ACs)</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Smart Video Intercom to Concierge Desk</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Rooftop Solar Integration & Rainwater Harvesting</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>High-Speed European Passenger Elevators</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="faq-card bg-white rounded-2xl border border-gray-200 hover:border-gray-300 shadow-sm transition-all duration-300 overflow-hidden" data-category="financing">
+            <button type="button" onclick="toggleFaq(this)" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none">
+              <div class="flex items-center gap-3.5 sm:gap-4">
+                <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gray-100 text-gray-600 flex items-center justify-center font-extrabold text-xs shrink-0">
+                  06
+                </span>
+                <div>
+                  <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider text-[#7B1824] bg-[#7B1824]/10 px-2.5 py-0.5 rounded-full mb-1">
+                    Handover & Guarantees
+                  </span>
+                  <h3 class="text-base sm:text-lg font-bold text-[#14080B] leading-snug">
+                    What is the guaranteed handover timeline and post-handover warranty?
+                  </h3>
+                </div>
+              </div>
+              <div class="faq-icon w-9 h-9 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center text-xs shrink-0 transition-all duration-300 shadow-sm">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </button>
+            <div class="faq-wrapper">
+              <div class="faq-inner px-5 sm:px-6 pb-6 pt-0 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                <div class="pt-4 pl-3 border-l-2 border-[#7B1824] bg-[#FAF7F2]/60 p-4 rounded-r-xl space-y-3 mt-2">
+                  <p>
+                    We take pride in our punctual execution. Handover timelines are legally codified within our allotment agreement with stipulated compensation clauses for delays. After handover, Mars Structure Limited provides a 12-month complimentary maintenance warranty covering plumbing, electrical, and structural fittings.
+                  </p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-gray-800 pt-1">
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Legally Binding Handover Milestones</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>12-Month Builder Maintenance Warranty</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Dedicated On-Site Facility Management Staff</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+                      <span>Smooth Community Association Transition</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+    <!-- ==========================================
+       SECTION 14: FLOATING CTA & FOOTER
+       Source: https://risingtheme.com/html/demo-newvilla/newvilla/index-2.html & image14
+       ========================================== -->
+    <!-- ==========================================
+       GLOBAL FOOTER (MATCHING HOME PAGE LUXURY DESIGN)
+       ========================================== -->
+  <div class="relative w-full pt-16">
+    <!-- Floating CTA Overlapping Card -->
+    <div class="relative -mb-16 z-30 max-w-6xl mx-auto px-4 sm:px-6 reveal-on-scroll reveal-fade-up">
+      <div class="bg-[#FF5A3C] bg-gradient-to-r from-[#7B1824] to-[#A82536] text-white p-8 sm:p-12 rounded-2xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
+            Looking for a dream home?
+          </h3>
+          <p class="text-xs sm:text-sm text-gray-200 mt-2 font-light">
+            We can help you realize your dream of a new home
+          </p>
+        </div>
+        <a href="property.html" class="shrink-0 px-8 py-3.5 bg-white text-gray-900 hover:bg-gray-100 font-bold text-xs sm:text-sm tracking-wide rounded-md shadow-lg transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
+          <span>Explore Properties</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Footer Container (Deep Noir) -->
+    <footer class="bg-[#14080B] text-gray-300 pt-28 pb-12 border-t border-[#480B12]/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- 5 Columns Footer Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-14 border-b border-gray-800">
+          
+          <!-- Column 1: Logo & Company Info -->
+          <div class="lg:col-span-1 space-y-4 reveal-on-scroll reveal-fade-up reveal-delay-100">
+            <!-- Brand Logo -->
+            <a href="index.html" class="inline-block bg-white p-2 rounded-md shadow">
+              <img src="img/logo.jpeg" alt="Mars Structure Limited" class="h-9 w-auto object-contain">
+            </a>
+            
+            <p class="text-xs text-gray-400 leading-relaxed font-light">
+              Pioneering luxury real estate development, bespoke duplex residences, and architectural masterworks with uncompromising integrity.
+            </p>
+
+            <div class="space-y-2 text-xs text-gray-400">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-[#E5A922] w-4"></i>
+                <span>Plot: 007, Road: 409A, Sector: 12, Jolshiri Abashon, Dhaka</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-phone text-[#E5A922] w-4"></i>
+                <span>+880 1700-000000</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-[#E5A922] w-4"></i>
+                <span>info@marsproperties.com</span>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center space-x-3 pt-2">
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <!-- Column 2: Company -->
+          <div class="reveal-on-scroll reveal-fade-up reveal-delay-150">
+            <h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">
+              Company
+            </h4>
+            <ul class="space-y-2.5 text-xs text-gray-400">
+              <li><a href="about.html" class="hover:text-[#E5A922] transition-colors">About Us</a></li>
+              <li><a href="property.html" class="hover:text-[#E5A922] transition-colors">All Products</a></li>
+              <li><a href="property-location.html" class="hover:text-[#E5A922] transition-colors">Locations Map</a></li>
+              <li><a href="contact.html" class="hover:text-[#E5A922] transition-colors">Contact us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Services -->
+          <div class="reveal-on-scroll reveal-fade-up reveal-delay-200">
+            <h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">
+              Services
+            </h4>
+            <ul class="space-y-2.5 text-xs text-gray-400">
+              <li><a href="property.html" class="hover:text-[#E5A922] transition-colors">Luxury Houses</a></li>
+              <li><a href="property.html" class="hover:text-[#E5A922] transition-colors">Wish List</a></li>
+              <li><a href="#" onclick="toggleModal('login-modal')" class="hover:text-[#E5A922] transition-colors">Login</a></li>
+              <li><a href="property.html" class="hover:text-[#E5A922] transition-colors">Floor Plans</a></li>
+              <li><a href="#" class="hover:text-[#E5A922] transition-colors">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Customer Care -->
+          <div class="reveal-on-scroll reveal-fade-up reveal-delay-250">
+            <h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">
+              Customer Care
+            </h4>
+            <ul class="space-y-2.5 text-xs text-gray-400">
+              <li><a href="#" onclick="toggleModal('login-modal')" class="hover:text-[#E5A922] transition-colors">Login / Register</a></li>
+              <li><a href="contact.html" class="hover:text-[#E5A922] transition-colors">Private Tour Booking</a></li>
+              <li><a href="contact.html" class="hover:text-[#E5A922] transition-colors">VIP Consultation</a></li>
+              <li><a href="contact.html" class="hover:text-[#E5A922] transition-colors">FAQ</a></li>
+              <li><a href="contact.html" class="hover:text-[#E5A922] transition-colors">Contact us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 5: Newsletter & Payment Badges -->
+          <div class="space-y-4 reveal-on-scroll reveal-fade-up reveal-delay-300">
+            <h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">
+              Newsletter
+            </h4>
+            <p class="text-xs text-gray-400 leading-relaxed">
+              Subscribe to our weekly Newsletter and receive updates via email.
+            </p>
+
+            <form onsubmit="handleNewsletter(event)" class="newsletter-form flex items-stretch w-full h-11 rounded-lg overflow-hidden shadow-sm mt-3 border border-transparent focus-within:border-[#E5A922] bg-white">
+              <input type="email" required placeholder="Email*" class="flex-1 min-w-0 bg-white text-gray-900 px-4 text-xs focus:outline-none placeholder-gray-400 border-0 h-full m-0">
+              <button type="submit" aria-label="Subscribe" class="bg-[#7B1824] hover:bg-[#60111A] text-white px-5 flex items-center justify-center transition-colors h-full shrink-0 cursor-pointer border-0 m-0">
+                <i class="fa-solid fa-paper-plane text-xs"></i>
+              </button>
+            </form>
+
+            <div class="pt-3">
+              <div class="text-xs font-bold text-white mb-2">We Accept</div>
+              <div class="bg-white rounded-md p-2 flex items-center justify-between text-gray-700 text-lg px-3 shadow-sm">
+                <i class="fa-brands fa-paypal text-[#003087]"></i>
+                <i class="fa-brands fa-cc-visa text-[#1A1F71]"></i>
+                <i class="fa-brands fa-cc-discover text-[#FF6000]"></i>
+                <i class="fa-brands fa-cc-mastercard text-[#EB001B]"></i>
+                <i class="fa-brands fa-cc-amex text-[#006FCF]"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Copyright Row -->
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+          <div>
+            All Rights Reserved @ Mars Structure Limited 2026
+          </div>
+          <div class="flex items-center space-x-6">
+            <a href="#" class="hover:text-white transition-colors">Terms & Conditions</a>
+            <a href="#" class="hover:text-white transition-colors">Claim</a>
+            <a href="#" class="hover:text-white transition-colors">Privacy & Policy</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scroll To Top Button -->
+  <button id="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed right-6 bottom-6 z-50 w-11 h-11 bg-[#7B1824] hover:bg-[#60111A] text-white rounded-md shadow-2xl flex items-center justify-center transition-all opacity-0 pointer-events-none transform translate-y-4 cursor-pointer" title="Scroll to Top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+    <div class="relative w-full max-w-md bg-white rounded-2xl p-8 shadow-2xl">
+      <button onclick="toggleModal('login-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl cursor-pointer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h3 class="text-2xl font-extrabold text-gray-900 mb-2">Client Portal</h3>
+      <p class="text-xs text-gray-500 mb-6">Sign in to access VIP property portfolios and schedules</p>
+      <form onsubmit="event.preventDefault(); alert('Signed in successfully!'); toggleModal('login-modal');" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-bold text-gray-700 mb-1">Email</label>
+          <input type="email" required placeholder="name@domain.com" class="w-full px-3.5 py-2.5 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#7B1824]">
+        </div>
+        <div>
+          <label class="block font-bold text-gray-700 mb-1">Password</label>
+          <input type="password" required placeholder="••••••••" class="w-full px-3.5 py-2.5 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#7B1824]">
+        </div>
+        <button type="submit" class="w-full py-3 bg-[#7B1824] hover:bg-[#60111A] text-white font-bold rounded-lg transition-colors cursor-pointer uppercase tracking-wider">
+          Sign In
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    }
+
+    // Modal Toggle
+        function handleNewsletter(e) {
+      e.preventDefault();
+      alert('Thank you for subscribing to Mars Structure updates!');
+      e.target.reset();
+    }
+
+    function toggleModal(id) {
+      const m = document.getElementById(id);
+      if (m) {
+        m.classList.toggle('hidden');
+        m.classList.toggle('flex');
+      }
+    }
+
+        // FAQ Accordion Toggle (Silky Smooth Grid Animation)
+    function toggleFaq(btn) {
+      const card = btn.closest('.faq-card');
+      if (!card) return;
+      const wrapper = card.querySelector('.faq-wrapper');
+      const icon = card.querySelector('.faq-icon');
+      const isAlreadyOpen = wrapper && wrapper.classList.contains('is-open');
+
+      // Close all other FAQ cards for a clean accordion flow
+      document.querySelectorAll('.faq-card').forEach(c => {
+        c.classList.remove('border-[#7B1824]', 'border-2', 'ring-2', 'ring-[#7B1824]/10', 'shadow-lg');
+        c.classList.add('border', 'border-gray-200');
+        const num = c.querySelector('button span.rounded-xl');
+        if (num) {
+          num.classList.remove('bg-[#7B1824]', 'text-white');
+          num.classList.add('bg-gray-100', 'text-gray-600');
+        }
+        const w = c.querySelector('.faq-wrapper');
+        if (w) w.classList.remove('is-open');
+        const icn = c.querySelector('.faq-icon');
+        if (icn) {
+          icn.classList.remove('rotate-180', 'bg-[#7B1824]', 'text-white');
+          icn.classList.add('bg-[#FAF7F2]', 'text-gray-700');
+        }
+      });
+
+      // If clicked item was closed, expand it smoothly
+      if (!isAlreadyOpen && wrapper) {
+        wrapper.classList.add('is-open');
+        card.classList.remove('border-gray-200');
+        card.classList.add('border-2', 'border-[#7B1824]', 'ring-2', 'ring-[#7B1824]/10', 'shadow-lg');
+        const num = card.querySelector('button span.rounded-xl');
+        if (num) {
+          num.classList.remove('bg-gray-100', 'text-gray-600');
+          num.classList.add('bg-[#7B1824]', 'text-white');
+        }
+        if (icon) {
+          icon.classList.add('rotate-180', 'bg-[#7B1824]', 'text-white');
+          icon.classList.remove('bg-[#FAF7F2]', 'text-gray-700');
+        }
+      }
+    }
+
+    // FAQ Category Filter Controller
+    function filterFaq(category, btn) {
+      document.querySelectorAll('.faq-filter-btn').forEach(b => {
+        b.className = 'faq-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-gray-700 border border-gray-200 hover:border-[#7B1824] hover:text-[#7B1824] cursor-pointer';
+      });
+      if (btn) {
+        btn.className = 'faq-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#7B1824] text-white border border-[#7B1824] shadow-md cursor-pointer';
+      }
+
+      document.querySelectorAll('.faq-card').forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (category === 'all' || cat === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Automatically expand first visible question in chosen category
+      const firstVis = Array.from(document.querySelectorAll('.faq-card')).find(c => !c.classList.contains('hidden'));
+      if (firstVis) {
+        const btnElem = firstVis.querySelector('button');
+        if (btnElem) toggleFaq(btnElem);
+      }
+    }
+
+    // Contact Form Handler
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      alert('Thank you for contacting Mars Structure Limited! Your inquiry has been submitted. A senior client advisor will reach out to you shortly.');
+      e.target.reset();
+    }
+
+    // Scroll Reveal Observer
+    function initScrollReveal() {
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+      if (!revealElements.length) return;
+
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08 });
+        revealElements.forEach(el => obs.observe(el));
+      } else {
+        revealElements.forEach(el => el.classList.add('is-revealed'));
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initScrollReveal);
+  </script>
+</body>
+</html>

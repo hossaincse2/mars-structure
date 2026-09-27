@@ -1,0 +1,696 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Mars Structure Limited - Premier Real Estate & Architecture</title>
+  <meta name="description" content="Discover Mars Structure Limited - Pioneering luxury real estate development, sustainable modern architecture, and premier residential masterworks in Dhaka.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- RemixIcon CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
+  
+  <!-- LordIcon Animated Icons CDN -->
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            mars: {
+              maroon: '#7B1824',
+              'maroon-dark': '#60111A',
+              'maroon-deep': '#480B12',
+              'maroon-noir': '#14080B',
+              gold: '#E5A922',
+              'gold-light': '#F3C843',
+              'gold-glow': 'rgba(229, 169, 34, 0.4)',
+              'gold-subtle': 'rgba(229, 169, 34, 0.15)',
+              'gold-border': 'rgba(229, 169, 34, 0.25)',
+              'bg-light': '#FAF7F2',
+              card: '#FFFFFF',
+              border: '#E8DFD3',
+              main: '#2B2B2B',
+              muted: '#6B6560',
+              light: '#FAF7F2',
+              white: '#FFFFFF',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --mars-maroon: #7B1824;
+      --mars-maroon-dark: #60111A;
+      --mars-gold: #E5A922;
+      --mars-bg-light: #FAF7F2;
+      --mars-text-main: #2B2B2B;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--mars-text-main);
+      background-color: #FFFFFF;
+      overflow-x: hidden;
+    }
+
+    .font-serif-luxury {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .glass-dark {
+      background: rgba(20, 8, 11, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* Scroll Reveal Animations */
+    .reveal-on-scroll {
+      opacity: 0;
+      will-change: transform, opacity;
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-fade-up { transform: translateY(40px); }
+    .reveal-fade-left { transform: translateX(-40px); }
+    .reveal-fade-right { transform: translateX(40px); }
+    .reveal-delay-100 { transition-delay: 100ms; }
+    .reveal-delay-150 { transition-delay: 150ms; }
+    .reveal-delay-200 { transition-delay: 200ms; }
+    .reveal-delay-250 { transition-delay: 250ms; }
+    .reveal-delay-300 { transition-delay: 300ms; }
+    .reveal-on-scroll.is-revealed {
+      opacity: 1 !important;
+      transform: translate(0, 0) !important;
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(229, 169, 34, 0.6); }
+      70% { transform: scale(1); box-shadow: 0 0 0 16px rgba(229, 169, 34, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(229, 169, 34, 0); }
+    }
+    .pulse-btn {
+      animation: pulse-ring 2.2s infinite;
+    }
+
+    @keyframes statCountGlow {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); color: #F3C843 !important; }
+    }
+    .stat-counting {
+      animation: statCountGlow 0.9s ease-in-out infinite;
+      display: inline-block;
+    }
+      /* Newsletter Form Button & Input Synchronization */
+    .newsletter-form {
+      display: flex !important;
+      align-items: stretch !important;
+      height: 44px !important;
+      border-radius: 8px !important;
+      overflow: hidden !important;
+      background: #FFFFFF !important;
+    }
+    .newsletter-form input {
+      flex: 1 1 0% !important;
+      min-width: 0 !important;
+      height: 100% !important;
+      border: none !important;
+      outline: none !important;
+      margin: 0 !important;
+      padding: 0 16px !important;
+      font-size: 12px !important;
+      line-height: 44px !important;
+      box-sizing: border-box !important;
+    }
+    .newsletter-form button {
+      height: 100% !important;
+      border: none !important;
+      outline: none !important;
+      margin: 0 !important;
+      padding: 0 20px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      flex-shrink: 0 !important;
+      box-sizing: border-box !important;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-[#7B1824] selection:text-white">
+
+  <!-- Top Bar & Navigation -->
+  <header class="w-full relative z-40">
+    <!-- Top Information Bar -->
+    <div class="bg-white border-b border-[#E8DFD3] py-2.5 px-4 sm:px-8">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="img/logo.jpeg" alt="Mars Structure Limited" class="h-11 sm:h-13 w-auto object-contain transition-transform group-hover:scale-102">
+        </a>
+
+        <div class="flex items-center flex-wrap gap-5 sm:gap-7 text-sm font-medium text-[#2B2B2B]">
+          <a href="property.html" class="flex items-center gap-1.5 hover:text-[#7B1824] transition-colors">
+            <i class="fa-regular fa-heart text-[#7B1824]"></i>
+            <span>Favorite</span>
+          </a>
+          <span class="text-gray-300">|</span>
+          <a href="contact.html" class="flex items-center gap-1.5 hover:text-[#7B1824] transition-colors">
+            <i class="fa-solid fa-cloud-arrow-up text-[#7B1824]"></i>
+            <span>Submit Property</span>
+          </a>
+          <span class="text-gray-300">|</span>
+          <a href="property.html" class="flex items-center gap-1.5 hover:text-[#7B1824] transition-colors">
+            <i class="fa-solid fa-hotel text-[#7B1824]"></i>
+            <span>My Property</span>
+          </a>
+          <button onclick="toggleModal('login-modal')" class="bg-[#7B1824] hover:bg-[#60111A] text-white px-5 py-2 rounded-md font-semibold text-xs sm:text-sm tracking-wide flex items-center gap-2 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer">
+            <i class="fa-solid fa-user-circle"></i>
+            <span>Login / Register</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="sticky top-0 z-50 glass-dark border-b border-[#480B12]/40 text-white transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between h-14">
+        <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-[#E5A922] focus:outline-none p-2 cursor-pointer">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+
+        <!-- Desktop Menu Links (Given Image Design) -->
+        <div class="hidden lg:flex items-center space-x-9 text-[15px] font-bold tracking-normal">
+          <a href="index.html" class="text-white hover:text-[#E5A922] transition-colors py-4">Home</a>
+          <a href="about.html" class="text-[#E5A922] border-b-2 border-[#E5A922] transition-colors py-4">About</a>
+          
+          <!-- Property with Dropdown -->
+          <div class="relative group">
+            <button type="button" class="flex items-center gap-1.5 py-4 text-white hover:text-[#E5A922] transition-colors focus:outline-none cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden'); event.stopPropagation();">
+              <span>Property</span>
+              <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute left-0 top-full hidden group-hover:block w-52 bg-white rounded-lg shadow-2xl py-2.5 border border-gray-100 z-50 transition-all duration-200">
+              <a href="property.html" class="block px-5 py-2.5 text-sm font-semibold text-[#184E42] hover:text-[#7B1824] hover:bg-[#FAF7F2] transition-colors">Property</a>
+              <a href="property-location.html" class="block px-5 py-2.5 text-sm font-semibold text-[#184E42] hover:text-[#7B1824] hover:bg-[#FAF7F2] transition-colors">Property Location</a>
+            </div>
+          </div>
+
+          <a href="contact.html" class="text-white hover:text-[#E5A922] transition-colors py-4">Contact Us</a>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="flex items-center space-x-3">
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden bg-[#14080B] px-6 py-4 border-t border-[#480B12]/50 space-y-3 text-sm">
+        <a href="index.html" class="block text-white hover:text-[#E5A922] font-semibold py-1">Home</a>
+        <a href="about.html" class="block text-[#E5A922] font-semibold py-1">About</a>
+        <div class="py-1">
+          <div class="flex items-center justify-between text-white font-semibold py-1 cursor-pointer" onclick="document.getElementById('mobile-prop-submenu').classList.toggle('hidden');">
+            <span>Property</span>
+            <i class="fa-solid fa-chevron-down text-xs"></i>
+          </div>
+          <div id="mobile-prop-submenu" class="pl-4 pt-1 space-y-2 border-l border-gray-700 mt-1">
+            <a href="property.html" class="block text-gray-300 hover:text-[#E5A922] text-xs py-1">Property</a>
+            <a href="property-location.html" class="block text-gray-300 hover:text-[#E5A922] text-xs py-1">Property Location</a>
+          </div>
+        </div>
+        <a href="contact.html" class="block text-white hover:text-[#E5A922] py-1">Contact Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Header Banner / Breadcrumb -->
+  <div class="relative py-20 lg:py-28 bg-[#14080B] text-white overflow-hidden bg-cover bg-center" style="background-image: linear-gradient(rgba(20, 8, 11, 0.85), rgba(20, 8, 11, 0.9)), url('img/banner-8.jpg');">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
+      <span class="inline-block px-4 py-1.5 bg-[#7B1824] text-white text-xs font-bold uppercase tracking-widest rounded-full mb-4">About Our Legacy</span>
+      <h1 class="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-4">About Us</h1>
+      <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
+        Pioneering luxury real estate development, bespoke duplex residences, and architectural masterworks with uncompromising integrity.
+      </p>
+      <div class="flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-gray-400 mt-6">
+        <a href="index.html" class="hover:text-[#E5A922] transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-[#E5A922]">About Us</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main About Us Section -->
+  <section id="about-us" class="py-20 lg:py-28 bg-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left: Overlapping Photo & Video Card -->
+        <div class="lg:col-span-6 relative flex items-center justify-center reveal-on-scroll reveal-fade-left">
+          <div class="relative w-full max-w-[500px]">
+            <img src="img/7.png" alt="The Leading Real Estate Rental Marketplace" class="w-full h-auto drop-shadow-lg select-none block">
+
+            <div class="absolute bottom-[10%] -left-[3%] sm:-left-[5%] z-20 w-[52%] max-w-[270px] rounded-xl overflow-hidden shadow-2xl cursor-pointer group transition-all duration-300 hover:scale-105 hover:shadow-2xl" onclick="toggleModal('video-modal')" title="Watch Video Tour">
+              <div class="relative overflow-hidden rounded-xl">
+                <img src="img/about-video.png" alt="Interior Video Walkthrough" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 block">
+                <div class="absolute inset-0 bg-black/25 flex items-center justify-center group-hover:bg-black/35 transition-colors">
+                  <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-[#7B1824] flex items-center justify-center shadow-2xl pulse-btn transform group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-play text-sm sm:text-base ml-1"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Text Content & Value Proposition -->
+        <div class="lg:col-span-6 space-y-6 lg:pl-6 mt-8 lg:mt-0 reveal-on-scroll reveal-fade-right reveal-delay-150">
+          <div>
+            <span class="inline-block text-[#7B1824] font-bold text-xs uppercase tracking-widest mb-2 bg-[#7B1824]/10 px-3.5 py-1 rounded-full">
+              About Us
+            </span>
+            <h2 class="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#14080B] leading-tight">
+              The Leading Real Estate Rental Marketplace.
+            </h2>
+          </div>
+
+          <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-light">
+            Over 39,000 people work for us in more than 70 countries all over the world. This breadth of global coverage, combined with specialist services and luxury residential developments, provides our clients with unmatched quality and security.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 py-2">
+            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8DFD3]/60 shadow-sm">
+              <div class="w-10 h-10 rounded-lg bg-[#7B1824]/10 flex items-center justify-center text-[#7B1824] shrink-0">
+                <i class="fa-solid fa-home text-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-[#14080B]">Smart Living Design</h4>
+                <p class="text-xs text-gray-500">Luxury modern lifestyle</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8DFD3]/60 shadow-sm">
+              <div class="w-10 h-10 rounded-lg bg-[#E5A922]/15 flex items-center justify-center text-[#E5A922] shrink-0">
+                <i class="fa-solid fa-shield-halved text-lg text-[#7B1824]"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-[#14080B]">Complete Security</h4>
+                <p class="text-xs text-gray-500">24/7 Gated intelligence</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-xl bg-[#FAF7F2] border-l-4 border-[#7B1824] text-xs sm:text-sm text-gray-700 leading-relaxed italic">
+            "Envisaging architectural landmarks that redefine modern Bangladeshi urban living with uncompromising luxury, safety, and natural serenity."
+          </div>
+
+          <div class="pt-2 flex flex-wrap items-center gap-4">
+            <a href="contact.html" class="px-8 py-3.5 bg-[#7B1824] hover:bg-[#60111A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider rounded-md shadow-lg shadow-maroon/25 transition-all transform hover:-translate-y-0.5">
+              Get in Touch
+            </a>
+            <a href="property.html" class="px-8 py-3.5 bg-white border border-gray-300 hover:border-[#7B1824] text-gray-800 hover:text-[#7B1824] font-bold text-xs sm:text-sm uppercase tracking-wider rounded-md shadow-sm transition-all">
+              Explore Properties
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Grid Feature Highlights (Parallax Half) -->
+  <section class="w-full relative overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed py-20" style="background-image: url('img/paralax-half.jpg');">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal-on-scroll reveal-fade-up">
+        <span class="inline-block px-4 py-1.5 bg-[#E5A922]/20 text-[#E5A922] text-xs font-bold uppercase tracking-widest rounded-full mb-3">Our Core Pillars</span>
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl text-white font-extrabold tracking-tight">Why Choose Mars Structure</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/15 text-center text-white reveal-on-scroll reveal-fade-up reveal-delay-100 hover:bg-white/15 transition-all">
+          <lord-icon src="https://cdn.lordicon.com/gmzxduhd.json" trigger="hover" colors="primary:#ffffff,secondary:#E5A922" style="width:70px;height:70px" class="mx-auto mb-4"></lord-icon>
+          <h3 class="text-lg font-bold mb-2">Prime Locations</h3>
+          <p class="text-xs text-gray-200 leading-relaxed font-light">Direct diplomatic boulevard & waterfront frontage across North Dhaka's premier sectors.</p>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/15 text-center text-white reveal-on-scroll reveal-fade-up reveal-delay-200 hover:bg-white/15 transition-all">
+          <lord-icon src="https://cdn.lordicon.com/kxoxiwrf.json" trigger="hover" colors="primary:#ffffff,secondary:#E5A922" style="width:70px;height:70px" class="mx-auto mb-4"></lord-icon>
+          <h3 class="text-lg font-bold mb-2">Architectural Grandeur</h3>
+          <p class="text-xs text-gray-200 leading-relaxed font-light">Tri-facade airflow, high ceiling clearance, and bespoke interior duplex layouts.</p>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/15 text-center text-white reveal-on-scroll reveal-fade-up reveal-delay-300 hover:bg-white/15 transition-all">
+          <lord-icon src="https://cdn.lordicon.com/jvucoldz.json" trigger="hover" colors="primary:#ffffff,secondary:#E5A922" style="width:70px;height:70px" class="mx-auto mb-4"></lord-icon>
+          <h3 class="text-lg font-bold mb-2">Legal Transparency</h3>
+          <p class="text-xs text-gray-200 leading-relaxed font-light">100% verified titles, RAJUK approved drawings, and clear documentation guarantee.</p>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/15 text-center text-white reveal-on-scroll reveal-fade-up reveal-delay-400 hover:bg-white/15 transition-all">
+          <lord-icon src="https://cdn.lordicon.com/nobciafz.json" trigger="hover" colors="primary:#ffffff,secondary:#E5A922" style="width:70px;height:70px" class="mx-auto mb-4"></lord-icon>
+          <h3 class="text-lg font-bold mb-2">Eco-Living & Serenity</h3>
+          <p class="text-xs text-gray-200 leading-relaxed font-light">Lush rooftop meditation gardens, solar water arrays, and rainwater harvesting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats / Counter Banner -->
+  <section id="stats-section" class="relative py-20 lg:py-24 bg-cover bg-center bg-fixed cursor-pointer select-none" style="background-image: linear-gradient(rgba(20, 8, 11, 0.92), rgba(72, 11, 18, 0.88)), url('img/banner-4.jpg');">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 text-center text-white divide-y md:divide-y-0 md:divide-x divide-white/10">
+        <div class="py-6 px-4 group reveal-on-scroll reveal-fade-up reveal-delay-100">
+          <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#E5A922] font-serif-luxury"><span class="stat-num" data-target="560">560</span>+</div>
+          <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-300 mt-2">Finished Projects</div>
+        </div>
+        <div class="py-6 px-4 group reveal-on-scroll reveal-fade-up reveal-delay-200">
+          <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-white font-serif-luxury"><span class="stat-num" data-target="197">197</span>+</div>
+          <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-300 mt-2">Experienced Agents</div>
+        </div>
+        <div class="py-6 px-4 group reveal-on-scroll reveal-fade-up reveal-delay-300">
+          <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#E5A922] font-serif-luxury"><span class="stat-num" data-target="268">268</span>+</div>
+          <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-300 mt-2">Happy Clients</div>
+        </div>
+        <div class="py-6 px-4 group reveal-on-scroll reveal-fade-up reveal-delay-400">
+          <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-white font-serif-luxury"><span class="stat-num" data-target="340">340</span>+</div>
+          <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-300 mt-2">Awards Won</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating CTA Card + Footer -->
+    <!-- ==========================================
+       SECTION 14: FLOATING CTA & FOOTER
+       Source: https://risingtheme.com/html/demo-newvilla/newvilla/index-2.html & image14
+       ========================================== -->
+    <!-- ==========================================
+       GLOBAL FOOTER (MATCHING HOME PAGE LUXURY DESIGN)
+       ========================================== -->
+  <div class="relative w-full pt-16">
+    <!-- Floating CTA Overlapping Card -->
+    <div class="relative -mb-16 z-30 max-w-6xl mx-auto px-4 sm:px-6 reveal-on-scroll reveal-fade-up">
+      <div class="bg-[#FF5A3C] bg-gradient-to-r from-[#7B1824] to-[#A82536] text-white p-8 sm:p-12 rounded-2xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
+            Looking for a dream home?
+          </h3>
+          <p class="text-xs sm:text-sm text-gray-200 mt-2 font-light">
+            We can help you realize your dream of a new home
+          </p>
+        </div>
+        <a href="property.html" class="shrink-0 px-8 py-3.5 bg-white text-gray-900 hover:bg-gray-100 font-bold text-xs sm:text-sm tracking-wide rounded-md shadow-lg transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
+          <span>Explore Properties</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Footer Container (Deep Noir) -->
+    <footer class="bg-[#14080B] text-gray-300 pt-28 pb-12 border-t border-[#480B12]/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- 5 Columns Footer Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-14 border-b border-gray-800">
+          
+          <!-- Column 1: Logo & Company Info -->
+          <div class="lg:col-span-1 space-y-4 reveal-on-scroll reveal-fade-up reveal-delay-100">
+            <!-- Brand Logo -->
+            <a href="index.html" class="inline-block bg-white p-2 rounded-md shadow">
+              <img src="img/logo.jpeg" alt="Mars Structure Limited" class="h-9 w-auto object-contain">
+            </a>
+            
+            <p class="text-xs text-gray-400 leading-relaxed font-light">
+              Pioneering luxury real estate development, bespoke duplex residences, and architectural masterworks with uncompromising integrity.
+            </p>
+
+            <div class="space-y-2 text-xs text-gray-400">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-[#E5A922] w-4"></i>
+                <span>Plot: 007, Road: 409A, Sector: 12, Jolshiri Abashon, Dhaka</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-phone text-[#E5A922] w-4"></i>
+                <span>+880 1700-000000</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-[#E5A922] w-4"></i>
+                <span>info@marsproperties.com</span>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center space-x-3 pt-2">
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <!-- Column 2: Company -->
+          <div class="reveal-on-scroll reveal-fade-up reveal-delay-150">
+            <h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">
+              Company
+            </h4>
+            <ul class="space-y-2.5 text-xs text-gray-400">
+              <li><a href="about.html" class="hover:text-[#E5A922] transition-colors">About Us</a></li>
+              <li><a href="property.html" class="hover:text-[#E5A922] transition-colors">All Products</a></li>
+              <li><a href="property-location.html" class="hover:text-[#E5A922] transition-colors">Locations Map</a></li>
+              <li><a href="contact.html" class="hover:text-[#E5A922] transition-colors">Contact us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Services -->
+          <div class="reveal-on-scroll reveal-fade-up reveal-delay-200">
+            <h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">
+              Services
+            </h4>
+            <ul class="space-y-2.5 text-xs text-gray-400">
+              <li><a href="property.html" class="hover:text-[#E5A922] transition-colors">Luxury Houses</a></li>
+              <li><a href="property.html" class="hover:text-[#E5A922] transition-colors">Wish List</a></li>
+              <li><a href="#" onclick="toggleModal('login-modal')" class="hover:text-[#E5A922] transition-colors">Login</a></li>
+              <li><a href="property.html" class="hover:text-[#E5A922] transition-colors">Floor Plans</a></li>
+              <li><a href="#" class="hover:text-[#E5A922] transition-colors">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Customer Care -->
+          <div class="reveal-on-scroll reveal-fade-up reveal-delay-250">
+            <h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">
+              Customer Care
+            </h4>
+            <ul class="space-y-2.5 text-xs text-gray-400">
+              <li><a href="#" onclick="toggleModal('login-modal')" class="hover:text-[#E5A922] transition-colors">Login / Register</a></li>
+              <li><a href="contact.html" class="hover:text-[#E5A922] transition-colors">Private Tour Booking</a></li>
+              <li><a href="contact.html" class="hover:text-[#E5A922] transition-colors">VIP Consultation</a></li>
+              <li><a href="contact.html" class="hover:text-[#E5A922] transition-colors">FAQ</a></li>
+              <li><a href="contact.html" class="hover:text-[#E5A922] transition-colors">Contact us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 5: Newsletter & Payment Badges -->
+          <div class="space-y-4 reveal-on-scroll reveal-fade-up reveal-delay-300">
+            <h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">
+              Newsletter
+            </h4>
+            <p class="text-xs text-gray-400 leading-relaxed">
+              Subscribe to our weekly Newsletter and receive updates via email.
+            </p>
+
+            <form onsubmit="handleNewsletter(event)" class="newsletter-form flex items-stretch w-full h-11 rounded-lg overflow-hidden shadow-sm mt-3 border border-transparent focus-within:border-[#E5A922] bg-white">
+              <input type="email" required placeholder="Email*" class="flex-1 min-w-0 bg-white text-gray-900 px-4 text-xs focus:outline-none placeholder-gray-400 border-0 h-full m-0">
+              <button type="submit" aria-label="Subscribe" class="bg-[#7B1824] hover:bg-[#60111A] text-white px-5 flex items-center justify-center transition-colors h-full shrink-0 cursor-pointer border-0 m-0">
+                <i class="fa-solid fa-paper-plane text-xs"></i>
+              </button>
+            </form>
+
+            <div class="pt-3">
+              <div class="text-xs font-bold text-white mb-2">We Accept</div>
+              <div class="bg-white rounded-md p-2 flex items-center justify-between text-gray-700 text-lg px-3 shadow-sm">
+                <i class="fa-brands fa-paypal text-[#003087]"></i>
+                <i class="fa-brands fa-cc-visa text-[#1A1F71]"></i>
+                <i class="fa-brands fa-cc-discover text-[#FF6000]"></i>
+                <i class="fa-brands fa-cc-mastercard text-[#EB001B]"></i>
+                <i class="fa-brands fa-cc-amex text-[#006FCF]"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Copyright Row -->
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+          <div>
+            All Rights Reserved @ Mars Structure Limited 2026
+          </div>
+          <div class="flex items-center space-x-6">
+            <a href="#" class="hover:text-white transition-colors">Terms & Conditions</a>
+            <a href="#" class="hover:text-white transition-colors">Claim</a>
+            <a href="#" class="hover:text-white transition-colors">Privacy & Policy</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scroll To Top Button -->
+  <button id="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed right-6 bottom-6 z-50 w-11 h-11 bg-[#7B1824] hover:bg-[#60111A] text-white rounded-md shadow-2xl flex items-center justify-center transition-all opacity-0 pointer-events-none transform translate-y-4 cursor-pointer" title="Scroll to Top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Video Modal -->
+  <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-md p-4">
+    <div class="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl border border-gray-800 flex flex-col">
+      <!-- Modal Header Bar -->
+      <div class="flex items-center justify-between px-4 sm:px-6 py-3 bg-neutral-900 border-b border-gray-800">
+        <div class="flex items-center gap-2.5">
+          <i class="fa-brands fa-youtube text-red-600 text-lg"></i>
+          <span class="text-white text-xs sm:text-sm font-bold tracking-wide">MARS MELORA @ Bashundhara L block</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://youtu.be/bHubVrfgFK8" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-[#E5A922] hover:bg-[#F3C843] text-[#14080B] text-xs font-bold rounded flex items-center gap-1.5 transition-colors shadow">
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            <span>Watch on YouTube</span>
+          </a>
+          <button onclick="toggleModal('video-modal')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition cursor-pointer" title="Close">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Video Player Container with Proper Referrer Policy & Fullscreen -->
+      <div class="aspect-video w-full bg-black flex items-center justify-center">
+        <iframe 
+          id="video-tour-iframe"
+          class="w-full h-full" 
+          src="https://www.youtube.com/embed/bHubVrfgFK8?autoplay=0&rel=0&enablejsapi=1" 
+          title="MARS MELORA @ Bashundhara L block" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+    <div class="relative w-full max-w-md bg-white rounded-2xl p-8 shadow-2xl">
+      <button onclick="toggleModal('login-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl cursor-pointer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h3 class="text-2xl font-extrabold text-gray-900 mb-2">Client Portal</h3>
+      <p class="text-xs text-gray-500 mb-6">Sign in to access VIP property portfolios and schedules</p>
+      <form onsubmit="event.preventDefault(); alert('Signed in successfully!'); toggleModal('login-modal');" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-bold text-gray-700 mb-1">Email</label>
+          <input type="email" required placeholder="name@domain.com" class="w-full px-3.5 py-2.5 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#7B1824]">
+        </div>
+        <div>
+          <label class="block font-bold text-gray-700 mb-1">Password</label>
+          <input type="password" required placeholder="••••••••" class="w-full px-3.5 py-2.5 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#7B1824]">
+        </div>
+        <button type="submit" class="w-full py-3 bg-[#7B1824] hover:bg-[#60111A] text-white font-bold rounded-lg transition-colors cursor-pointer uppercase tracking-wider">
+          Sign In
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    }
+
+    // Modal Toggle
+        function handleNewsletter(e) {
+      e.preventDefault();
+      alert('Thank you for subscribing to Mars Structure updates!');
+      e.target.reset();
+    }
+
+    function toggleModal(id) {
+      const m = document.getElementById(id);
+      if (!m) return;
+      if (m.classList.contains('hidden')) {
+        m.classList.remove('hidden');
+        m.classList.add('flex');
+        if (id === 'video-modal') {
+          const iframe = document.getElementById('video-tour-iframe');
+          if (iframe) {
+            iframe.src = 'https://www.youtube.com/embed/bHubVrfgFK8?autoplay=1&rel=0&enablejsapi=1';
+          }
+        }
+      } else {
+        m.classList.add('hidden');
+        m.classList.remove('flex');
+        if (id === 'video-modal') {
+          const iframe = document.getElementById('video-tour-iframe');
+          if (iframe) {
+            iframe.src = 'about:blank'; // stop playback
+          }
+        }
+      }
+    }
+
+    // Close open dropdowns
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.group')) {
+        document.querySelectorAll('.group > div').forEach(d => {
+          if (!d.classList.contains('hidden') && d.classList.contains('absolute')) {
+            // keep standard hover behavior
+          }
+        });
+      }
+    });
+
+    // Scroll Reveal Observer
+    function initScrollReveal() {
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+      if (!revealElements.length) return;
+
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08 });
+        revealElements.forEach(el => obs.observe(el));
+      } else {
+        revealElements.forEach(el => el.classList.add('is-revealed'));
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initScrollReveal);
+  </script>
+</body>
+</html>
