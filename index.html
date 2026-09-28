@@ -52,7 +52,7 @@
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            serif: ['"Playfair Display"', 'serif'],
+            serif: ['"Plus Jakarta Sans"', 'sans-serif'],
           }
         }
       }
@@ -83,8 +83,28 @@
       --mars-text-white: #FFFFFF;
     }
 
+    /* Universal Strict Font Family: Plus Jakarta Sans Across Entire Site */
+    *, *::before, *::after {
+      font-family: inherit;
+    }
+
+    body, h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, select {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+    }
+
+    /* Preserve Icon Font Families */
+    .fa, .fas, .far, .fal, .fa-solid, .fa-regular {
+      font-family: "Font Awesome 6 Free" !important;
+    }
+    .fab, .fa-brands {
+      font-family: "Font Awesome 6 Brands" !important;
+    }
+    [class^="ri-"], [class*=" ri-"] {
+      font-family: remixicon !important;
+    }
+
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
       color: var(--mars-text-main);
       background-color: #FFFFFF;
       overflow-x: hidden;
@@ -100,7 +120,7 @@
     }
 
     .font-serif-luxury {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
     }
 
     /* Ribbon diagonal for Trending badge */
@@ -392,6 +412,80 @@
       color: #FFFFFF;
       border-color: #7B1824;
       box-shadow: 0 6px 18px rgba(123, 24, 36, 0.25);
+    }
+
+    /* Luxury Building Amenities Cards */
+    .amenity-card {
+      position: relative;
+      background: #FFFFFF;
+      border: 1px solid #E8DFD3;
+      border-radius: 20px;
+      overflow: hidden; /* Perfectly rounds all children and top hover accent bar to 20px */
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 18px rgba(20, 8, 11, 0.03);
+    }
+    .amenity-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(123, 24, 36, 0.3);
+      box-shadow: 0 22px 45px -10px rgba(123, 24, 36, 0.15), 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+    /* Smooth Rounded Top Accent Bar on Hover */
+    .amenity-card .amenity-top-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #7B1824, #E5A922, #7B1824);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      z-index: 10;
+    }
+    .amenity-card:hover .amenity-top-bar {
+      transform: scaleX(1);
+    }
+    .amenity-card .amenity-icon-box {
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #FAF7F2 0%, #FFF5F5 100%);
+      border: 1px solid #E8DFD3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7B1824;
+      font-size: 26px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 14px rgba(20, 8, 11, 0.04);
+    }
+    .amenity-card:hover .amenity-icon-box {
+      background: #7B1824;
+      color: #FFFFFF;
+      border-color: #7B1824;
+      transform: scale(1.1) rotate(-3deg);
+      box-shadow: 0 12px 28px -4px rgba(123, 24, 36, 0.38);
+    }
+    .amenity-card .amenity-action-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #FAF7F2;
+      border: 1px solid #E8DFD3;
+      color: #7B1824;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .amenity-card:hover .amenity-action-btn {
+      background: #7B1824;
+      color: #FFFFFF;
+      border-color: #7B1824;
+      transform: rotate(-45deg);
     }
 
     /* Card Box Equal Height Guarantee */
@@ -769,16 +863,16 @@
        Source: https://logicsforest.org/html-preview/ideahomes/idea-home-files/
        ========================================== -->
   <header class="w-full relative z-40">
-    <!-- Top Information Bar -->
-    <div class="bg-white border-b border-[#E8DFD3] py-2.5 px-4 sm:px-8">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <!-- Top Information Bar (Desktop: Clean, Spacious, Uncluttered) -->
+    <div class="hidden lg:block bg-white border-b border-[#E8DFD3] py-2.5 px-4 sm:px-8">
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
         <!-- Logo -->
-        <a href="#" class="flex items-center gap-3 group">
-          <img src="img/logo.jpeg" alt="Mars Structure Limited" class="h-11 sm:h-13 w-auto object-contain transition-transform group-hover:scale-102">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="img/logo.jpeg" alt="Mars Structure Limited" class="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-102">
         </a>
 
         <!-- Top Right Actions -->
-        <div class="flex items-center flex-wrap gap-5 sm:gap-7 text-sm font-medium text-[#2B2B2B]">
+        <div class="flex items-center gap-6 text-sm font-medium text-[#2B2B2B]">
           <a href="#featured-listings" class="flex items-center gap-1.5 hover:text-[#7B1824] transition-colors">
             <i class="fa-regular fa-heart text-[#7B1824]"></i>
             <span>Favorite</span>
@@ -793,7 +887,7 @@
             <i class="fa-solid fa-hotel text-[#7B1824]"></i>
             <span>My Property</span>
           </a>
-          <button onclick="toggleModal('login-modal')" class="bg-[#7B1824] hover:bg-[#60111A] text-white px-5 py-2 rounded-md font-semibold text-xs sm:text-sm tracking-wide flex items-center gap-2 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+          <button onclick="toggleModal('login-modal')" class="bg-[#7B1824] hover:bg-[#60111A] text-white px-5 py-2 rounded-md font-semibold text-xs sm:text-sm tracking-wide flex items-center gap-2 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer">
             <i class="fa-solid fa-user-circle"></i>
             <span>Login / Register</span>
           </button>
@@ -801,20 +895,40 @@
       </div>
     </div>
 
-    <!-- Main Navigation Bar (Dark Glassmorphism) -->
-    <nav class="sticky top-0 z-50 glass-dark border-b border-[#480B12]/40 text-white transition-all duration-300">
-      <div class="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between h-14">
-        <!-- Mobile Menu Toggle -->
-        <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-[#E5A922] focus:outline-none p-2">
-          <i class="fa-solid fa-bars text-xl"></i>
+    <!-- Mobile Top Micro-Bar (Slim, Functional, High-End) -->
+    <div class="lg:hidden bg-[#14080B] text-white/80 py-1.5 px-4 text-[11px] font-medium border-b border-white/10 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-phone text-[#E5A922] text-[10px]"></i>
+        <a href="tel:+8801700000000" class="hover:text-white transition-colors">+880 1700-000000</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="#featured-listings" class="text-white/80 hover:text-[#E5A922] flex items-center gap-1 transition-colors">
+          <i class="fa-regular fa-heart text-[#E5A922] text-[10px]"></i>
+          <span>Favorites</span>
+        </a>
+        <span class="text-white/20">•</span>
+        <button onclick="toggleModal('login-modal')" class="text-[#E5A922] hover:text-white font-bold flex items-center gap-1 cursor-pointer transition-colors">
+          <i class="fa-solid fa-user text-[10px]"></i>
+          <span>Login</span>
         </button>
+      </div>
+    </div>
 
-        <!-- Desktop Menu Links (Updated matching user reference image) -->
+    <!-- Main Navigation Bar (Sticky with Dark Glassmorphism) -->
+    <nav class="sticky top-0 z-40 bg-[#14080B]/95 backdrop-blur-md border-b border-[#480B12]/40 text-white transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 sm:h-18 lg:h-14">
+        <!-- Mobile Brand Logo (Shows in sticky nav on mobile so branding is always fixed) -->
+        <a href="index.html" class="lg:hidden flex items-center gap-2.5 py-1">
+          <img src="img/logo.jpeg" alt="Mars Structure Limited" class="h-9 sm:h-10 w-auto object-contain rounded bg-white p-0.5 shadow-sm">
+          <span class="font-extrabold text-sm sm:text-base text-white tracking-tight hidden xs:inline">Mars Structure</span>
+        </a>
+
+        <!-- Desktop Menu Links -->
         <div class="hidden lg:flex items-center space-x-9 text-[15px] font-bold tracking-normal">
-          <a href="index.html" class="text-white hover:text-[#E5A922] transition-colors py-4">Home</a>
+          <a href="index.html" class="text-[#E5A922] hover:text-[#E5A922] transition-colors py-4">Home</a>
           <a href="about.html" class="text-white hover:text-[#E5A922] transition-colors py-4">About</a>
           
-          <!-- Property with Dropdown (Only Property shows dropdown) -->
+          <!-- Property with Dropdown -->
           <div class="relative group">
             <button type="button" class="flex items-center gap-1.5 py-4 text-white hover:text-[#E5A922] transition-colors focus:outline-none cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden'); event.stopPropagation();">
               <span>Property</span>
@@ -829,40 +943,119 @@
           <a href="contact.html" class="text-white hover:text-[#E5A922] transition-colors py-4">Contact Us</a>
         </div>
 
-        <!-- Social Media Icons (Header Right) -->
-        <div class="flex items-center space-x-3">
-          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs">
-            <i class="fa-brands fa-twitter"></i>
-          </a>
-          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs">
-            <i class="fa-brands fa-pinterest-p"></i>
-          </a>
+        <!-- Desktop Social Media Icons -->
+        <div class="hidden lg:flex items-center space-x-3">
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
         </div>
-      </div>
 
-      <!-- Mobile Dropdown Menu -->
-      <div id="mobile-menu" class="hidden lg:hidden bg-[#14080B] px-6 py-4 border-t border-[#480B12]/50 space-y-3 text-sm">
-        <a href="index.html" class="block text-white hover:text-[#E5A922] font-semibold py-1">Home</a>
-        <a href="about.html" class="block text-white hover:text-[#E5A922] py-1">About</a>
-        <div class="py-1">
-          <div class="flex items-center justify-between text-white font-semibold py-1 cursor-pointer" onclick="document.getElementById('mobile-prop-submenu').classList.toggle('hidden');">
-            <span>Property</span>
-            <i class="fa-solid fa-chevron-down text-xs"></i>
-          </div>
-          <div id="mobile-prop-submenu" class="pl-4 pt-1 space-y-2 border-l border-gray-700 mt-1">
-            <a href="property.html" class="block text-gray-300 hover:text-[#E5A922] text-xs py-1">Property</a>
-            <a href="property-location.html" class="block text-gray-300 hover:text-[#E5A922] text-xs py-1">Property Location</a>
-          </div>
+        <!-- Mobile Actions Group (Right Side) -->
+        <div class="lg:hidden flex items-center gap-2 sm:gap-3">
+          <a href="#contact-deal" class="px-3 py-1.5 rounded-lg bg-[#7B1824] hover:bg-[#60111A] text-white text-xs font-bold transition flex items-center gap-1.5 shadow-sm">
+            <i class="fa-solid fa-headset text-[11px]"></i>
+            <span class="hidden xs:inline">Inquire</span>
+          </a>
+          <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-[#7B1824] active:scale-95 text-white flex items-center justify-center transition-all cursor-pointer focus:outline-none" aria-label="Open Navigation Menu">
+            <i id="mobile-menu-icon" class="fa-solid fa-bars text-lg"></i>
+          </button>
         </div>
-        <a href="contact.html" class="block text-white hover:text-[#E5A922] py-1">Contact Us</a>
       </div>
     </nav>
+
+    <!-- Mobile Off-Canvas Drawer & Backdrop Overlay -->
+    <div id="mobile-drawer-backdrop" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm hidden transition-opacity duration-300 opacity-0" onclick="toggleMobileMenu()"></div>
+    
+    <aside id="mobile-drawer" class="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-[#14080B] text-white z-50 shadow-2xl flex flex-col justify-between border-l border-white/10 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto no-scrollbar">
+      <!-- Drawer Top: Header & Links -->
+      <div>
+        <!-- Drawer Header -->
+        <div class="p-5 border-b border-white/10 flex items-center justify-between bg-black/40">
+          <a href="index.html" class="flex items-center gap-3" onclick="toggleMobileMenu()">
+            <img src="img/logo.jpeg" alt="Mars Structure Limited" class="h-10 w-auto object-contain rounded bg-white p-0.5">
+            <div>
+              <span class="font-extrabold text-sm text-white block">Mars Structure</span>
+              <span class="text-[10px] text-[#E5A922] font-semibold tracking-wider uppercase block">Premium Real Estate</span>
+            </div>
+          </a>
+          <button onclick="toggleMobileMenu()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#7B1824] text-white flex items-center justify-center transition cursor-pointer" aria-label="Close Navigation Menu">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
+
+        <!-- Quick CTAs inside Mobile Drawer -->
+        <div class="p-4 bg-white/5 border-b border-white/10 grid grid-cols-2 gap-2">
+          <a href="#contact-deal" onclick="toggleMobileMenu()" class="py-2.5 px-3 rounded-xl bg-[#7B1824] hover:bg-[#60111A] text-white text-xs font-bold text-center transition flex items-center justify-center gap-1.5 shadow-sm">
+            <i class="fa-solid fa-cloud-arrow-up text-xs"></i>
+            <span>Submit Prop</span>
+          </a>
+          <button onclick="toggleMobileMenu(); toggleModal('login-modal');" class="py-2.5 px-3 rounded-xl bg-[#E5A922] hover:bg-[#F3C843] text-[#14080B] text-xs font-bold text-center transition flex items-center justify-center gap-1.5 shadow-sm cursor-pointer">
+            <i class="fa-solid fa-user-circle text-xs"></i>
+            <span>Resident Login</span>
+          </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="p-4 space-y-1 text-sm font-semibold">
+          <a href="index.html" onclick="toggleMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-white/10 text-[#E5A922] transition-colors">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-house text-[#E5A922] text-xs w-4 text-center"></i> Home</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-gray-500"></i>
+          </a>
+          <a href="about.html" onclick="toggleMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-white/10 text-white hover:text-[#E5A922] transition-colors">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-building text-[#E5A922] text-xs w-4 text-center"></i> About Us</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-gray-500"></i>
+          </a>
+          
+          <!-- Property Accordion -->
+          <div class="rounded-xl overflow-hidden">
+            <button type="button" onclick="document.getElementById('drawer-prop-submenu').classList.toggle('hidden'); document.getElementById('drawer-prop-arrow').classList.toggle('rotate-180');" class="w-full flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-white/10 text-white hover:text-[#E5A922] transition-colors cursor-pointer">
+              <span class="flex items-center gap-3"><i class="fa-solid fa-city text-[#E5A922] text-xs w-4 text-center"></i> Properties</span>
+              <i id="drawer-prop-arrow" class="fa-solid fa-chevron-down text-[10px] text-gray-400 transition-transform duration-200"></i>
+            </button>
+            <div id="drawer-prop-submenu" class="hidden pl-9 pr-3 py-1 space-y-1 bg-black/30 rounded-lg my-1">
+              <a href="property.html" onclick="toggleMobileMenu()" class="block py-2 text-xs text-gray-300 hover:text-[#E5A922] transition-colors border-b border-white/5">Property</a>
+              <a href="property-location.html" onclick="toggleMobileMenu()" class="block py-2 text-xs text-gray-300 hover:text-[#E5A922] transition-colors">Property Location</a>
+            </div>
+          </div>
+
+          <a href="contact.html" onclick="toggleMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-white/10 text-white hover:text-[#E5A922] transition-colors">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-envelope text-[#E5A922] text-xs w-4 text-center"></i> Contact Us</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-gray-500"></i>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Drawer Footer & Social -->
+      <div class="p-5 border-t border-white/10 bg-black/40 space-y-4">
+        <!-- Direct Contact -->
+        <div class="space-y-2 text-xs text-gray-300">
+          <a href="tel:+8801700000000" class="flex items-center gap-2.5 hover:text-[#E5A922] transition-colors">
+            <i class="fa-solid fa-phone text-[#E5A922] text-xs"></i>
+            <span>+880 1700-000000</span>
+          </a>
+          <a href="mailto:info@marsstructure.com" class="flex items-center gap-2.5 hover:text-[#E5A922] transition-colors">
+            <i class="fa-solid fa-envelope text-[#E5A922] text-xs"></i>
+            <span>info@marsstructure.com</span>
+          </a>
+          <div class="flex items-center gap-2.5 text-gray-400">
+            <i class="fa-solid fa-location-dot text-[#E5A922] text-xs"></i>
+            <span>Bashundhara & Gulshan, Dhaka</span>
+          </div>
+        </div>
+
+        <!-- Social Media Strip -->
+        <div class="pt-3 border-t border-white/10 flex items-center justify-between">
+          <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Follow Us</span>
+          <div class="flex items-center gap-2">
+            <a href="#" class="w-7 h-7 rounded-full bg-white/10 hover:bg-[#1877F2] text-white flex items-center justify-center text-xs transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-7 h-7 rounded-full bg-white/10 hover:bg-[#1DA1F2] text-white flex items-center justify-center text-xs transition-colors" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="w-7 h-7 rounded-full bg-white/10 hover:bg-[#E4405F] text-white flex items-center justify-center text-xs transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="w-7 h-7 rounded-full bg-white/10 hover:bg-[#E60023] text-white flex items-center justify-center text-xs transition-colors" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+          </div>
+        </div>
+      </div>
+    </aside>
 
     <!-- Hero Slider Showcase -->
     <div id="hero-section" class="relative min-h-[580px] lg:min-h-[720px] w-full flex items-center overflow-hidden bg-black/10">
@@ -875,11 +1068,11 @@
       <!-- Luminous Natural Light Overlay - Greatly reduced opacity so banner slide displays with radiant daylight -->
       <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/15 to-transparent pointer-events-none"></div>
 
-      <!-- Slider Arrows -->
-      <button onclick="prevHeroSlide()" class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/80 hover:bg-white text-gray-900 flex items-center justify-center shadow-2xl transition-all transform hover:scale-110 cursor-pointer" title="Previous Slide">
+      <!-- Slider Arrows (Hidden on Mobile View, visible on Tablet/Desktop) -->
+      <button onclick="prevHeroSlide()" class="hidden md:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 lg:w-13 lg:h-13 rounded-full bg-white/80 hover:bg-white text-gray-900 items-center justify-center shadow-2xl transition-all transform hover:scale-110 cursor-pointer" title="Previous Slide">
         <i class="fa-solid fa-arrow-left text-sm sm:text-base"></i>
       </button>
-      <button onclick="nextHeroSlide()" class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/80 hover:bg-white text-gray-900 flex items-center justify-center shadow-2xl transition-all transform hover:scale-110 cursor-pointer" title="Next Slide">
+      <button onclick="nextHeroSlide()" class="hidden md:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 lg:w-13 lg:h-13 rounded-full bg-white/80 hover:bg-white text-gray-900 items-center justify-center shadow-2xl transition-all transform hover:scale-110 cursor-pointer" title="Next Slide">
         <i class="fa-solid fa-arrow-right text-sm sm:text-base"></i>
       </button>
 
@@ -1029,123 +1222,306 @@
 
   <!-- ==========================================
        SECTION 3: BUILDING AMENITIES
-       Source: https://tunatheme.com/tf/html/quarter-preview/quarter/index.html
+       Luxury Mars Architectural Collection
        ========================================== -->
-  <section id="amenities-section" class="py-20 lg:py-24 bg-[#FAF7F2]/60 border-y border-[#E8DFD3]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Title -->
+  <section id="amenities-section" class="py-20 lg:py-28 bg-[#FAF7F2] relative overflow-hidden border-y border-[#E8DFD3]">
+    <!-- Ambient luxury background glow -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#7B1824]/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-[#E5A922]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- Section Header -->
       <div class="text-center mb-16 reveal-on-scroll reveal-fade-up">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7B1824]/10 border border-[#7B1824]/20 text-[#7B1824] text-xs font-bold uppercase tracking-widest mb-3">
+          <i class="fa-solid fa-crown text-[#E5A922] text-xs"></i>
+          <span>Signature Privileges</span>
+        </div>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#14080B] tracking-tight">
-          Building Amenities
+          Building <span class="relative inline-block text-[#7B1824]">Amenities
+            <svg class="absolute -bottom-2.5 left-0 w-full" height="7" viewBox="0 0 100 7" preserveAspectRatio="none" fill="none">
+              <path d="M0 3.5C25 1 75 6 100 3.5" stroke="#E5A922" stroke-width="4.5" stroke-linecap="round"/>
+            </svg>
+          </span>
         </h2>
-        <div class="w-16 h-1 bg-[#7B1824] mx-auto mt-3 rounded-full"></div>
+        <p class="max-w-2xl mx-auto mt-4 text-sm sm:text-base text-[#6B6560] leading-relaxed">
+          Curated ultra-luxury conveniences and architectural amenities engineered for an unmatched living experience.
+        </p>
       </div>
 
-      <!-- 8 Amenity Cards Grid (Active styling on hover for all cards) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+      <!-- 8 Amenity Cards Grid (High-end luxury cards with interactive specs) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
         <!-- 1. Parking Space -->
-        <div class="amenity-card bg-white hover:bg-[#7B1824] border border-gray-100 hover:border-[#7B1824] p-8 rounded-2xl shadow-sm hover:shadow-2xl flex flex-col items-center text-center transition-all duration-300 group cursor-pointer hover:-translate-y-2 reveal-on-scroll reveal-fade-up reveal-delay-50">
-          <div class="w-16 h-16 rounded-full bg-[#FFF5F5] group-hover:bg-white flex items-center justify-center text-[#7B1824] transition-all duration-300 text-2xl mb-5 shadow-sm group-hover:shadow-md">
-            <i class="fa-solid fa-car-side"></i>
+        <div class="amenity-card group p-7 flex flex-col justify-between cursor-pointer reveal-on-scroll reveal-fade-up reveal-delay-50" onclick="openAmenityModal(1)" title="Click to view Parking Space details">
+          <div class="amenity-top-bar"></div>
+          <div>
+            <div class="flex items-center justify-between w-full mb-5">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[#7B1824] bg-[#7B1824]/8 px-2.5 py-1 rounded-full border border-[#7B1824]/15">
+                Infrastructure
+              </span>
+              <span class="text-xs font-bold text-gray-300 group-hover:text-[#E5A922] transition-colors duration-300">
+                01
+              </span>
+            </div>
+            <div class="amenity-icon-box mx-auto mb-5">
+              <i class="fa-solid fa-car-side"></i>
+            </div>
+            <h3 class="font-bold text-lg text-[#14080B] group-hover:text-[#7B1824] transition-colors duration-300 mb-2">
+              Parking Space
+            </h3>
+            <p class="text-xs text-[#6B6560] leading-relaxed mb-6 line-clamp-2">
+              Multi-level secured basement parking with reserved EV rapid charging stations.
+            </p>
           </div>
-          <h3 class="font-bold text-base text-[#14080B] group-hover:text-white transition-colors duration-300 mb-6">
-            Parking Space
-          </h3>
-          <div class="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 group-hover:bg-white group-hover:border-white group-hover:text-[#7B1824] flex items-center justify-center text-gray-500 text-xs transition-all duration-300 shadow-sm group-hover:shadow-md">
-            <i class="fa-solid fa-arrow-right group-hover:translate-x-0.5 transition-transform duration-300"></i>
+          <div class="pt-4 border-t border-[#E8DFD3]/70 flex items-center justify-between w-full">
+            <span class="text-[11px] font-semibold text-[#184E42] bg-[#184E42]/8 px-2.5 py-1 rounded-md flex items-center gap-1.5">
+              <i class="fa-solid fa-bolt text-[#E5A922] text-[10px]"></i> EV Stations
+            </span>
+            <div class="amenity-action-btn">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
           </div>
         </div>
 
         <!-- 2. Swimming Pool -->
-        <div class="amenity-card bg-white hover:bg-[#7B1824] border border-gray-100 hover:border-[#7B1824] p-8 rounded-2xl shadow-sm hover:shadow-2xl flex flex-col items-center text-center transition-all duration-300 group cursor-pointer hover:-translate-y-2 reveal-on-scroll reveal-fade-up reveal-delay-100">
-          <div class="w-16 h-16 rounded-full bg-[#FFF5F5] group-hover:bg-white flex items-center justify-center text-[#7B1824] transition-all duration-300 text-2xl mb-5 shadow-sm group-hover:shadow-md">
-            <i class="fa-solid fa-water-ladder"></i>
+        <div class="amenity-card group p-7 flex flex-col justify-between cursor-pointer reveal-on-scroll reveal-fade-up reveal-delay-100" onclick="openAmenityModal(2)" title="Click to view Swimming Pool details">
+          <div class="amenity-top-bar"></div>
+          <div>
+            <div class="flex items-center justify-between w-full mb-5">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[#7B1824] bg-[#7B1824]/8 px-2.5 py-1 rounded-full border border-[#7B1824]/15">
+                Wellness & Spa
+              </span>
+              <span class="text-xs font-bold text-gray-300 group-hover:text-[#E5A922] transition-colors duration-300">
+                02
+              </span>
+            </div>
+            <div class="amenity-icon-box mx-auto mb-5">
+              <i class="fa-solid fa-water-ladder"></i>
+            </div>
+            <h3 class="font-bold text-lg text-[#14080B] group-hover:text-[#7B1824] transition-colors duration-300 mb-2">
+              Swimming Pool
+            </h3>
+            <p class="text-xs text-[#6B6560] leading-relaxed mb-6 line-clamp-2">
+              Temperature-controlled rooftop infinity pool with private sundecks & skyline panorama.
+            </p>
           </div>
-          <h3 class="font-bold text-base text-[#14080B] group-hover:text-white transition-colors duration-300 mb-6">
-            Swimming Pool
-          </h3>
-          <div class="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 group-hover:bg-white group-hover:border-white group-hover:text-[#7B1824] flex items-center justify-center text-gray-500 text-xs transition-all duration-300 shadow-sm group-hover:shadow-md">
-            <i class="fa-solid fa-arrow-right group-hover:translate-x-0.5 transition-transform duration-300"></i>
+          <div class="pt-4 border-t border-[#E8DFD3]/70 flex items-center justify-between w-full">
+            <span class="text-[11px] font-semibold text-[#184E42] bg-[#184E42]/8 px-2.5 py-1 rounded-md flex items-center gap-1.5">
+              <i class="fa-solid fa-temperature-arrow-up text-[#E5A922] text-[10px]"></i> Heated Infinity
+            </span>
+            <div class="amenity-action-btn">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
           </div>
         </div>
 
         <!-- 3. Private Security -->
-        <div class="amenity-card bg-white hover:bg-[#7B1824] border border-gray-100 hover:border-[#7B1824] p-8 rounded-2xl shadow-sm hover:shadow-2xl flex flex-col items-center text-center transition-all duration-300 group cursor-pointer hover:-translate-y-2 reveal-on-scroll reveal-fade-up reveal-delay-150">
-          <div class="w-16 h-16 rounded-full bg-[#FFF5F5] group-hover:bg-white flex items-center justify-center text-[#7B1824] transition-all duration-300 text-2xl mb-5 shadow-sm group-hover:shadow-md">
-            <i class="fa-solid fa-shield-virus"></i>
+        <div class="amenity-card group p-7 flex flex-col justify-between cursor-pointer reveal-on-scroll reveal-fade-up reveal-delay-150" onclick="openAmenityModal(3)" title="Click to view Private Security details">
+          <div class="amenity-top-bar"></div>
+          <div>
+            <div class="flex items-center justify-between w-full mb-5">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[#7B1824] bg-[#7B1824]/8 px-2.5 py-1 rounded-full border border-[#7B1824]/15">
+                Safety & Defense
+              </span>
+              <span class="text-xs font-bold text-gray-300 group-hover:text-[#E5A922] transition-colors duration-300">
+                03
+              </span>
+            </div>
+            <div class="amenity-icon-box mx-auto mb-5">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3 class="font-bold text-lg text-[#14080B] group-hover:text-[#7B1824] transition-colors duration-300 mb-2">
+              Private Security
+            </h3>
+            <p class="text-xs text-[#6B6560] leading-relaxed mb-6 line-clamp-2">
+              Multi-tiered biometric access control, 24/7 AI CCTV defense & certified security officers.
+            </p>
           </div>
-          <h3 class="font-bold text-base text-[#14080B] group-hover:text-white transition-colors duration-300 mb-6">
-            Private Security
-          </h3>
-          <div class="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 group-hover:bg-white group-hover:border-white group-hover:text-[#7B1824] flex items-center justify-center text-gray-500 text-xs transition-all duration-300 shadow-sm group-hover:shadow-md">
-            <i class="fa-solid fa-arrow-right group-hover:translate-x-0.5 transition-transform duration-300"></i>
+          <div class="pt-4 border-t border-[#E8DFD3]/70 flex items-center justify-between w-full">
+            <span class="text-[11px] font-semibold text-[#184E42] bg-[#184E42]/8 px-2.5 py-1 rounded-md flex items-center gap-1.5">
+              <i class="fa-solid fa-video text-[#E5A922] text-[10px]"></i> 24/7 CCTV & Guards
+            </span>
+            <div class="amenity-action-btn">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
           </div>
         </div>
 
         <!-- 4. Medical Center -->
-        <div class="amenity-card bg-white hover:bg-[#7B1824] border border-gray-100 hover:border-[#7B1824] p-8 rounded-2xl shadow-sm hover:shadow-2xl flex flex-col items-center text-center transition-all duration-300 group cursor-pointer hover:-translate-y-2 reveal-on-scroll reveal-fade-up reveal-delay-200">
-          <div class="w-16 h-16 rounded-full bg-[#FFF5F5] group-hover:bg-white flex items-center justify-center text-[#7B1824] transition-all duration-300 text-2xl mb-5 shadow-sm group-hover:shadow-md">
-            <i class="fa-solid fa-stethoscope"></i>
+        <div class="amenity-card group p-7 flex flex-col justify-between cursor-pointer reveal-on-scroll reveal-fade-up reveal-delay-200" onclick="openAmenityModal(4)" title="Click to view Medical Center details">
+          <div class="amenity-top-bar"></div>
+          <div>
+            <div class="flex items-center justify-between w-full mb-5">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[#7B1824] bg-[#7B1824]/8 px-2.5 py-1 rounded-full border border-[#7B1824]/15">
+                Healthcare
+              </span>
+              <span class="text-xs font-bold text-gray-300 group-hover:text-[#E5A922] transition-colors duration-300">
+                04
+              </span>
+            </div>
+            <div class="amenity-icon-box mx-auto mb-5">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <h3 class="font-bold text-lg text-[#14080B] group-hover:text-[#7B1824] transition-colors duration-300 mb-2">
+              Medical Center
+            </h3>
+            <p class="text-xs text-[#6B6560] leading-relaxed mb-6 line-clamp-2">
+              On-site resident clinic for immediate emergency first-aid, AED care & doctor consultations.
+            </p>
           </div>
-          <h3 class="font-bold text-base text-[#14080B] group-hover:text-white transition-colors duration-300 mb-6">
-            Medical Center
-          </h3>
-          <div class="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 group-hover:bg-white group-hover:border-white group-hover:text-[#7B1824] flex items-center justify-center text-gray-500 text-xs transition-all duration-300 shadow-sm group-hover:shadow-md">
-            <i class="fa-solid fa-arrow-right group-hover:translate-x-0.5 transition-transform duration-300"></i>
+          <div class="pt-4 border-t border-[#E8DFD3]/70 flex items-center justify-between w-full">
+            <span class="text-[11px] font-semibold text-[#184E42] bg-[#184E42]/8 px-2.5 py-1 rounded-md flex items-center gap-1.5">
+              <i class="fa-solid fa-kit-medical text-[#E5A922] text-[10px]"></i> Resident Clinic
+            </span>
+            <div class="amenity-action-btn">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
           </div>
         </div>
 
         <!-- 5. Library Area -->
-        <div class="amenity-card bg-white hover:bg-[#7B1824] border border-gray-100 hover:border-[#7B1824] p-8 rounded-2xl shadow-sm hover:shadow-2xl flex flex-col items-center text-center transition-all duration-300 group cursor-pointer hover:-translate-y-2 reveal-on-scroll reveal-fade-up reveal-delay-250">
-          <div class="w-16 h-16 rounded-full bg-[#FFF5F5] group-hover:bg-white flex items-center justify-center text-[#7B1824] transition-all duration-300 text-2xl mb-5 shadow-sm group-hover:shadow-md">
-            <i class="fa-solid fa-book-open-reader"></i>
+        <div class="amenity-card group p-7 flex flex-col justify-between cursor-pointer reveal-on-scroll reveal-fade-up reveal-delay-250" onclick="openAmenityModal(5)" title="Click to view Library Area details">
+          <div class="amenity-top-bar"></div>
+          <div>
+            <div class="flex items-center justify-between w-full mb-5">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[#7B1824] bg-[#7B1824]/8 px-2.5 py-1 rounded-full border border-[#7B1824]/15">
+                Culture & Study
+              </span>
+              <span class="text-xs font-bold text-gray-300 group-hover:text-[#E5A922] transition-colors duration-300">
+                05
+              </span>
+            </div>
+            <div class="amenity-icon-box mx-auto mb-5">
+              <i class="fa-solid fa-book-open-reader"></i>
+            </div>
+            <h3 class="font-bold text-lg text-[#14080B] group-hover:text-[#7B1824] transition-colors duration-300 mb-2">
+              Library Area
+            </h3>
+            <p class="text-xs text-[#6B6560] leading-relaxed mb-6 line-clamp-2">
+              Acoustically isolated reading sanctuary with fiber WiFi, study pods & curated volumes.
+            </p>
           </div>
-          <h3 class="font-bold text-base text-[#14080B] group-hover:text-white transition-colors duration-300 mb-6">
-            Library Area
-          </h3>
-          <div class="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 group-hover:bg-white group-hover:border-white group-hover:text-[#7B1824] flex items-center justify-center text-gray-500 text-xs transition-all duration-300 shadow-sm group-hover:shadow-md">
-            <i class="fa-solid fa-arrow-right group-hover:translate-x-0.5 transition-transform duration-300"></i>
+          <div class="pt-4 border-t border-[#E8DFD3]/70 flex items-center justify-between w-full">
+            <span class="text-[11px] font-semibold text-[#184E42] bg-[#184E42]/8 px-2.5 py-1 rounded-md flex items-center gap-1.5">
+              <i class="fa-solid fa-wifi text-[#E5A922] text-[10px]"></i> Acoustic Lounge
+            </span>
+            <div class="amenity-action-btn">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
           </div>
         </div>
 
-        <!-- 6. King Size Beds -->
-        <div class="amenity-card bg-white hover:bg-[#7B1824] border border-gray-100 hover:border-[#7B1824] p-8 rounded-2xl shadow-sm hover:shadow-2xl flex flex-col items-center text-center transition-all duration-300 group cursor-pointer hover:-translate-y-2 reveal-on-scroll reveal-fade-up reveal-delay-300">
-          <div class="w-16 h-16 rounded-full bg-[#FFF5F5] group-hover:bg-white flex items-center justify-center text-[#7B1824] transition-all duration-300 text-2xl mb-5 shadow-sm group-hover:shadow-md">
-            <i class="fa-solid fa-bed"></i>
+        <!-- 6. King Size Suites -->
+        <div class="amenity-card group p-7 flex flex-col justify-between cursor-pointer reveal-on-scroll reveal-fade-up reveal-delay-300" onclick="openAmenityModal(6)" title="Click to view King Size Suites details">
+          <div class="amenity-top-bar"></div>
+          <div>
+            <div class="flex items-center justify-between w-full mb-5">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[#7B1824] bg-[#7B1824]/8 px-2.5 py-1 rounded-full border border-[#7B1824]/15">
+                Luxury Living
+              </span>
+              <span class="text-xs font-bold text-gray-300 group-hover:text-[#E5A922] transition-colors duration-300">
+                06
+              </span>
+            </div>
+            <div class="amenity-icon-box mx-auto mb-5">
+              <i class="fa-solid fa-bed"></i>
+            </div>
+            <h3 class="font-bold text-lg text-[#14080B] group-hover:text-[#7B1824] transition-colors duration-300 mb-2">
+              King Size Suites
+            </h3>
+            <p class="text-xs text-[#6B6560] leading-relaxed mb-6 line-clamp-2">
+              Master suites with soundproof acoustic glazing, walk-in dressing suites & private terraces.
+            </p>
           </div>
-          <h3 class="font-bold text-base text-[#14080B] group-hover:text-white transition-colors duration-300 mb-6">
-            King Size Beds
-          </h3>
-          <div class="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 group-hover:bg-white group-hover:border-white group-hover:text-[#7B1824] flex items-center justify-center text-gray-500 text-xs transition-all duration-300 shadow-sm group-hover:shadow-md">
-            <i class="fa-solid fa-arrow-right group-hover:translate-x-0.5 transition-transform duration-300"></i>
+          <div class="pt-4 border-t border-[#E8DFD3]/70 flex items-center justify-between w-full">
+            <span class="text-[11px] font-semibold text-[#184E42] bg-[#184E42]/8 px-2.5 py-1 rounded-md flex items-center gap-1.5">
+              <i class="fa-solid fa-crown text-[#E5A922] text-[10px]"></i> Soundproof Suites
+            </span>
+            <div class="amenity-action-btn">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
           </div>
         </div>
 
         <!-- 7. Smart Homes -->
-        <div class="amenity-card bg-white hover:bg-[#7B1824] border border-gray-100 hover:border-[#7B1824] p-8 rounded-2xl shadow-sm hover:shadow-2xl flex flex-col items-center text-center transition-all duration-300 group cursor-pointer hover:-translate-y-2 reveal-on-scroll reveal-fade-up reveal-delay-350">
-          <div class="w-16 h-16 rounded-full bg-[#FFF5F5] group-hover:bg-white flex items-center justify-center text-[#7B1824] transition-all duration-300 text-2xl mb-5 shadow-sm group-hover:shadow-md">
-            <i class="fa-solid fa-house-signal"></i>
+        <div class="amenity-card group p-7 flex flex-col justify-between cursor-pointer reveal-on-scroll reveal-fade-up reveal-delay-350" onclick="openAmenityModal(7)" title="Click to view Smart Homes details">
+          <div class="amenity-top-bar"></div>
+          <div>
+            <div class="flex items-center justify-between w-full mb-5">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[#7B1824] bg-[#7B1824]/8 px-2.5 py-1 rounded-full border border-[#7B1824]/15">
+                Next-Gen Tech
+              </span>
+              <span class="text-xs font-bold text-gray-300 group-hover:text-[#E5A922] transition-colors duration-300">
+                07
+              </span>
+            </div>
+            <div class="amenity-icon-box mx-auto mb-5">
+              <i class="fa-solid fa-house-signal"></i>
+            </div>
+            <h3 class="font-bold text-lg text-[#14080B] group-hover:text-[#7B1824] transition-colors duration-300 mb-2">
+              Smart Homes
+            </h3>
+            <p class="text-xs text-[#6B6560] leading-relaxed mb-6 line-clamp-2">
+              Integrated IoT automation for climate regulation, architectural lighting & keyless entry.
+            </p>
           </div>
-          <h3 class="font-bold text-base text-[#14080B] group-hover:text-white transition-colors duration-300 mb-6">
-            Smart Homes
-          </h3>
-          <div class="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 group-hover:bg-white group-hover:border-white group-hover:text-[#7B1824] flex items-center justify-center text-gray-500 text-xs transition-all duration-300 shadow-sm group-hover:shadow-md">
-            <i class="fa-solid fa-arrow-right group-hover:translate-x-0.5 transition-transform duration-300"></i>
+          <div class="pt-4 border-t border-[#E8DFD3]/70 flex items-center justify-between w-full">
+            <span class="text-[11px] font-semibold text-[#184E42] bg-[#184E42]/8 px-2.5 py-1 rounded-md flex items-center gap-1.5">
+              <i class="fa-solid fa-mobile-screen text-[#E5A922] text-[10px]"></i> IoT App Control
+            </span>
+            <div class="amenity-action-btn">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
           </div>
         </div>
 
         <!-- 8. Kid's Playland -->
-        <div class="amenity-card bg-white hover:bg-[#7B1824] border border-gray-100 hover:border-[#7B1824] p-8 rounded-2xl shadow-sm hover:shadow-2xl flex flex-col items-center text-center transition-all duration-300 group cursor-pointer hover:-translate-y-2 reveal-on-scroll reveal-fade-up reveal-delay-400">
-          <div class="w-16 h-16 rounded-full bg-[#FFF5F5] group-hover:bg-white flex items-center justify-center text-[#7B1824] transition-all duration-300 text-2xl mb-5 shadow-sm group-hover:shadow-md">
-            <i class="fa-solid fa-shapes"></i>
+        <div class="amenity-card group p-7 flex flex-col justify-between cursor-pointer reveal-on-scroll reveal-fade-up reveal-delay-400" onclick="openAmenityModal(8)" title="Click to view Kid's Playland details">
+          <div class="amenity-top-bar"></div>
+          <div>
+            <div class="flex items-center justify-between w-full mb-5">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[#7B1824] bg-[#7B1824]/8 px-2.5 py-1 rounded-full border border-[#7B1824]/15">
+                Family & Joy
+              </span>
+              <span class="text-xs font-bold text-gray-300 group-hover:text-[#E5A922] transition-colors duration-300">
+                08
+              </span>
+            </div>
+            <div class="amenity-icon-box mx-auto mb-5">
+              <i class="fa-solid fa-shapes"></i>
+            </div>
+            <h3 class="font-bold text-lg text-[#14080B] group-hover:text-[#7B1824] transition-colors duration-300 mb-2">
+              Kid’s Playland
+            </h3>
+            <p class="text-xs text-[#6B6560] leading-relaxed mb-6 line-clamp-2">
+              Safe, cushioned discovery activity park with child-safe equipment & parent viewing lounge.
+            </p>
           </div>
-          <h3 class="font-bold text-base text-[#14080B] group-hover:text-white transition-colors duration-300 mb-6">
-            Kid’s Playland
-          </h3>
-          <div class="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 group-hover:bg-white group-hover:border-white group-hover:text-[#7B1824] flex items-center justify-center text-gray-500 text-xs transition-all duration-300 shadow-sm group-hover:shadow-md">
-            <i class="fa-solid fa-arrow-right group-hover:translate-x-0.5 transition-transform duration-300"></i>
+          <div class="pt-4 border-t border-[#E8DFD3]/70 flex items-center justify-between w-full">
+            <span class="text-[11px] font-semibold text-[#184E42] bg-[#184E42]/8 px-2.5 py-1 rounded-md flex items-center gap-1.5">
+              <i class="fa-solid fa-shield-cat text-[#E5A922] text-[10px]"></i> Cushioned Safety
+            </span>
+            <div class="amenity-action-btn">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
           </div>
         </div>
+      </div>
+
+      <!-- Amenities Bottom Privilege Banner -->
+      <div class="mt-12 p-6 sm:p-8 rounded-2xl bg-white border border-[#E8DFD3] shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 reveal-on-scroll reveal-fade-up">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-[#7B1824]/10 text-[#7B1824] flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-star text-[#E5A922]"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-base text-[#14080B]">Custom Architectural & Concierge Upgrades Available</h4>
+            <p class="text-xs sm:text-sm text-[#6B6560] mt-0.5">Looking for customized interior layouts or bespoke facilities? Our architectural concierge team will tailor your residence.</p>
+          </div>
+        </div>
+        <a href="#contact-deal" class="shrink-0 px-6 py-3 rounded-xl bg-[#7B1824] hover:bg-[#60111A] text-white text-xs sm:text-sm font-bold transition shadow-md hover:shadow-lg flex items-center gap-2">
+          <span>Inquire With Concierge</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
       </div>
     </div>
   </section>
@@ -1502,7 +1878,23 @@
                 <div>
                   <div class="info">
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Villa</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
+                    <ul class="group-info">
+                      <li>
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" onclick="toggleShareDropdown(this, event);" aria-label="Share">
+                            <i class="ri-share-line"></i>
+                          </button>
+                          <ul class="dropdown-menu hidden">
+                            <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i> Facebook</a></li>
+                            <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-x-line"></i> Twitter</a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-fill"></i> Instagram</a></li>
+                            <li><a href="https://bd.linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i> LinkedIn</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li>
+                      <li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
+                    </ul>
                   </div>
                   <div class="title"><h3><a href="property-details.html">Luxury Mediterranean Villa</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>6</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>2</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>4100</span></li></ul>
@@ -1523,7 +1915,23 @@
                 <div>
                   <div class="info">
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Villa</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
+                    <ul class="group-info">
+                      <li>
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" onclick="toggleShareDropdown(this, event);" aria-label="Share">
+                            <i class="ri-share-line"></i>
+                          </button>
+                          <ul class="dropdown-menu hidden">
+                            <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i> Facebook</a></li>
+                            <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-x-line"></i> Twitter</a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-fill"></i> Instagram</a></li>
+                            <li><a href="https://bd.linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i> LinkedIn</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li>
+                      <li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
+                    </ul>
                   </div>
                   <div class="title"><h3><a href="property-details.html">Beach Front Villa</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>5</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>3500</span></li></ul>
@@ -1549,7 +1957,23 @@
                 <div>
                   <div class="info">
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Rental</a></li><li><a href="#latest-properties" class="link-btn">For Rent</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
+                    <ul class="group-info">
+                      <li>
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" onclick="toggleShareDropdown(this, event);" aria-label="Share">
+                            <i class="ri-share-line"></i>
+                          </button>
+                          <ul class="dropdown-menu hidden">
+                            <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i> Facebook</a></li>
+                            <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-x-line"></i> Twitter</a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-fill"></i> Instagram</a></li>
+                            <li><a href="https://bd.linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i> LinkedIn</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li>
+                      <li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
+                    </ul>
                   </div>
                   <div class="title"><h3><a href="property-details.html">Executive Penthouse Rental</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>3</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>2800</span></li></ul>
@@ -1570,7 +1994,23 @@
                 <div>
                   <div class="info">
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Rental</a></li><li><a href="#latest-properties" class="link-btn">For Rent</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
+                    <ul class="group-info">
+                      <li>
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" onclick="toggleShareDropdown(this, event);" aria-label="Share">
+                            <i class="ri-share-line"></i>
+                          </button>
+                          <ul class="dropdown-menu hidden">
+                            <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i> Facebook</a></li>
+                            <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-x-line"></i> Twitter</a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-fill"></i> Instagram</a></li>
+                            <li><a href="https://bd.linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i> LinkedIn</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li>
+                      <li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
+                    </ul>
                   </div>
                   <div class="title"><h3><a href="property-details.html">Urban Residence Suite</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>3</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>2</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>2100</span></li></ul>
@@ -1596,7 +2036,23 @@
                 <div>
                   <div class="info">
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Apartment</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
+                    <ul class="group-info">
+                      <li>
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" onclick="toggleShareDropdown(this, event);" aria-label="Share">
+                            <i class="ri-share-line"></i>
+                          </button>
+                          <ul class="dropdown-menu hidden">
+                            <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i> Facebook</a></li>
+                            <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-x-line"></i> Twitter</a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-fill"></i> Instagram</a></li>
+                            <li><a href="https://bd.linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i> LinkedIn</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li>
+                      <li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
+                    </ul>
                   </div>
                   <div class="title"><h3><a href="property-details.html">Industrial Spaces</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>6</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>3250</span></li></ul>
@@ -1617,7 +2073,23 @@
                 <div>
                   <div class="info">
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Apartment</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
+                    <ul class="group-info">
+                      <li>
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" onclick="toggleShareDropdown(this, event);" aria-label="Share">
+                            <i class="ri-share-line"></i>
+                          </button>
+                          <ul class="dropdown-menu hidden">
+                            <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i> Facebook</a></li>
+                            <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-x-line"></i> Twitter</a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-fill"></i> Instagram</a></li>
+                            <li><a href="https://bd.linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i> LinkedIn</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li>
+                      <li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
+                    </ul>
                   </div>
                   <div class="title"><h3><a href="property-details.html">Beach Front Property</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>6</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>3250</span></li></ul>
@@ -1643,7 +2115,23 @@
                 <div>
                   <div class="info">
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Condo</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
+                    <ul class="group-info">
+                      <li>
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" onclick="toggleShareDropdown(this, event);" aria-label="Share">
+                            <i class="ri-share-line"></i>
+                          </button>
+                          <ul class="dropdown-menu hidden">
+                            <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i> Facebook</a></li>
+                            <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-x-line"></i> Twitter</a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-fill"></i> Instagram</a></li>
+                            <li><a href="https://bd.linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i> LinkedIn</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li>
+                      <li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
+                    </ul>
                   </div>
                   <div class="title"><h3><a href="property-details.html">Skyline Heights Condo</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>3</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>1</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>2900</span></li></ul>
@@ -1664,7 +2152,23 @@
                 <div>
                   <div class="info">
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Condo</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
+                    <ul class="group-info">
+                      <li>
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" onclick="toggleShareDropdown(this, event);" aria-label="Share">
+                            <i class="ri-share-line"></i>
+                          </button>
+                          <ul class="dropdown-menu hidden">
+                            <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i> Facebook</a></li>
+                            <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-x-line"></i> Twitter</a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-fill"></i> Instagram</a></li>
+                            <li><a href="https://bd.linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i> LinkedIn</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li>
+                      <li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
+                    </ul>
                   </div>
                   <div class="title"><h3><a href="property-details.html">Modern Horizon Penthouse</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="ri-hotel-bed-line"></i></div><span>5</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>2</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>3400</span></li></ul>
@@ -1690,7 +2194,23 @@
                 <div>
                   <div class="info">
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Commercial</a></li><li><a href="#latest-properties" class="link-btn">For Lease</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
+                    <ul class="group-info">
+                      <li>
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" onclick="toggleShareDropdown(this, event);" aria-label="Share">
+                            <i class="ri-share-line"></i>
+                          </button>
+                          <ul class="dropdown-menu hidden">
+                            <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i> Facebook</a></li>
+                            <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-x-line"></i> Twitter</a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-fill"></i> Instagram</a></li>
+                            <li><a href="https://bd.linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i> LinkedIn</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li>
+                      <li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
+                    </ul>
                   </div>
                   <div class="title"><h3><a href="property-details.html">Prime Financial Tower Office</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="fa-solid fa-building"></i></div><span>Floor 12</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>6</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>5800</span></li></ul>
@@ -1711,7 +2231,23 @@
                 <div>
                   <div class="info">
                     <ul class="link-list"><li><a href="#latest-properties" class="link-btn">Commercial</a></li></ul>
-                    <ul class="group-info"><li><button type="button" aria-label="Share"><i class="ri-share-line"></i></button></li><li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li><li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li></ul>
+                    <ul class="group-info">
+                      <li>
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" onclick="toggleShareDropdown(this, event);" aria-label="Share">
+                            <i class="ri-share-line"></i>
+                          </button>
+                          <ul class="dropdown-menu hidden">
+                            <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i> Facebook</a></li>
+                            <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-x-line"></i> Twitter</a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-fill"></i> Instagram</a></li>
+                            <li><a href="https://bd.linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i> LinkedIn</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><button type="button" aria-label="Favorite"><i class="ri-heart-line"></i></button></li>
+                      <li><button type="button" aria-label="Compare"><i class="ri-arrow-left-right-line"></i></button></li>
+                    </ul>
                   </div>
                   <div class="title"><h3><a href="property-details.html">Corporate Innovation Hub</a></h3><span>194 Mercer Street, NY 10012, USA</span></div>
                   <ul class="info-list"><li><div class="icon"><i class="fa-solid fa-building"></i></div><span>Floor 8</span></li><li><div class="icon"><i class="fa-solid fa-bath"></i></div><span>3</span></li><li><div class="icon"><i class="fa-solid fa-car"></i></div><span>4</span></li><li><div class="icon"><i class="fa-solid fa-vector-square"></i></div><span>4200</span></li></ul>
@@ -2297,7 +2833,7 @@
 
               <div class="p-5 sm:p-6">
                 <h3 class="font-bold text-lg text-[#14080B] group-hover:text-[#FF5A3C] transition-colors mb-2 leading-snug">
-                  Luxury Duplex Suite
+                  <a href="property-details.html" class="hover:text-[#FF5A3C] transition-colors">Luxury Duplex Suite</a>
                 </h3>
                 <p class="text-xs text-[#6B7280] leading-relaxed mb-4 line-clamp-2">
                   Grand high-ceiling duplex interior with bespoke spiral staircase and private master salon.
@@ -2389,7 +2925,7 @@
 
               <div class="p-5 sm:p-6">
                 <h3 class="font-bold text-lg text-[#14080B] group-hover:text-[#FF5A3C] transition-colors mb-2 leading-snug">
-                  Modern Deluxe Suite
+                  <a href="property-details.html" class="hover:text-[#FF5A3C] transition-colors">Modern Deluxe Suite</a>
                 </h3>
                 <p class="text-xs text-[#6B7280] leading-relaxed mb-4 line-clamp-2">
                   Luxurious master bedroom sanctuary with panoramic glass ensuite and designer mood lighting.
@@ -2481,7 +3017,7 @@
 
               <div class="p-5 sm:p-6">
                 <h3 class="font-bold text-lg text-[#14080B] group-hover:text-[#FF5A3C] transition-colors mb-2 leading-snug">
-                  European Luxury Villa
+                  <a href="property-details.html" class="hover:text-[#FF5A3C] transition-colors">European Luxury Villa</a>
                 </h3>
                 <p class="text-xs text-[#6B7280] leading-relaxed mb-4 line-clamp-2">
                   Architectural masterwork surrounded by private landscaped greenery with stone patio.
@@ -2573,7 +3109,7 @@
 
               <div class="p-5 sm:p-6">
                 <h3 class="font-bold text-lg text-[#14080B] group-hover:text-[#FF5A3C] transition-colors mb-2 leading-snug">
-                  Architectural Studio Lounge
+                  <a href="property-details.html" class="hover:text-[#FF5A3C] transition-colors">Architectural Studio Lounge</a>
                 </h3>
                 <p class="text-xs text-[#6B7280] leading-relaxed mb-4 line-clamp-2">
                   Futuristic open-concept living quarters featuring circular bay portals and bespoke woodwork.
@@ -2665,7 +3201,7 @@
 
               <div class="p-5 sm:p-6">
                 <h3 class="font-bold text-lg text-[#14080B] group-hover:text-[#FF5A3C] transition-colors mb-2 leading-snug">
-                  Contemporary Urban Residence
+                  <a href="property-details.html" class="hover:text-[#FF5A3C] transition-colors">Contemporary Urban Residence</a>
                 </h3>
                 <p class="text-xs text-[#6B7280] leading-relaxed mb-4 line-clamp-2">
                   Multi-tier architectural facade with private cantilevered balconies and lush rooftop lawn.
@@ -2757,7 +3293,7 @@
 
               <div class="p-5 sm:p-6">
                 <h3 class="font-bold text-lg text-[#14080B] group-hover:text-[#FF5A3C] transition-colors mb-2 leading-snug">
-                  Grand Residence Foyer
+                  <a href="property-details.html" class="hover:text-[#FF5A3C] transition-colors">Grand Residence Foyer</a>
                 </h3>
                 <p class="text-xs text-[#6B7280] leading-relaxed mb-4 line-clamp-2">
                   Polished hardwood grand foyer featuring double-height ceiling and bespoke accent art niches.
@@ -2849,7 +3385,7 @@
 
               <div class="p-5 sm:p-6">
                 <h3 class="font-bold text-lg text-[#14080B] group-hover:text-[#FF5A3C] transition-colors mb-2 leading-snug">
-                  Skyline Penthouse Chamber
+                  <a href="property-details.html" class="hover:text-[#FF5A3C] transition-colors">Skyline Penthouse Chamber</a>
                 </h3>
                 <p class="text-xs text-[#6B7280] leading-relaxed mb-4 line-clamp-2">
                   Penthouse floor sanctuary offering complete privacy, custom acoustic headboard, and ambient lights.
@@ -2941,7 +3477,7 @@
 
               <div class="p-5 sm:p-6">
                 <h3 class="font-bold text-lg text-[#14080B] group-hover:text-[#FF5A3C] transition-colors mb-2 leading-snug">
-                  Contemporary Suburban House
+                  <a href="property-details.html" class="hover:text-[#FF5A3C] transition-colors">Contemporary Suburban House</a>
                 </h3>
                 <p class="text-xs text-[#6B6560] leading-relaxed mb-4 line-clamp-2">
                   Newly renovated luxury residence in prime serene location with covered multi-car garage bays.
@@ -3454,35 +3990,146 @@
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12 reveal-on-scroll reveal-fade-up">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-end">
         <div class="lg:col-span-7">
-          <div class="flex items-center gap-2 text-xs font-bold uppercase text-[#059669] tracking-wider mb-2">
-            <i class="fa-solid fa-house"></i>
+          <div class="flex items-center gap-2 text-xs font-bold uppercase text-[#7B1824] tracking-wider mb-2">
+            <i class="fa-solid fa-camera-retro text-[#E5A922]"></i>
             <span>TRUSTED REAL ESTATE CARE</span>
           </div>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] leading-[1.18] tracking-tight">
+          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] leading-[1.18] tracking-tight">
             See Our Internal Gallery To Get<br class="hidden sm:inline"> Inspired
           </h2>
         </div>
         <div class="lg:col-span-5 flex items-end">
-          <p class="text-gray-500 text-sm sm:text-base leading-relaxed max-w-xl">
-            Our company provides a full range of services for the construction of private houses and cottages since 19 Our company provides a full private houses and cottages since 19
+          <p class="text-gray-500 text-xs sm:text-base leading-relaxed max-w-xl">
+            Explore our signature architectural interiors, bespoke duplex finishes, and master-crafted residential spaces engineered for inspired living.
           </p>
         </div>
       </div>
     </div>
 
-    <!-- Full-Width Edge-to-Edge Carousel Sliding Area -->
-    <div class="w-full relative group/gallery reveal-on-scroll reveal-fade-up reveal-delay-150">
+    <!-- Mobile View: Luxury 2-Column Responsive Grid (Zero Horizontal Scroll, Native Mobile Performance) -->
+    <div class="block md:hidden max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-2 gap-3 sm:gap-4">
+        
+        <!-- Mobile Card 1 -->
+        <div class="relative rounded-2xl overflow-hidden shadow-md border border-gray-100 group aspect-[4/3] bg-gray-100 cursor-pointer active:scale-95 transition-transform" onclick="openLightbox('img/gallery1-crop.png')">
+          <img src="img/gallery1-crop.png" alt="Modern Minimalist White Residence" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+          <span class="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-xs text-[#E5A922] font-extrabold text-[10px] px-2 py-0.5 rounded-full border border-white/10">08</span>
+          <div class="absolute bottom-2.5 left-2.5 right-2.5">
+            <h4 class="text-white text-xs font-bold leading-tight truncate">Modern Minimalist</h4>
+            <span class="text-[10px] text-gray-300 flex items-center gap-1 mt-0.5">
+              <span>View Photo</span> <i class="fa-solid fa-arrow-up-right-from-square text-[8px] text-[#E5A922]"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Mobile Card 2 -->
+        <div class="relative rounded-2xl overflow-hidden shadow-md border border-gray-100 group aspect-[4/3] bg-gray-100 cursor-pointer active:scale-95 transition-transform" onclick="openLightbox('img/gallery10.png')">
+          <img src="img/gallery10.png" alt="Contemporary Villa Sunset" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+          <span class="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-xs text-[#E5A922] font-extrabold text-[10px] px-2 py-0.5 rounded-full border border-white/10">10</span>
+          <div class="absolute bottom-2.5 left-2.5 right-2.5">
+            <h4 class="text-white text-xs font-bold leading-tight truncate">Luxury Estate Living</h4>
+            <span class="text-[10px] text-gray-300 flex items-center gap-1 mt-0.5">
+              <span>View Photo</span> <i class="fa-solid fa-arrow-up-right-from-square text-[8px] text-[#E5A922]"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Mobile Card 3 -->
+        <div class="relative rounded-2xl overflow-hidden shadow-md border border-gray-100 group aspect-[4/3] bg-gray-100 cursor-pointer active:scale-95 transition-transform" onclick="openLightbox('img/gallery7.png')">
+          <img src="img/gallery7.png" alt="Panoramic Villa Exterior" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+          <span class="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-xs text-[#E5A922] font-extrabold text-[10px] px-2 py-0.5 rounded-full border border-white/10">12</span>
+          <div class="absolute bottom-2.5 left-2.5 right-2.5">
+            <h4 class="text-white text-xs font-bold leading-tight truncate">Panoramic Villa</h4>
+            <span class="text-[10px] text-gray-300 flex items-center gap-1 mt-0.5">
+              <span>View Photo</span> <i class="fa-solid fa-arrow-up-right-from-square text-[8px] text-[#E5A922]"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Mobile Card 4 -->
+        <div class="relative rounded-2xl overflow-hidden shadow-md border border-gray-100 group aspect-[4/3] bg-gray-100 cursor-pointer active:scale-95 transition-transform" onclick="openLightbox('img/gallery6.png')">
+          <img src="img/gallery6.png" alt="Creative Design Digital" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+          <span class="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-xs text-[#E5A922] font-extrabold text-[10px] px-2 py-0.5 rounded-full border border-white/10">12</span>
+          <div class="absolute bottom-2.5 left-2.5 right-2.5">
+            <h4 class="text-white text-xs font-bold leading-tight truncate">Creative Architecture</h4>
+            <span class="text-[10px] text-gray-300 flex items-center gap-1 mt-0.5">
+              <span>View Photo</span> <i class="fa-solid fa-arrow-up-right-from-square text-[8px] text-[#E5A922]"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Mobile Card 5 -->
+        <div class="relative rounded-2xl overflow-hidden shadow-md border border-gray-100 group aspect-[4/3] bg-gray-100 cursor-pointer active:scale-95 transition-transform" onclick="openLightbox('img/deal-property.png')">
+          <img src="img/deal-property.png" alt="Modern Architecture Villa" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+          <span class="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-xs text-[#E5A922] font-extrabold text-[10px] px-2 py-0.5 rounded-full border border-white/10">14</span>
+          <div class="absolute bottom-2.5 left-2.5 right-2.5">
+            <h4 class="text-white text-xs font-bold leading-tight truncate">Modern Residence</h4>
+            <span class="text-[10px] text-gray-300 flex items-center gap-1 mt-0.5">
+              <span>View Photo</span> <i class="fa-solid fa-arrow-up-right-from-square text-[8px] text-[#E5A922]"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Mobile Card 6 -->
+        <div class="relative rounded-2xl overflow-hidden shadow-md border border-gray-100 group aspect-[4/3] bg-gray-100 cursor-pointer active:scale-95 transition-transform" onclick="openLightbox('img/gallery8.png')">
+          <img src="img/gallery8.png" alt="Contemporary Duplex Suites" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+          <span class="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-xs text-[#E5A922] font-extrabold text-[10px] px-2 py-0.5 rounded-full border border-white/10">15</span>
+          <div class="absolute bottom-2.5 left-2.5 right-2.5">
+            <h4 class="text-white text-xs font-bold leading-tight truncate">Duplex Suites</h4>
+            <span class="text-[10px] text-gray-300 flex items-center gap-1 mt-0.5">
+              <span>View Photo</span> <i class="fa-solid fa-arrow-up-right-from-square text-[8px] text-[#E5A922]"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Mobile Card 7 -->
+        <div class="relative rounded-2xl overflow-hidden shadow-md border border-gray-100 group aspect-[4/3] bg-gray-100 cursor-pointer active:scale-95 transition-transform" onclick="openLightbox('img/banner-8.jpg')">
+          <img src="img/banner-8.jpg" alt="Structural Grandeur Villa" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+          <span class="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-xs text-[#E5A922] font-extrabold text-[10px] px-2 py-0.5 rounded-full border border-white/10">18</span>
+          <div class="absolute bottom-2.5 left-2.5 right-2.5">
+            <h4 class="text-white text-xs font-bold leading-tight truncate">Structural Grandeur</h4>
+            <span class="text-[10px] text-gray-300 flex items-center gap-1 mt-0.5">
+              <span>View Photo</span> <i class="fa-solid fa-arrow-up-right-from-square text-[8px] text-[#E5A922]"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Mobile Card 8 -->
+        <div class="relative rounded-2xl overflow-hidden shadow-md border border-gray-100 group aspect-[4/3] bg-gray-100 cursor-pointer active:scale-95 transition-transform" onclick="openLightbox('img/banner-4.jpg')">
+          <img src="img/banner-4.jpg" alt="Bespoke Penthouse Living" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+          <span class="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-xs text-[#E5A922] font-extrabold text-[10px] px-2 py-0.5 rounded-full border border-white/10">21</span>
+          <div class="absolute bottom-2.5 left-2.5 right-2.5">
+            <h4 class="text-white text-xs font-bold leading-tight truncate">Penthouse Living</h4>
+            <span class="text-[10px] text-gray-300 flex items-center gap-1 mt-0.5">
+              <span>View Photo</span> <i class="fa-solid fa-arrow-up-right-from-square text-[8px] text-[#E5A922]"></i>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Full-Width Edge-to-Edge Carousel Sliding Area (Desktop & Tablet: 'Others is OK') -->
+    <div class="hidden md:block w-full relative group/gallery reveal-on-scroll reveal-fade-up reveal-delay-150">
       
       <!-- Sleek Floating Nav Arrows for manual sliding -->
-      <button onclick="slideGallery('prev')" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 hover:bg-[#059669] hover:text-white text-gray-800 shadow-xl backdrop-blur-md flex items-center justify-center transition-all duration-300 border border-gray-200" title="Previous Slide">
+      <button onclick="slideGallery('prev')" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 hover:bg-[#7B1824] hover:text-white text-gray-800 shadow-xl backdrop-blur-md flex items-center justify-center transition-all duration-300 border border-gray-200" title="Previous Slide">
         <i class="fa-solid fa-chevron-left text-sm sm:text-base"></i>
       </button>
-      <button onclick="slideGallery('next')" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 hover:bg-[#059669] hover:text-white text-gray-800 shadow-xl backdrop-blur-md flex items-center justify-center transition-all duration-300 border border-gray-200" title="Next Slide">
+      <button onclick="slideGallery('next')" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 hover:bg-[#7B1824] hover:text-white text-gray-800 shadow-xl backdrop-blur-md flex items-center justify-center transition-all duration-300 border border-gray-200" title="Next Slide">
         <i class="fa-solid fa-chevron-right text-sm sm:text-base"></i>
       </button>
 
       <!-- Carousel Track (items-center creates the alternating vertical rhythm: Short -> Tall -> Short -> Tall) -->
-      <div id="gallery-slider" class="flex items-center gap-5 sm:gap-7 overflow-x-auto scroll-smooth py-4 px-4 sm:px-8 no-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
+      <div id="gallery-slider" class="flex items-center gap-5 sm:gap-7 overflow-x-auto scroll-smooth py-4 px-4 sm:px-8 no-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none; overscroll-behavior-x: contain;">
         
         <!-- Card 1: Landscape (Short - Vertically Centered) -->
         <div class="gallery-slide-card flex-shrink-0 w-[280px] sm:w-[350px] lg:w-[390px] h-[260px] sm:h-[300px] lg:h-[330px] rounded-2xl overflow-hidden shadow-md group relative cursor-pointer transition-all duration-300 hover:shadow-2xl" onclick="openLightbox('img/gallery1-crop.png')">
@@ -3657,29 +4304,31 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10 reveal-on-scroll reveal-fade-up">
       
       <!-- Section Title in Elegant Serif Typography -->
-      <h2 class="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#14080B] tracking-tight">
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#14080B] tracking-tight">
         Our Presence
       </h2>
       <div class="w-20 h-0.5 bg-[#7B1824] mx-auto mt-4 mb-8"></div>
 
       <!-- Location Filter Badges -->
-      <div class="flex items-center justify-center flex-wrap gap-2.5 sm:gap-3 text-xs sm:text-sm font-semibold">
-        <button data-loc="all" onclick="highlightLocation('all')" class="loc-filter-btn px-5 py-2 rounded-full bg-[#7B1824] text-white transition-all shadow-sm">All Projects</button>
-        <button data-loc="gulshan" onclick="highlightLocation('gulshan')" class="loc-filter-btn px-5 py-2 rounded-full bg-[#FAF7F2] text-gray-700 hover:bg-gray-200 transition-all">Gulshan</button>
-        <button data-loc="banani" onclick="highlightLocation('banani')" class="loc-filter-btn px-5 py-2 rounded-full bg-[#FAF7F2] text-gray-700 hover:bg-gray-200 transition-all">Banani</button>
-        <button data-loc="baridhara" onclick="highlightLocation('baridhara')" class="loc-filter-btn px-5 py-2 rounded-full bg-[#FAF7F2] text-gray-700 hover:bg-gray-200 transition-all">Baridhara</button>
-        <button data-loc="jolshiri" onclick="highlightLocation('jolshiri')" class="loc-filter-btn px-5 py-2 rounded-full bg-[#FAF7F2] text-gray-700 hover:bg-gray-200 transition-all">Jolshiri</button>
-        <button data-loc="mirpur" onclick="highlightLocation('mirpur')" class="loc-filter-btn px-5 py-2 rounded-full bg-[#FAF7F2] text-gray-700 hover:bg-gray-200 transition-all">Mirpur</button>
+      <div class="flex items-center justify-start sm:justify-center overflow-x-auto pb-2 sm:pb-0 sm:flex-wrap gap-2 sm:gap-3 text-xs sm:text-sm font-semibold no-scrollbar px-2 sm:px-0 max-w-full">
+        <button data-loc="all" onclick="highlightLocation('all')" class="loc-filter-btn whitespace-nowrap flex-shrink-0 px-4 py-2 sm:px-5 rounded-full bg-[#7B1824] text-white transition-all shadow-sm">All Projects</button>
+        <button data-loc="gulshan" onclick="highlightLocation('gulshan')" class="loc-filter-btn whitespace-nowrap flex-shrink-0 px-4 py-2 sm:px-5 rounded-full bg-[#FAF7F2] text-gray-700 hover:bg-gray-200 transition-all">Gulshan</button>
+        <button data-loc="banani" onclick="highlightLocation('banani')" class="loc-filter-btn whitespace-nowrap flex-shrink-0 px-4 py-2 sm:px-5 rounded-full bg-[#FAF7F2] text-gray-700 hover:bg-gray-200 transition-all">Banani</button>
+        <button data-loc="baridhara" onclick="highlightLocation('baridhara')" class="loc-filter-btn whitespace-nowrap flex-shrink-0 px-4 py-2 sm:px-5 rounded-full bg-[#FAF7F2] text-gray-700 hover:bg-gray-200 transition-all">Baridhara</button>
+        <button data-loc="jolshiri" onclick="highlightLocation('jolshiri')" class="loc-filter-btn whitespace-nowrap flex-shrink-0 px-4 py-2 sm:px-5 rounded-full bg-[#FAF7F2] text-gray-700 hover:bg-gray-200 transition-all">Jolshiri</button>
+        <button data-loc="mirpur" onclick="highlightLocation('mirpur')" class="loc-filter-btn whitespace-nowrap flex-shrink-0 px-4 py-2 sm:px-5 rounded-full bg-[#FAF7F2] text-gray-700 hover:bg-gray-200 transition-all">Mirpur</button>
       </div>
     </div>
 
     <!-- Full-Width Edge-to-Edge Live Google Location Map -->
-    <div class="relative w-full overflow-hidden bg-gray-100 min-h-[480px] sm:min-h-[580px] lg:min-h-[660px] reveal-on-scroll reveal-fade-up reveal-delay-150">
-      <!-- Live Google Location Map iframe -->
+    <div class="relative w-full bg-[#FAF7F2] md:bg-gray-100 md:overflow-hidden md:min-h-[580px] lg:min-h-[660px] pb-8 md:pb-0 reveal-on-scroll reveal-fade-up reveal-delay-150">
+      <!-- Live Google Location Map Wrapper -->
+      <div class="relative w-full h-[280px] sm:h-[350px] md:h-[580px] lg:h-[660px] overflow-hidden bg-gray-100">
+        <!-- Live Google Location Map iframe -->
       <iframe 
         id="presence-google-map" 
         src="https://maps.google.com/maps?q=Gulshan+Banani+Baridhara+Dhaka+Bangladesh&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-        class="w-full h-[480px] sm:h-[580px] lg:h-[660px] border-0 filter contrast-[1.02] transition-opacity duration-500" 
+        class="w-full h-full border-0 filter contrast-[1.02] transition-opacity duration-500" 
         loading="lazy" 
         allowfullscreen="" 
         referrerpolicy="no-referrer-when-downgrade" 
@@ -3754,8 +4403,26 @@
         </button>
       </div>
 
-      <!-- Floating Property Info Spotlight Card Overlay (Shows Property Image & Property Name) -->
-      <div id="map-property-card" class="absolute top-5 left-4 sm:top-8 sm:left-8 z-30 max-w-xs sm:max-w-sm w-[calc(100%-32px)] sm:w-88 bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-2xl border border-gray-100 pointer-events-auto transition-all duration-300">
+      <!-- Controls & Open Map Buttons (Top Right) -->
+      <div class="absolute top-3 right-3 sm:top-5 sm:right-5 md:top-8 md:right-8 z-30 flex items-center gap-1.5 sm:gap-2">
+        <button id="map-mode-toggle" onclick="toggleMapSatellite()" class="px-2.5 py-1.5 sm:px-3 sm:py-2 md:px-3.5 md:py-2.5 bg-white/95 hover:bg-[#7B1824] text-gray-800 hover:text-white rounded-lg md:rounded-xl shadow-md md:shadow-xl border border-gray-100 text-[11px] md:text-xs font-bold transition-all flex items-center gap-1.5 backdrop-blur-sm cursor-pointer" title="Toggle Satellite Imagery">
+          <i class="fa-solid fa-earth-americas text-xs text-[#7B1824]"></i>
+          <span id="map-mode-text" class="hidden sm:inline">Satellite</span>
+        </button>
+        <a id="open-in-google-maps-btn" 
+           href="https://www.google.com/maps/search/Gulshan+Banani+Baridhara+Dhaka+Bangladesh" 
+           target="_blank" 
+           rel="noopener" 
+           class="px-2.5 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2.5 bg-white/95 hover:bg-[#7B1824] text-gray-800 hover:text-white rounded-lg md:rounded-xl shadow-md md:shadow-xl border border-gray-100 text-[11px] md:text-xs font-bold transition-all flex items-center gap-1.5 group backdrop-blur-sm cursor-pointer">
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs group-hover:scale-110 transition-transform"></i>
+          <span class="hidden sm:inline">Open in Google Maps</span>
+          <span class="sm:hidden">Map</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Floating Property Info Spotlight Card Overlay (Shows Property Image & Property Name) -->
+      <div id="map-property-card" class="relative z-20 mx-4 mt-4 sm:mx-6 md:mt-0 md:mx-0 md:absolute md:top-8 md:left-8 md:z-30 max-w-lg md:max-w-sm w-auto md:w-88 bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-xl md:shadow-2xl border border-gray-100 pointer-events-auto transition-all duration-300">
         <!-- Top Status Row -->
         <div class="flex items-center justify-between mb-3">
           <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#7B1824]/10 text-[#7B1824]">
@@ -3804,26 +4471,26 @@
         </div>
       </div>
 
-      <!-- Controls & Open Map Buttons (Top Right) -->
-      <div class="absolute top-5 right-4 sm:top-8 sm:right-8 z-30 flex items-center gap-2">
-        <button id="map-mode-toggle" onclick="toggleMapSatellite()" class="px-3.5 py-2.5 bg-white/95 hover:bg-[#7B1824] text-gray-800 hover:text-white rounded-xl shadow-xl border border-gray-100 text-xs font-bold transition-all flex items-center gap-1.5 backdrop-blur-sm cursor-pointer" title="Toggle Satellite Imagery">
-          <i class="fa-solid fa-earth-americas text-xs text-[#7B1824]"></i>
-          <span id="map-mode-text" class="hidden sm:inline">Satellite</span>
-        </button>
-        <a id="open-in-google-maps-btn" 
-           href="https://www.google.com/maps/search/Gulshan+Banani+Baridhara+Dhaka+Bangladesh" 
-           target="_blank" 
-           rel="noopener" 
-           class="px-4 py-2.5 bg-white/95 hover:bg-[#7B1824] text-gray-800 hover:text-white rounded-xl shadow-xl border border-gray-100 text-xs font-bold transition-all flex items-center gap-2 group backdrop-blur-sm cursor-pointer">
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs group-hover:scale-110 transition-transform"></i>
-          <span class="hidden sm:inline">Open in Google Maps</span>
-          <span class="sm:hidden">View Map</span>
-        </a>
-      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <!-- Floating Property Cards Strip (Bottom Center: Image + Property Name Wise) -->
-      <div class="absolute bottom-5 inset-x-4 sm:inset-x-8 z-30 flex items-center justify-center">
-        <div class="bg-black/80 backdrop-blur-md text-white p-2 sm:px-4 sm:py-2.5 rounded-2xl shadow-2xl flex items-center gap-3 overflow-x-auto max-w-full no-scrollbar">
+      <div class="relative z-20 w-full md:absolute md:bottom-5 md:inset-x-8 md:z-30 flex items-center justify-center my-4 md:my-0">
+        <div class="w-full md:w-auto bg-[#14080B] md:bg-black/80 md:backdrop-blur-md text-white p-2.5 sm:px-4 sm:py-2.5 rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl flex items-center gap-2.5 sm:gap-3 overflow-x-auto max-w-full no-scrollbar">
           <span class="font-bold text-[#E5A922] flex items-center gap-1.5 flex-shrink-0 text-xs pl-2">
             <i class="fa-solid fa-layer-group"></i> Properties:
           </span>
@@ -3941,9 +4608,9 @@
             <!-- Social Links -->
             <div class="flex items-center space-x-3 pt-2">
               <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
-              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-twitter"></i></a>
-              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-youtube"></i></a>
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
             </div>
           </div>
 
@@ -3988,32 +4655,77 @@
             </ul>
           </div>
 
-          <!-- Column 5: Newsletter & Payment Badges -->
-          <div class="space-y-4 reveal-on-scroll reveal-fade-up reveal-delay-300">
-            <h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">
-              Newsletter
+          <!-- Column 5: Newsletter & Payment Methods -->
+          <div class="space-y-5 reveal-on-scroll reveal-fade-up reveal-delay-300">
+            <!-- Newsletter Subscription -->
+            <div>
+              <h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-2">
+                Newsletter
+              </h4>
+              <p class="text-xs text-gray-400 leading-relaxed mb-3">
+                Subscribe to our newsletter for exclusive luxury property updates and insights.
+              </p>
+              <form onsubmit="handleNewsletter(event)" class="newsletter-form shadow-sm">
+                <input type="email" placeholder="Enter your email" required class="text-gray-900 bg-white placeholder-gray-500">
+                <button type="submit" class="bg-[#7B1824] hover:bg-[#60111A] text-white font-semibold transition-colors">
+                  <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+              </form>
+            </div>
+
+            <!-- We Accept Payment Methods -->
+            <div>
+              <h4 class="text-white font-extrabold text-xs uppercase tracking-wider mb-2.5">
+              We Accept
             </h4>
             <p class="text-xs text-gray-400 leading-relaxed">
-              Subscribe to our weekly Newsletter and receive updates via email.
+              We accept official payment methods, secure wire transfers, and bank home loan financing.
             </p>
 
-            <form onsubmit="handleNewsletter(event)" class="newsletter-form flex items-stretch w-full h-11 rounded-lg overflow-hidden shadow-sm mt-3 border border-transparent focus-within:border-[#E5A922] bg-white">
-              <input type="email" required placeholder="Email*" class="flex-1 min-w-0 bg-white text-gray-900 px-4 text-xs focus:outline-none placeholder-gray-400 border-0 h-full m-0">
-              <button type="submit" aria-label="Subscribe" class="bg-[#7B1824] hover:bg-[#60111A] text-white px-5 flex items-center justify-center transition-colors h-full shrink-0 cursor-pointer border-0 m-0">
-                <i class="fa-solid fa-paper-plane text-xs"></i>
-              </button>
-            </form>
-
-            <div class="pt-3">
-              <div class="text-xs font-bold text-white mb-2">We Accept</div>
-              <div class="bg-white rounded-md p-2 flex items-center justify-between text-gray-700 text-lg px-3 shadow-sm">
-                <i class="fa-brands fa-paypal text-[#003087]"></i>
-                <i class="fa-brands fa-cc-visa text-[#1A1F71]"></i>
-                <i class="fa-brands fa-cc-discover text-[#FF6000]"></i>
-                <i class="fa-brands fa-cc-mastercard text-[#EB001B]"></i>
-                <i class="fa-brands fa-cc-amex text-[#006FCF]"></i>
+            <div class="grid grid-cols-3 gap-2 pt-1">
+              <!-- Visa -->
+              <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow" title="Visa">
+                <svg class="h-5 w-auto" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19.2 21H16.4L18.1 10.5H20.9L19.2 21ZM28.5 10.8C27.9 10.5 27.1 10.3 26 10.3C23.2 10.3 21.2 11.8 21.2 13.9C21.2 15.5 22.6 16.4 23.7 16.9C24.8 17.5 25.2 17.8 25.2 18.4C25.2 19.2 24.2 19.6 23.3 19.6C21.9 19.6 21.1 19.4 20.1 18.9L19.6 18.7L19.1 21C19.8 21.3 21.2 21.6 22.7 21.6C25.7 21.6 27.7 20.1 27.7 17.9C27.7 16.6 26.9 15.6 25.3 14.8C24.3 14.3 23.7 13.9 23.7 13.4C23.7 12.9 24.3 12.4 25.3 12.4C26.1 12.4 26.9 12.6 27.6 12.9L28 13.1L28.5 10.8ZM34.2 10.5H32C31.3 10.5 30.7 10.8 30.4 11.5L26 21H28.9L29.5 19.5H33L33.3 21H35.8L34.2 10.5ZM30.3 17.5L31.8 13.4C31.8 13.4 32.2 12.3 32.4 11.6L32.6 13.2L33.2 17.5H30.3ZM14.9 10.5L12.2 17.8L11.9 16.4C11.3 14.4 9.6 12.2 7.5 11.1L9.9 21H12.9L17.3 10.5H14.9Z" fill="#1A1F71"/>
+                </svg>
+              </div>
+              <!-- Mastercard -->
+              <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow" title="Mastercard">
+                <svg class="h-5 w-auto" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="19" cy="16" r="8" fill="#EB001B"/>
+                  <circle cx="29" cy="16" r="8" fill="#F79E1B"/>
+                  <path d="M24 10.4C25.4 11.8 26.3 13.8 26.3 16C26.3 18.2 25.4 20.2 24 21.6C22.6 20.2 21.7 18.2 21.7 16C21.7 13.8 22.6 11.8 24 10.4Z" fill="#FF5F00"/>
+                </svg>
+              </div>
+              <!-- American Express -->
+              <div class="bg-[#006FCF] rounded-lg p-2 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow" title="American Express">
+                <span class="text-white font-black text-[11px] tracking-wider font-mono">AMEX</span>
+              </div>
+              <!-- PayPal -->
+              <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow" title="PayPal">
+                <svg class="h-5 w-auto" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19.5 9.5H24.5C27 9.5 28.5 10.8 28.2 13.2C27.9 15.5 26.1 16.8 23.8 16.8H21.7L20.7 23H18L19.5 9.5Z" fill="#003087"/>
+                  <path d="M21.8 12.5H25.8C28 12.5 29.3 13.6 29 15.7C28.7 17.7 27.1 18.8 25 18.8H23.1L22.4 23H20.3L21.8 12.5Z" fill="#0079C1"/>
+                </svg>
+              </div>
+              <!-- Discover -->
+              <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow" title="Discover">
+                <span class="text-[#14080B] font-extrabold text-[9px] tracking-tight flex items-center">DISC<span class="w-2.5 h-2.5 rounded-full bg-[#FF6000] inline-block mx-0.5"></span>VER</span>
+              </div>
+              <!-- Bank Wire / Tripartite Financing -->
+              <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow" title="Bank Wire / Tripartite Loan">
+                <div class="flex items-center gap-1 text-[#7B1824] font-bold text-[9px]">
+                  <i class="fa-solid fa-building-columns text-xs"></i>
+                  <span>BANK</span>
+                </div>
               </div>
             </div>
+
+            <div class="pt-2 flex items-center gap-2 text-[11px] text-gray-400">
+              <i class="fa-solid fa-shield-halved text-[#E5A922] text-xs"></i>
+              <span>100% Encrypted & Title Verified</span>
+            </div>
+          </div>
           </div>
 
         </div>
@@ -4043,6 +4755,47 @@
   <!-- ==========================================
        MODALS & LIGHTBOXES
        ========================================== -->
+
+  <!-- Amenity Details Quick-View Modal -->
+  <div id="amenity-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4" onclick="if(event.target === this) closeAmenityModal()">
+    <div class="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-[#E8DFD3] overflow-hidden transform transition-all duration-300">
+      <!-- Close Button -->
+      <button onclick="closeAmenityModal()" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-white/90 hover:bg-[#7B1824] hover:text-white text-gray-700 flex items-center justify-center transition-all shadow-md cursor-pointer" title="Close">
+        <i class="fa-solid fa-xmark text-sm"></i>
+      </button>
+
+      <!-- Modal Image Header -->
+      <div class="relative h-52 sm:h-60 w-full overflow-hidden bg-gray-900">
+        <img id="amenity-modal-img" src="img/banner-4.jpg" alt="" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
+        <div class="absolute bottom-4 left-6 right-6">
+          <div class="flex items-center gap-2 mb-1.5">
+            <span id="amenity-modal-category" class="text-[10px] font-bold uppercase tracking-wider text-[#E5A922] bg-[#14080B]/80 px-2.5 py-0.5 rounded-full backdrop-blur-xs border border-[#E5A922]/30"></span>
+            <span id="amenity-modal-badge" class="text-[10px] font-bold uppercase tracking-wider text-white/90 bg-[#7B1824] px-2.5 py-0.5 rounded-full"></span>
+          </div>
+          <h3 id="amenity-modal-title" class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight"></h3>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 sm:p-8">
+        <p id="amenity-modal-desc" class="text-xs sm:text-sm text-[#6B6560] leading-relaxed mb-6"></p>
+        
+        <h4 class="text-xs font-bold text-[#14080B] uppercase tracking-wider mb-3 flex items-center gap-2">
+          <i class="fa-solid fa-circle-check text-[#7B1824] text-xs"></i> Facility Specifications
+        </h4>
+        <div id="amenity-modal-specs" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6"></div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-5 border-t border-[#E8DFD3]">
+          <span class="text-xs text-[#6B6560]">Included in all CNS Signature Properties</span>
+          <a href="#contact-deal" onclick="closeAmenityModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-[#7B1824] hover:bg-[#60111A] text-white text-xs font-bold transition shadow-md hover:shadow-lg">
+            <span>Inquire About Residences</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Video Tour Modal -->
   <div id="video-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
@@ -4272,11 +5025,74 @@
 
     resetHeroAutoTimer();
 
-    // Mobile Menu Toggle
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    // Touch Swipe Support for Hero Slider on Mobile
+    (function initHeroSwipe() {
+      const heroEl = document.getElementById('hero-section');
+      if (!heroEl) return;
+      let startX = 0, startY = 0;
+      heroEl.addEventListener('touchstart', e => {
+        if (!e.touches || e.touches.length === 0) return;
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+      }, { passive: true });
+      heroEl.addEventListener('touchend', e => {
+        if (!e.changedTouches || e.changedTouches.length === 0) return;
+        const diffX = e.changedTouches[0].clientX - startX;
+        const diffY = e.changedTouches[0].clientY - startY;
+        // Only trigger if horizontal swipe is dominant and exceeds threshold
+        if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY)) {
+          if (diffX < 0) {
+            nextHeroSlide(); // Swiped left
+          } else {
+            prevHeroSlide(); // Swiped right
+          }
+        }
+      }, { passive: true });
+    })();
+
+    // Smooth Mobile Drawer Navigation Controller
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobile-drawer');
+      const backdrop = document.getElementById('mobile-drawer-backdrop');
+      const icon = document.getElementById('mobile-menu-icon');
+      if (!drawer || !backdrop) return;
+
+      const isClosed = drawer.classList.contains('translate-x-full');
+      if (isClosed) {
+        // Open Drawer
+        backdrop.classList.remove('hidden');
+        setTimeout(() => {
+          backdrop.classList.remove('opacity-0');
+          backdrop.classList.add('opacity-100');
+          drawer.classList.remove('translate-x-full');
+        }, 15);
+        document.body.style.overflow = 'hidden';
+        if (icon) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-xmark');
+        }
+      } else {
+        // Close Drawer
+        drawer.classList.add('translate-x-full');
+        backdrop.classList.remove('opacity-100');
+        backdrop.classList.add('opacity-0');
+        setTimeout(() => backdrop.classList.add('hidden'), 300);
+        document.body.style.overflow = '';
+        if (icon) {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      }
+    }
+
+    // Close Mobile Drawer on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const drawer = document.getElementById('mobile-drawer');
+        if (drawer && !drawer.classList.contains('translate-x-full')) {
+          toggleMobileMenu();
+        }
+      }
     });
 
     // Modal Toggles
@@ -4308,6 +5124,156 @@
     function openLightbox(src) {
       document.getElementById('lightbox-img').src = src;
       toggleModal('lightbox-modal');
+    }
+
+    // Interactive Building Amenities Data & Quick-View Modal Controller
+    const amenitiesData = {
+      1: {
+        title: 'Parking Space',
+        category: 'Infrastructure & Mobility',
+        badge: 'Reserved & EV Ready',
+        desc: 'Multi-level temperature-regulated basement parking designed with wide driveways, dedicated EV rapid charging stations, and round-the-clock automated license plate recognition (ANPR).',
+        image: 'img/product-1.jpg',
+        specs: [
+          { icon: 'fa-solid fa-charging-station', label: 'EV Charging', val: 'Fast Level-2 & DC Chargers' },
+          { icon: 'fa-solid fa-id-card-clip', label: 'Access Control', val: 'ANPR & RFID Tag Entry' },
+          { icon: 'fa-solid fa-video', label: 'Surveillance', val: 'Full CCTV Coverage & Guarded' },
+          { icon: 'fa-solid fa-person-military-pointing', label: 'Valet Service', val: '24/7 Dedicated Concierge' }
+        ]
+      },
+      2: {
+        title: 'Swimming Pool',
+        category: 'Wellness & Relaxation',
+        badge: 'Panoramic Rooftop',
+        desc: 'Architectural semi-Olympic rooftop infinity pool maintained at a constant 28°C year-round, featuring panoramic city skyline views, private cabanas, and child-safe shallow wading zones.',
+        image: 'img/banner-4.jpg',
+        specs: [
+          { icon: 'fa-solid fa-temperature-arrow-up', label: 'Climate Control', val: '28°C Constant Heated' },
+          { icon: 'fa-solid fa-ruler-combined', label: 'Dimensions', val: '25m x 10m Semi-Olympic' },
+          { icon: 'fa-solid fa-droplet', label: 'Filtration', val: 'Eco Saltwater Purification' },
+          { icon: 'fa-solid fa-umbrella-beach', label: 'Deck Lounge', val: 'Private Cabanas & Sunbeds' }
+        ]
+      },
+      3: {
+        title: 'Private Security',
+        category: 'Safety & Protection',
+        badge: 'Multi-Tier Security',
+        desc: 'State-of-the-art residential safety matrix featuring round-the-clock licensed security personnel, AI-powered smart surveillance with facial recognition, and biometric perimeter access.',
+        image: 'img/product-2.jpg',
+        specs: [
+          { icon: 'fa-solid fa-fingerprint', label: 'Biometrics', val: 'Keyless Resident Entry' },
+          { icon: 'fa-solid fa-video', label: 'AI Surveillance', val: '360° Night-Vision CCTV' },
+          { icon: 'fa-solid fa-shield-virus', label: 'Guarded Gate', val: '24/7 Rapid Response Unit' },
+          { icon: 'fa-solid fa-phone-volume', label: 'Intercom', val: 'Direct Video Link to Lobby' }
+        ]
+      },
+      4: {
+        title: 'Medical Center',
+        category: 'Healthcare & Wellness',
+        badge: 'Immediate Assistance',
+        desc: 'Fully equipped on-site resident medical suite providing immediate first-aid emergency care, emergency oxygen facilities, Automated External Defibrillator (AED), and priority hospital triage.',
+        image: 'img/product-3.jpg',
+        specs: [
+          { icon: 'fa-solid fa-user-doctor', label: 'Staffing', val: 'On-Call Nurse & First Aid' },
+          { icon: 'fa-solid fa-heart-circle-bolt', label: 'Emergency Kit', val: 'AED & Oxygen Stations' },
+          { icon: 'fa-solid fa-truck-medical', label: 'Dispatch', val: 'Express Ambulance Tie-up' },
+          { icon: 'fa-solid fa-laptop-medical', label: 'Telehealth', val: 'Specialist Virtual Booth' }
+        ]
+      },
+      5: {
+        title: 'Library Area',
+        category: 'Culture & Quiet Study',
+        badge: 'Curated Collection',
+        desc: 'Serene, acoustically isolated reading sanctuary equipped with ergonomic seating, curated literature and architectural volumes, ultra-fast fiber WiFi, and private collaborative study pods.',
+        image: 'img/living-room-left.png',
+        specs: [
+          { icon: 'fa-solid fa-volume-xmark', label: 'Acoustics', val: 'Sound-Dampened Quiet' },
+          { icon: 'fa-solid fa-book', label: 'Volumes', val: '2,000+ Curated Books' },
+          { icon: 'fa-solid fa-wifi', label: 'Connectivity', val: 'Wi-Fi 6 & Power Stations' },
+          { icon: 'fa-solid fa-door-closed', label: 'Study Pods', val: 'Private Zoom/Reading Rooms' }
+        ]
+      },
+      6: {
+        title: 'King Size Suites',
+        category: 'Master Living',
+        badge: 'Architectural Craft',
+        desc: 'Grand master bedroom layouts engineered with triple-glazed acoustic sound insulation, Italian teak flooring, bespoke walk-in dressing suites, and private sunset observation balconies.',
+        image: 'img/product-4.jpg',
+        specs: [
+          { icon: 'fa-solid fa-ear-deaf', label: 'Soundproofing', val: 'Triple-Glazed Windows' },
+          { icon: 'fa-solid fa-shirt', label: 'Wardrobe', val: 'Custom Italian Walk-In' },
+          { icon: 'fa-solid fa-sun', label: 'Private Deck', val: 'Panoramic Sunset Balcony' },
+          { icon: 'fa-solid fa-temperature-high', label: 'HVAC', val: 'Independent VRF Climate' }
+        ]
+      },
+      7: {
+        title: 'Smart Homes',
+        category: 'Next-Gen Technology',
+        badge: 'Connected Living',
+        desc: 'Complete residential smart ecosystem integrating intelligent climate regulation, programmable architectural mood lighting, motorized blinds, digital door locks, and voice command.',
+        image: 'img/property3.jpg',
+        specs: [
+          { icon: 'fa-solid fa-mobile-screen', label: 'Resident App', val: 'Full Remote Residence Sync' },
+          { icon: 'fa-solid fa-microphone', label: 'Voice Control', val: 'Alexa / Siri / Google' },
+          { icon: 'fa-solid fa-lock', label: 'Smart Locks', val: 'Keyless & Guest Passcodes' },
+          { icon: 'fa-solid fa-leaf', label: 'Eco Efficiency', val: 'Automated Power Saving' }
+        ]
+      },
+      8: {
+        title: 'Kid’s Playland',
+        category: 'Family & Recreation',
+        badge: 'Child Safe',
+        desc: 'Vibrant indoor and open-air discovery play park engineered with shock-absorbent non-toxic rubber flooring, age-graded sensory climbing structures, and dedicated parent lounge.',
+        image: 'img/product-5.jpg',
+        specs: [
+          { icon: 'fa-solid fa-shield-cat', label: 'Safety Ground', val: 'Non-Toxic Rubber Cushion' },
+          { icon: 'fa-solid fa-cubes', label: 'Play Gear', val: 'Age-Graded Sensory Slides' },
+          { icon: 'fa-solid fa-video', label: 'Safety Camera', val: 'App CCTV Stream for Parents' },
+          { icon: 'fa-solid fa-mug-saucer', label: 'Parent Lounge', val: 'Adjacent Cafe & Shaded Deck' }
+        ]
+      }
+    };
+
+    function openAmenityModal(id) {
+      const data = amenitiesData[id];
+      if (!data) return;
+      document.getElementById('amenity-modal-title').textContent = data.title;
+      document.getElementById('amenity-modal-category').textContent = data.category;
+      document.getElementById('amenity-modal-badge').textContent = data.badge;
+      document.getElementById('amenity-modal-desc').textContent = data.desc;
+      document.getElementById('amenity-modal-img').src = data.image;
+      document.getElementById('amenity-modal-img').alt = data.title;
+      
+      const specsGrid = document.getElementById('amenity-modal-specs');
+      if (specsGrid) {
+        specsGrid.innerHTML = data.specs.map(s => `
+          <div class="p-3 rounded-xl bg-[#FAF7F2] border border-[#E8DFD3] flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-white border border-[#E8DFD3] text-[#7B1824] flex items-center justify-center shrink-0 text-sm shadow-xs">
+              <i class="${s.icon}"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[#6B6560] block">${s.label}</span>
+              <span class="text-xs font-bold text-[#14080B] block mt-0.5">${s.val}</span>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      const modal = document.getElementById('amenity-modal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeAmenityModal() {
+      const modal = document.getElementById('amenity-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
     }
 
     // Toast Notification Trigger (Disabled per user request to prevent popup alerts)
@@ -4681,9 +5647,9 @@
       document.querySelectorAll('.loc-filter-btn').forEach(btn => {
         const btnLoc = btn.getAttribute('data-loc') || btn.getAttribute('onclick')?.match(/highlightLocation\('([^']+)'\)/)?.[1];
         if (btnLoc === currentMapLocKey) {
-          btn.className = 'loc-filter-btn px-5 py-2 rounded-full bg-[#7B1824] text-white transition-all shadow-sm';
+          btn.className = 'loc-filter-btn whitespace-nowrap flex-shrink-0 px-4 py-2 sm:px-5 rounded-full bg-[#7B1824] text-white transition-all shadow-sm';
         } else {
-          btn.className = 'loc-filter-btn px-5 py-2 rounded-full bg-[#FAF7F2] text-gray-700 hover:bg-gray-200 transition-all';
+          btn.className = 'loc-filter-btn whitespace-nowrap flex-shrink-0 px-4 py-2 sm:px-5 rounded-full bg-[#FAF7F2] text-gray-700 hover:bg-gray-200 transition-all';
         }
       });
 

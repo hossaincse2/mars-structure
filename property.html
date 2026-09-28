@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -52,7 +52,7 @@
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            serif: ['"Playfair Display"', 'serif'],
+            serif: ['"Plus Jakarta Sans"', 'sans-serif'],
           }
         }
       }
@@ -68,15 +68,34 @@
       --mars-text-main: #2B2B2B;
     }
 
+    /* Universal Strict Font Family: Plus Jakarta Sans */
+    *, *::before, *::after {
+      font-family: inherit;
+    }
+
+    body, h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, select {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+    }
+
+    .fa, .fas, .far, .fal, .fa-solid, .fa-regular {
+      font-family: "Font Awesome 6 Free" !important;
+    }
+    .fab, .fa-brands {
+      font-family: "Font Awesome 6 Brands" !important;
+    }
+    [class^="ri-"], [class*=" ri-"] {
+      font-family: remixicon !important;
+    }
+
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
       color: var(--mars-text-main);
       background-color: #FFFFFF;
       overflow-x: hidden;
     }
 
     .font-serif-luxury {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
     }
 
     .glass-dark {
@@ -509,9 +528,9 @@
         <!-- Social Media Icons -->
         <div class="flex items-center space-x-3">
           <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
         </div>
       </div>
 
@@ -1728,10 +1747,6 @@
   </div>
 
 
-  <!-- ==========================================
-       SECTION 9: FEATURED LISTINGS
-       Source: https://tunatheme.com/tf/html/quarter-preview/quarter/index.html
-
   <!-- Call To Action -->
   <section class="py-16 bg-[#7B1824] text-white relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal-on-scroll reveal-fade-up">
@@ -1813,9 +1828,9 @@
             <!-- Social Links -->
             <div class="flex items-center space-x-3 pt-2">
               <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
-              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-twitter"></i></a>
-              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-youtube"></i></a>
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
             </div>
           </div>
 
@@ -1860,32 +1875,77 @@
             </ul>
           </div>
 
-          <!-- Column 5: Newsletter & Payment Badges -->
-          <div class="space-y-4 reveal-on-scroll reveal-fade-up reveal-delay-300">
-            <h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">
-              Newsletter
+          <!-- Column 5: Newsletter & Payment Methods -->
+          <div class="space-y-5 reveal-on-scroll reveal-fade-up reveal-delay-300">
+            <!-- Newsletter Subscription -->
+            <div>
+              <h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-2">
+                Newsletter
+              </h4>
+              <p class="text-xs text-gray-400 leading-relaxed mb-3">
+                Subscribe to our newsletter for exclusive luxury property updates and insights.
+              </p>
+              <form onsubmit="handleNewsletter(event)" class="newsletter-form shadow-sm">
+                <input type="email" placeholder="Enter your email" required class="text-gray-900 bg-white placeholder-gray-500">
+                <button type="submit" class="bg-[#7B1824] hover:bg-[#60111A] text-white font-semibold transition-colors">
+                  <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+              </form>
+            </div>
+
+            <!-- We Accept Payment Methods -->
+            <div>
+              <h4 class="text-white font-extrabold text-xs uppercase tracking-wider mb-2.5">
+              We Accept
             </h4>
             <p class="text-xs text-gray-400 leading-relaxed">
-              Subscribe to our weekly Newsletter and receive updates via email.
+              We accept official payment methods, secure wire transfers, and bank home loan financing.
             </p>
 
-            <form onsubmit="handleNewsletter(event)" class="newsletter-form flex items-stretch w-full h-11 rounded-lg overflow-hidden shadow-sm mt-3 border border-transparent focus-within:border-[#E5A922] bg-white">
-              <input type="email" required placeholder="Email*" class="flex-1 min-w-0 bg-white text-gray-900 px-4 text-xs focus:outline-none placeholder-gray-400 border-0 h-full m-0">
-              <button type="submit" aria-label="Subscribe" class="bg-[#7B1824] hover:bg-[#60111A] text-white px-5 flex items-center justify-center transition-colors h-full shrink-0 cursor-pointer border-0 m-0">
-                <i class="fa-solid fa-paper-plane text-xs"></i>
-              </button>
-            </form>
-
-            <div class="pt-3">
-              <div class="text-xs font-bold text-white mb-2">We Accept</div>
-              <div class="bg-white rounded-md p-2 flex items-center justify-between text-gray-700 text-lg px-3 shadow-sm">
-                <i class="fa-brands fa-paypal text-[#003087]"></i>
-                <i class="fa-brands fa-cc-visa text-[#1A1F71]"></i>
-                <i class="fa-brands fa-cc-discover text-[#FF6000]"></i>
-                <i class="fa-brands fa-cc-mastercard text-[#EB001B]"></i>
-                <i class="fa-brands fa-cc-amex text-[#006FCF]"></i>
+            <div class="grid grid-cols-3 gap-2 pt-1">
+              <!-- Visa -->
+              <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow" title="Visa">
+                <svg class="h-5 w-auto" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19.2 21H16.4L18.1 10.5H20.9L19.2 21ZM28.5 10.8C27.9 10.5 27.1 10.3 26 10.3C23.2 10.3 21.2 11.8 21.2 13.9C21.2 15.5 22.6 16.4 23.7 16.9C24.8 17.5 25.2 17.8 25.2 18.4C25.2 19.2 24.2 19.6 23.3 19.6C21.9 19.6 21.1 19.4 20.1 18.9L19.6 18.7L19.1 21C19.8 21.3 21.2 21.6 22.7 21.6C25.7 21.6 27.7 20.1 27.7 17.9C27.7 16.6 26.9 15.6 25.3 14.8C24.3 14.3 23.7 13.9 23.7 13.4C23.7 12.9 24.3 12.4 25.3 12.4C26.1 12.4 26.9 12.6 27.6 12.9L28 13.1L28.5 10.8ZM34.2 10.5H32C31.3 10.5 30.7 10.8 30.4 11.5L26 21H28.9L29.5 19.5H33L33.3 21H35.8L34.2 10.5ZM30.3 17.5L31.8 13.4C31.8 13.4 32.2 12.3 32.4 11.6L32.6 13.2L33.2 17.5H30.3ZM14.9 10.5L12.2 17.8L11.9 16.4C11.3 14.4 9.6 12.2 7.5 11.1L9.9 21H12.9L17.3 10.5H14.9Z" fill="#1A1F71"/>
+                </svg>
+              </div>
+              <!-- Mastercard -->
+              <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow" title="Mastercard">
+                <svg class="h-5 w-auto" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="19" cy="16" r="8" fill="#EB001B"/>
+                  <circle cx="29" cy="16" r="8" fill="#F79E1B"/>
+                  <path d="M24 10.4C25.4 11.8 26.3 13.8 26.3 16C26.3 18.2 25.4 20.2 24 21.6C22.6 20.2 21.7 18.2 21.7 16C21.7 13.8 22.6 11.8 24 10.4Z" fill="#FF5F00"/>
+                </svg>
+              </div>
+              <!-- American Express -->
+              <div class="bg-[#006FCF] rounded-lg p-2 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow" title="American Express">
+                <span class="text-white font-black text-[11px] tracking-wider font-mono">AMEX</span>
+              </div>
+              <!-- PayPal -->
+              <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow" title="PayPal">
+                <svg class="h-5 w-auto" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19.5 9.5H24.5C27 9.5 28.5 10.8 28.2 13.2C27.9 15.5 26.1 16.8 23.8 16.8H21.7L20.7 23H18L19.5 9.5Z" fill="#003087"/>
+                  <path d="M21.8 12.5H25.8C28 12.5 29.3 13.6 29 15.7C28.7 17.7 27.1 18.8 25 18.8H23.1L22.4 23H20.3L21.8 12.5Z" fill="#0079C1"/>
+                </svg>
+              </div>
+              <!-- Discover -->
+              <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow" title="Discover">
+                <span class="text-[#14080B] font-extrabold text-[9px] tracking-tight flex items-center">DISC<span class="w-2.5 h-2.5 rounded-full bg-[#FF6000] inline-block mx-0.5"></span>VER</span>
+              </div>
+              <!-- Bank Wire / Tripartite Financing -->
+              <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow" title="Bank Wire / Tripartite Loan">
+                <div class="flex items-center gap-1 text-[#7B1824] font-bold text-[9px]">
+                  <i class="fa-solid fa-building-columns text-xs"></i>
+                  <span>BANK</span>
+                </div>
               </div>
             </div>
+
+            <div class="pt-2 flex items-center gap-2 text-[11px] text-gray-400">
+              <i class="fa-solid fa-shield-halved text-[#E5A922] text-xs"></i>
+              <span>100% Encrypted & Title Verified</span>
+            </div>
+          </div>
           </div>
 
         </div>

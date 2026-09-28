@@ -1,16 +1,16 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Mars Structure Limited - Premier Real Estate & Architecture</title>
-  <meta name="description" content="Discover Mars Structure Limited - Pioneering luxury real estate development, sustainable modern architecture, and premier residential masterworks in Dhaka.">
+  <title>About MARS Structure Limited | Premier Real Estate & Architecture</title>
+  <meta name="description" content="Discover MARS Structure Limited - A premier building development company in Bangladesh dedicated to modern engineering, sustainable design, and luxury residential landmarks.">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Plus Jakarta Sans Only (Standardized Typography) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -51,7 +51,7 @@
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            serif: ['"Playfair Display"', 'serif'],
+            serif: ['"Plus Jakarta Sans"', 'sans-serif'],
           }
         }
       }
@@ -62,26 +62,59 @@
     :root {
       --mars-maroon: #7B1824;
       --mars-maroon-dark: #60111A;
+      --mars-maroon-deep: #480B12;
+      --mars-maroon-noir: #14080B;
       --mars-gold: #E5A922;
+      --mars-gold-light: #F3C843;
+      --mars-gold-glow: rgba(229, 169, 34, 0.4);
+      --mars-gold-subtle: rgba(229, 169, 34, 0.15);
+      --mars-gold-border: rgba(229, 169, 34, 0.25);
       --mars-bg-light: #FAF7F2;
+      --mars-card-bg: #FFFFFF;
+      --mars-border-subtle: #E8DFD3;
       --mars-text-main: #2B2B2B;
+      --mars-text-muted: #6B6560;
+      --mars-text-light: #FAF7F2;
+      --mars-text-white: #FFFFFF;
+    }
+
+    /* Universal Strict Font Family: Plus Jakarta Sans */
+    *, *::before, *::after {
+      font-family: inherit;
+    }
+
+    body, h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, select {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+    }
+
+    .fa, .fas, .far, .fal, .fa-solid, .fa-regular {
+      font-family: "Font Awesome 6 Free" !important;
+    }
+    .fab, .fa-brands {
+      font-family: "Font Awesome 6 Brands" !important;
+    }
+    [class^="ri-"], [class*=" ri-"] {
+      font-family: remixicon !important;
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
       color: var(--mars-text-main);
       background-color: #FFFFFF;
       overflow-x: hidden;
     }
 
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
     .font-serif-luxury {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
     }
 
     .glass-dark {
-      background: rgba(20, 8, 11, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(20, 8, 11, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
 
     /* Scroll Reveal Animations */
@@ -90,9 +123,10 @@
       will-change: transform, opacity;
       transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal-fade-up { transform: translateY(40px); }
-    .reveal-fade-left { transform: translateX(-40px); }
-    .reveal-fade-right { transform: translateX(40px); }
+    .reveal-fade-up { transform: translateY(35px); }
+    .reveal-fade-left { transform: translateX(-35px); }
+    .reveal-fade-right { transform: translateX(35px); }
+    .reveal-delay-50  { transition-delay: 50ms; }
     .reveal-delay-100 { transition-delay: 100ms; }
     .reveal-delay-150 { transition-delay: 150ms; }
     .reveal-delay-200 { transition-delay: 200ms; }
@@ -112,15 +146,39 @@
       animation: pulse-ring 2.2s infinite;
     }
 
-    @keyframes statCountGlow {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.06); color: #F3C843 !important; }
+    /* Luxury Service Card Hover with Rounded Top Bar */
+    .about-service-card {
+      position: relative;
+      background: #FFFFFF;
+      border: 1px solid #E8DFD3;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 18px rgba(20, 8, 11, 0.03);
     }
-    .stat-counting {
-      animation: statCountGlow 0.9s ease-in-out infinite;
-      display: inline-block;
+    .about-service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(123, 24, 36, 0.35);
+      box-shadow: 0 20px 40px -10px rgba(123, 24, 36, 0.15), 0 2px 10px rgba(0, 0, 0, 0.04);
     }
-      /* Newsletter Form Button & Input Synchronization */
+    .about-service-card .card-top-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #7B1824, #E5A922, #7B1824);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      z-index: 10;
+    }
+    .about-service-card:hover .card-top-bar {
+      transform: scaleX(1);
+    }
+
     .newsletter-form {
       display: flex !important;
       align-items: stretch !important;
@@ -158,16 +216,18 @@
 </head>
 <body class="antialiased selection:bg-[#7B1824] selection:text-white">
 
-  <!-- Top Bar & Navigation -->
+  <!-- ==========================================
+       HEADER & NAVIGATION (STANDARDIZED WITH INDEX.HTML)
+       ========================================== -->
   <header class="w-full relative z-40">
-    <!-- Top Information Bar -->
-    <div class="bg-white border-b border-[#E8DFD3] py-2.5 px-4 sm:px-8">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <!-- Top Information Bar (Desktop) -->
+    <div class="hidden lg:block bg-white border-b border-[#E8DFD3] py-2.5 px-4 sm:px-8">
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
         <a href="index.html" class="flex items-center gap-3 group">
-          <img src="img/logo.jpeg" alt="Mars Structure Limited" class="h-11 sm:h-13 w-auto object-contain transition-transform group-hover:scale-102">
+          <img src="img/logo.jpeg" alt="Mars Structure Limited" class="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-102">
         </a>
 
-        <div class="flex items-center flex-wrap gap-5 sm:gap-7 text-sm font-medium text-[#2B2B2B]">
+        <div class="flex items-center gap-6 text-sm font-medium text-[#2B2B2B]">
           <a href="property.html" class="flex items-center gap-1.5 hover:text-[#7B1824] transition-colors">
             <i class="fa-regular fa-heart text-[#7B1824]"></i>
             <span>Favorite</span>
@@ -190,19 +250,34 @@
       </div>
     </div>
 
-    <!-- Main Navigation Bar -->
-    <nav class="sticky top-0 z-50 glass-dark border-b border-[#480B12]/40 text-white transition-all duration-300">
-      <div class="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between h-14">
-        <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-[#E5A922] focus:outline-none p-2 cursor-pointer">
-          <i class="fa-solid fa-bars text-xl"></i>
+    <!-- Mobile Top Micro-Bar (Slim, Functional) -->
+    <div class="lg:hidden bg-[#14080B] text-white px-4 py-2 border-b border-[#480B12]/60 flex items-center justify-between text-xs">
+      <a href="tel:+8801844020600" class="flex items-center gap-2 text-gray-200 hover:text-[#E5A922] transition-colors">
+        <i class="fa-solid fa-phone-volume text-[#E5A922] text-xs"></i>
+        <span class="font-bold tracking-wide">+880 1844 020600</span>
+      </a>
+      <div class="flex items-center gap-3">
+        <button onclick="toggleModal('login-modal')" class="text-gray-300 hover:text-white flex items-center gap-1">
+          <i class="fa-solid fa-user text-[11px] text-[#E5A922]"></i>
+          <span>Login</span>
         </button>
+      </div>
+    </div>
 
-        <!-- Desktop Menu Links (Given Image Design) -->
+    <!-- Main Navigation Bar (Dark Glassmorphism) -->
+    <nav class="sticky top-0 z-50 glass-dark border-b border-[#480B12]/40 text-white transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between h-16">
+        <!-- Mobile Logo -->
+        <a href="index.html" class="lg:hidden flex items-center gap-2 py-1">
+          <img src="img/logo.jpeg" alt="Mars Structure Limited" class="h-9 w-auto object-contain rounded bg-white p-0.5 shadow-sm">
+        </a>
+
+        <!-- Desktop Menu Links -->
         <div class="hidden lg:flex items-center space-x-9 text-[15px] font-bold tracking-normal">
           <a href="index.html" class="text-white hover:text-[#E5A922] transition-colors py-4">Home</a>
           <a href="about.html" class="text-[#E5A922] border-b-2 border-[#E5A922] transition-colors py-4">About</a>
           
-          <!-- Property with Dropdown -->
+          <!-- Property Dropdown -->
           <div class="relative group">
             <button type="button" class="flex items-center gap-1.5 py-4 text-white hover:text-[#E5A922] transition-colors focus:outline-none cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden'); event.stopPropagation();">
               <span>Property</span>
@@ -217,51 +292,161 @@
           <a href="contact.html" class="text-white hover:text-[#E5A922] transition-colors py-4">Contact Us</a>
         </div>
 
-        <!-- Social Media Icons -->
-        <div class="flex items-center space-x-3">
+        <!-- Social Media Icons (Desktop) -->
+        <div class="hidden sm:flex items-center space-x-3">
           <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] transition-all text-xs" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
         </div>
-      </div>
 
-      <!-- Mobile Dropdown Menu -->
-      <div id="mobile-menu" class="hidden lg:hidden bg-[#14080B] px-6 py-4 border-t border-[#480B12]/50 space-y-3 text-sm">
-        <a href="index.html" class="block text-white hover:text-[#E5A922] font-semibold py-1">Home</a>
-        <a href="about.html" class="block text-[#E5A922] font-semibold py-1">About</a>
-        <div class="py-1">
-          <div class="flex items-center justify-between text-white font-semibold py-1 cursor-pointer" onclick="document.getElementById('mobile-prop-submenu').classList.toggle('hidden');">
-            <span>Property</span>
-            <i class="fa-solid fa-chevron-down text-xs"></i>
-          </div>
-          <div id="mobile-prop-submenu" class="pl-4 pt-1 space-y-2 border-l border-gray-700 mt-1">
-            <a href="property.html" class="block text-gray-300 hover:text-[#E5A922] text-xs py-1">Property</a>
-            <a href="property-location.html" class="block text-gray-300 hover:text-[#E5A922] text-xs py-1">Property Location</a>
-          </div>
+        <!-- Mobile Drawer Hamburger Toggle Button -->
+        <div class="flex items-center gap-2 lg:hidden">
+          <a href="tel:+8801844020600" class="w-9 h-9 rounded-lg bg-white/10 hover:bg-[#7B1824] text-white flex items-center justify-center transition-colors text-xs" title="Call Concierge">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+          <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu" class="text-white hover:text-[#E5A922] focus:outline-none p-2 rounded-lg hover:bg-white/10 transition-colors cursor-pointer">
+            <i id="mobile-menu-icon" class="fa-solid fa-bars text-xl"></i>
+          </button>
         </div>
-        <a href="contact.html" class="block text-white hover:text-[#E5A922] py-1">Contact Us</a>
       </div>
     </nav>
+
+    <!-- Off-Canvas Mobile Navigation Drawer -->
+    <div id="mobile-drawer-backdrop" onclick="toggleMobileMenu()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+    <aside id="mobile-drawer" class="fixed top-0 right-0 w-80 max-w-[85vw] h-full bg-[#14080B] text-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out border-l border-[#480B12]/60 shadow-2xl flex flex-col justify-between overflow-y-auto no-scrollbar">
+      <div class="p-6 space-y-6">
+        <div class="flex items-center justify-between pb-4 border-b border-white/10">
+          <a href="index.html" class="flex items-center gap-2.5">
+            <img src="img/logo.jpeg" alt="Mars Structure Limited" class="h-9 w-auto rounded bg-white p-0.5">
+            <span class="font-extrabold text-sm tracking-wide text-white">Mars Structure</span>
+          </a>
+          <button onclick="toggleMobileMenu()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white flex items-center justify-center transition-colors cursor-pointer" title="Close Menu">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
+          <a href="contact.html" class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-[#7B1824] text-white text-xs font-bold shadow hover:bg-[#60111A] transition-colors">
+            <i class="fa-solid fa-paper-plane text-[10px]"></i> Connect
+          </a>
+          <button onclick="toggleModal('login-modal'); toggleMobileMenu();" class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-white/10 text-white text-xs font-bold hover:bg-white/20 transition-colors">
+            <i class="fa-solid fa-user-circle text-[10px] text-[#E5A922]"></i> Login
+          </button>
+        </div>
+
+        <nav class="space-y-1 text-sm font-semibold">
+          <a href="index.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 text-white hover:text-[#E5A922] transition-colors">
+            <i class="fa-solid fa-house text-[#E5A922] text-xs w-4 text-center"></i> Home
+          </a>
+          <a href="about.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white/10 text-[#E5A922] font-bold">
+            <i class="fa-solid fa-building text-[#E5A922] text-xs w-4 text-center"></i> About Us
+          </a>
+          <div>
+            <div class="flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-white/10 text-white hover:text-[#E5A922] cursor-pointer transition-colors" onclick="document.getElementById('mobile-drawer-prop-sub').classList.toggle('hidden'); document.getElementById('prop-chevron').classList.toggle('rotate-180');">
+              <span class="flex items-center gap-3">
+                <i class="fa-solid fa-city text-[#E5A922] text-xs w-4 text-center"></i> Properties
+              </span>
+              <i id="prop-chevron" class="fa-solid fa-chevron-down text-xs transition-transform duration-200"></i>
+            </div>
+            <div id="mobile-drawer-prop-sub" class="hidden pl-8 pr-2 py-1 space-y-1 border-l-2 border-[#7B1824]/60 ml-5 my-1">
+              <a href="property.html" onclick="toggleMobileMenu()" class="block py-1.5 text-xs text-gray-300 hover:text-[#E5A922] transition-colors">Property</a>
+              <a href="property-location.html" onclick="toggleMobileMenu()" class="block py-1.5 text-xs text-gray-300 hover:text-[#E5A922] transition-colors">Property Location</a>
+            </div>
+          </div>
+          <a href="contact.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 text-white hover:text-[#E5A922] transition-colors">
+            <i class="fa-solid fa-envelope text-[#E5A922] text-xs w-4 text-center"></i> Contact Us
+          </a>
+        </nav>
+      </div>
+
+      <div class="p-6 border-t border-white/10 bg-black/40 space-y-3.5 text-xs">
+        <a href="tel:+8801844020600" class="flex items-center gap-2.5 text-gray-300 hover:text-[#E5A922] transition-colors">
+          <i class="fa-solid fa-phone text-[#E5A922]"></i>
+          <span>+880 1844 020600</span>
+        </a>
+        <a href="mailto:info@marsstructureltd.com" class="flex items-center gap-2.5 text-gray-300 hover:text-[#E5A922] transition-colors">
+          <i class="fa-solid fa-envelope text-[#E5A922]"></i>
+          <span>info@marsstructureltd.com</span>
+        </a>
+      </div>
+    </aside>
   </header>
 
-  <!-- Page Header Banner / Breadcrumb -->
-  <div class="relative py-20 lg:py-28 bg-[#14080B] text-white overflow-hidden bg-cover bg-center" style="background-image: linear-gradient(rgba(20, 8, 11, 0.85), rgba(20, 8, 11, 0.9)), url('img/banner-8.jpg');">
+  <!-- ==========================================
+       HERO BANNER (FROM MARSSTRUCTURELTD.COM/ABOUT.PHP)
+       ========================================== -->
+  <div class="relative py-20 lg:py-28 bg-[#14080B] text-white overflow-hidden bg-cover bg-center" style="background-image: linear-gradient(rgba(20, 8, 11, 0.88), rgba(20, 8, 11, 0.93)), url('img/banner-8.jpg');">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
-      <span class="inline-block px-4 py-1.5 bg-[#7B1824] text-white text-xs font-bold uppercase tracking-widest rounded-full mb-4">About Our Legacy</span>
-      <h1 class="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-4">About Us</h1>
-      <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
-        Pioneering luxury real estate development, bespoke duplex residences, and architectural masterworks with uncompromising integrity.
+      <span class="inline-block px-4 py-1.5 bg-[#7B1824] text-white text-xs font-bold uppercase tracking-widest rounded-full mb-4">
+        A Team Of Experts Ready To Help
+      </span>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 text-white">
+        About MARS Structure Limited
+      </h1>
+      <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed">
+        Dedicated to helping you achieve your real estate dreams with ease, confidence, and architectural brilliance across Bangladesh.
       </p>
       <div class="flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-gray-400 mt-6">
         <a href="index.html" class="hover:text-[#E5A922] transition-colors">Home</a>
-        <span>/</span>
+        <span><i class="fa-solid fa-angle-right text-[10px]"></i></span>
         <span class="text-[#E5A922]">About Us</span>
       </div>
     </div>
   </div>
 
-  <!-- Main About Us Section -->
+  <!-- ==========================================
+       KEY METRICS / STATS COUNTERS (FROM MARSSTRUCTURELTD.COM)
+       ========================================== -->
+  <section class="bg-[#FAF7F2] border-b border-[#E8DFD3] py-10 relative z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+        <!-- 1. Projects -->
+        <div class="p-6 rounded-2xl bg-white border border-[#E8DFD3] shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#7B1824] mb-1">
+            <span>18</span><span class="text-[#E5A922]">+</span>
+          </div>
+          <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#2B2B2B]">
+            Finished & Ongoing Projects
+          </div>
+        </div>
+
+        <!-- 2. Assets -->
+        <div class="p-6 rounded-2xl bg-white border border-[#E8DFD3] shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#14080B] mb-1">
+            <span>89</span><span class="text-[#E5A922]">+</span>
+          </div>
+          <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#2B2B2B]">
+            Premium Property Assets
+          </div>
+        </div>
+
+        <!-- 3. Total Assets Sold -->
+        <div class="p-6 rounded-2xl bg-white border border-[#E8DFD3] shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#7B1824] mb-1">
+            <span>25</span><span class="text-[#E5A922]">+</span>
+          </div>
+          <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#2B2B2B]">
+            Total Assets Sold & Handed
+          </div>
+        </div>
+
+        <!-- 4. Client Trust Guarantee -->
+        <div class="p-6 rounded-2xl bg-white border border-[#E8DFD3] shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#14080B] mb-1">
+            <span>100</span><span class="text-[#E5A922]">%</span>
+          </div>
+          <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#2B2B2B]">
+            Title Verified & Compliant
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       MAIN ABOUT STORY (EXACT CONTENT FROM MARSSTRUCTURELTD.COM/ABOUT.PHP)
+       ========================================== -->
   <section id="about-us" class="py-20 lg:py-28 bg-white relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -269,12 +454,24 @@
         <!-- Left: Overlapping Photo & Video Card -->
         <div class="lg:col-span-6 relative flex items-center justify-center reveal-on-scroll reveal-fade-left">
           <div class="relative w-full max-w-[500px]">
-            <img src="img/7.png" alt="The Leading Real Estate Rental Marketplace" class="w-full h-auto drop-shadow-lg select-none block">
+            <img src="img/7.png" alt="MARS Structure Limited Architecture" class="w-full h-auto drop-shadow-lg select-none block rounded-2xl">
 
-            <div class="absolute bottom-[10%] -left-[3%] sm:-left-[5%] z-20 w-[52%] max-w-[270px] rounded-xl overflow-hidden shadow-2xl cursor-pointer group transition-all duration-300 hover:scale-105 hover:shadow-2xl" onclick="toggleModal('video-modal')" title="Watch Video Tour">
+            <!-- Dhaka City Badge -->
+            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-[#E8DFD3] flex items-center gap-2.5">
+              <div class="w-7 h-7 rounded-full bg-[#7B1824] text-white flex items-center justify-center text-xs">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <div class="text-xs font-extrabold text-[#14080B]">Dhaka City</div>
+                <div class="text-[10px] text-gray-500 font-medium">Headquartered in Bangladesh</div>
+              </div>
+            </div>
+
+            <!-- Video Tour Link -->
+            <div class="absolute bottom-[10%] -left-[3%] sm:-left-[5%] z-20 w-[52%] max-w-[270px] rounded-xl overflow-hidden shadow-2xl cursor-pointer group transition-all duration-300 hover:scale-105" onclick="toggleModal('video-modal')" title="Watch Video Tour">
               <div class="relative overflow-hidden rounded-xl">
-                <img src="img/about-video.png" alt="Interior Video Walkthrough" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 block">
-                <div class="absolute inset-0 bg-black/25 flex items-center justify-center group-hover:bg-black/35 transition-colors">
+                <img src="img/about-video.png" alt="Interior Walkthrough" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 block">
+                <div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
                   <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-[#7B1824] flex items-center justify-center shadow-2xl pulse-btn transform group-hover:scale-110 transition-transform">
                     <i class="fa-solid fa-play text-sm sm:text-base ml-1"></i>
                   </div>
@@ -284,53 +481,70 @@
           </div>
         </div>
 
-        <!-- Right: Text Content & Value Proposition -->
-        <div class="lg:col-span-6 space-y-6 lg:pl-6 mt-8 lg:mt-0 reveal-on-scroll reveal-fade-right reveal-delay-150">
+        <!-- Right: Text Content (Full Authentic Text) -->
+        <div class="lg:col-span-6 space-y-5 lg:pl-6 mt-8 lg:mt-0 reveal-on-scroll reveal-fade-right reveal-delay-150">
           <div>
-            <span class="inline-block text-[#7B1824] font-bold text-xs uppercase tracking-widest mb-2 bg-[#7B1824]/10 px-3.5 py-1 rounded-full">
-              About Us
+            <span class="inline-flex items-center gap-2 text-[#7B1824] font-bold text-xs uppercase tracking-widest mb-3 bg-[#7B1824]/10 border border-[#7B1824]/20 px-3.5 py-1.5 rounded-full">
+              <i class="fa-solid fa-crown text-[#E5A922]"></i>
+              <span>Welcome to MARS Structure Limited</span>
             </span>
-            <h2 class="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#14080B] leading-tight">
-              The Leading Real Estate Rental Marketplace.
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#14080B] leading-tight tracking-tight">
+              Shaping the Skyline of Bangladesh with Integrity & Passion
             </h2>
           </div>
 
-          <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-light">
-            Over 39,000 people work for us in more than 70 countries all over the world. This breadth of global coverage, combined with specialist services and luxury residential developments, provides our clients with unmatched quality and security.
+          <!-- Paragraph 1 -->
+          <p class="text-sm sm:text-base text-[#6B6560] leading-relaxed font-normal">
+            At <strong>MARS Structure Limited</strong>, we are dedicated to helping you achieve your real estate dreams with ease and confidence. With a rich history of success and a commitment to excellence, we offer unparalleled expertise and a personalized approach to meet your unique needs.
           </p>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 py-2">
-            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8DFD3]/60 shadow-sm">
-              <div class="w-10 h-10 rounded-lg bg-[#7B1824]/10 flex items-center justify-center text-[#7B1824] shrink-0">
-                <i class="fa-solid fa-home text-lg"></i>
+          <!-- Paragraph 2 -->
+          <p class="text-sm sm:text-base text-[#6B6560] leading-relaxed font-normal">
+            MARS Structure Limited is a premier building development company in Bangladesh, committed to excellence in construction and design. Since our inception, we have focused on creating structures that are not only strong and sustainable but also aesthetically inspiring.
+          </p>
+
+          <!-- Paragraph 3 -->
+          <p class="text-sm sm:text-base text-[#6B6560] leading-relaxed font-normal">
+            Our mission is to provide high-quality building solutions that meet the evolving needs of our clients while adhering to the highest standards of safety, efficiency, and innovation.
+          </p>
+
+          <!-- Paragraph 4 -->
+          <p class="text-sm sm:text-base text-[#6B6560] leading-relaxed font-normal">
+            At MARS Structure Limited, we combine modern engineering techniques with a customer-focused approach, ensuring every project is delivered on time and exceeds expectations. From residential complexes to commercial landmarks, we are dedicated to shaping the skyline of Bangladesh with integrity, precision, and passion.
+          </p>
+
+          <!-- Feature Pills -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8DFD3]/70">
+              <div class="w-10 h-10 rounded-lg bg-[#7B1824]/10 flex items-center justify-center text-[#7B1824] shrink-0 font-bold">
+                <i class="fa-solid fa-compass-drafting text-base"></i>
               </div>
               <div>
-                <h4 class="font-bold text-sm text-[#14080B]">Smart Living Design</h4>
-                <p class="text-xs text-gray-500">Luxury modern lifestyle</p>
+                <h4 class="font-extrabold text-sm text-[#14080B]">Modern Engineering</h4>
+                <p class="text-xs text-[#6B6560]">Precision structural design</p>
               </div>
             </div>
 
-            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8DFD3]/60 shadow-sm">
-              <div class="w-10 h-10 rounded-lg bg-[#E5A922]/15 flex items-center justify-center text-[#E5A922] shrink-0">
-                <i class="fa-solid fa-shield-halved text-lg text-[#7B1824]"></i>
+            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8DFD3]/70">
+              <div class="w-10 h-10 rounded-lg bg-[#E5A922]/15 flex items-center justify-center text-[#7B1824] shrink-0 font-bold">
+                <i class="fa-solid fa-users-gear text-base"></i>
               </div>
               <div>
-                <h4 class="font-bold text-sm text-[#14080B]">Complete Security</h4>
-                <p class="text-xs text-gray-500">24/7 Gated intelligence</p>
+                <h4 class="font-extrabold text-sm text-[#14080B]">Customer-Centric</h4>
+                <p class="text-xs text-[#6B6560]">Delivered on time, every time</p>
               </div>
             </div>
           </div>
 
-          <div class="p-5 rounded-xl bg-[#FAF7F2] border-l-4 border-[#7B1824] text-xs sm:text-sm text-gray-700 leading-relaxed italic">
-            "Envisaging architectural landmarks that redefine modern Bangladeshi urban living with uncompromising luxury, safety, and natural serenity."
-          </div>
-
-          <div class="pt-2 flex flex-wrap items-center gap-4">
-            <a href="contact.html" class="px-8 py-3.5 bg-[#7B1824] hover:bg-[#60111A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider rounded-md shadow-lg shadow-maroon/25 transition-all transform hover:-translate-y-0.5">
-              Get in Touch
+          <!-- CTAs -->
+          <div class="pt-3 flex flex-wrap items-center gap-4">
+            <a href="contact.html" class="px-8 py-3.5 bg-[#7B1824] hover:bg-[#60111A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider rounded-md shadow-lg shadow-maroon/20 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+              <span>Connect Us</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
             </a>
-            <a href="property.html" class="px-8 py-3.5 bg-white border border-gray-300 hover:border-[#7B1824] text-gray-800 hover:text-[#7B1824] font-bold text-xs sm:text-sm uppercase tracking-wider rounded-md shadow-sm transition-all">
-              Explore Properties
+            <a href="tel:+8801844020600" class="px-8 py-3.5 bg-white border border-[#E8DFD3] hover:border-[#7B1824] text-gray-800 hover:text-[#7B1824] font-bold text-xs sm:text-sm uppercase tracking-wider rounded-md shadow-sm transition-all flex items-center gap-2">
+              <i class="fa-solid fa-phone text-[#7B1824] text-xs"></i>
+              <span>+880 1844 020600</span>
             </a>
           </div>
         </div>
@@ -339,73 +553,320 @@
     </div>
   </section>
 
-  <!-- Service Grid Feature Highlights (Parallax Half) -->
-  <section class="w-full relative overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed py-20" style="background-image: url('img/paralax-half.jpg');">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 reveal-on-scroll reveal-fade-up">
-        <span class="inline-block px-4 py-1.5 bg-[#E5A922]/20 text-[#E5A922] text-xs font-bold uppercase tracking-widest rounded-full mb-3">Our Core Pillars</span>
-        <h2 class="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl text-white font-extrabold tracking-tight">Why Choose Mars Structure</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/15 text-center text-white reveal-on-scroll reveal-fade-up reveal-delay-100 hover:bg-white/15 transition-all">
-          <lord-icon src="https://cdn.lordicon.com/gmzxduhd.json" trigger="hover" colors="primary:#ffffff,secondary:#E5A922" style="width:70px;height:70px" class="mx-auto mb-4"></lord-icon>
-          <h3 class="text-lg font-bold mb-2">Prime Locations</h3>
-          <p class="text-xs text-gray-200 leading-relaxed font-light">Direct diplomatic boulevard & waterfront frontage across North Dhaka's premier sectors.</p>
-        </div>
-
-        <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/15 text-center text-white reveal-on-scroll reveal-fade-up reveal-delay-200 hover:bg-white/15 transition-all">
-          <lord-icon src="https://cdn.lordicon.com/kxoxiwrf.json" trigger="hover" colors="primary:#ffffff,secondary:#E5A922" style="width:70px;height:70px" class="mx-auto mb-4"></lord-icon>
-          <h3 class="text-lg font-bold mb-2">Architectural Grandeur</h3>
-          <p class="text-xs text-gray-200 leading-relaxed font-light">Tri-facade airflow, high ceiling clearance, and bespoke interior duplex layouts.</p>
-        </div>
-
-        <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/15 text-center text-white reveal-on-scroll reveal-fade-up reveal-delay-300 hover:bg-white/15 transition-all">
-          <lord-icon src="https://cdn.lordicon.com/jvucoldz.json" trigger="hover" colors="primary:#ffffff,secondary:#E5A922" style="width:70px;height:70px" class="mx-auto mb-4"></lord-icon>
-          <h3 class="text-lg font-bold mb-2">Legal Transparency</h3>
-          <p class="text-xs text-gray-200 leading-relaxed font-light">100% verified titles, RAJUK approved drawings, and clear documentation guarantee.</p>
-        </div>
-
-        <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/15 text-center text-white reveal-on-scroll reveal-fade-up reveal-delay-400 hover:bg-white/15 transition-all">
-          <lord-icon src="https://cdn.lordicon.com/nobciafz.json" trigger="hover" colors="primary:#ffffff,secondary:#E5A922" style="width:70px;height:70px" class="mx-auto mb-4"></lord-icon>
-          <h3 class="text-lg font-bold mb-2">Eco-Living & Serenity</h3>
-          <p class="text-xs text-gray-200 leading-relaxed font-light">Lush rooftop meditation gardens, solar water arrays, and rainwater harvesting.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats / Counter Banner -->
-  <section id="stats-section" class="relative py-20 lg:py-24 bg-cover bg-center bg-fixed cursor-pointer select-none" style="background-image: linear-gradient(rgba(20, 8, 11, 0.92), rgba(72, 11, 18, 0.88)), url('img/banner-4.jpg');">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 text-center text-white divide-y md:divide-y-0 md:divide-x divide-white/10">
-        <div class="py-6 px-4 group reveal-on-scroll reveal-fade-up reveal-delay-100">
-          <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#E5A922] font-serif-luxury"><span class="stat-num" data-target="560">560</span>+</div>
-          <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-300 mt-2">Finished Projects</div>
-        </div>
-        <div class="py-6 px-4 group reveal-on-scroll reveal-fade-up reveal-delay-200">
-          <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-white font-serif-luxury"><span class="stat-num" data-target="197">197</span>+</div>
-          <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-300 mt-2">Experienced Agents</div>
-        </div>
-        <div class="py-6 px-4 group reveal-on-scroll reveal-fade-up reveal-delay-300">
-          <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#E5A922] font-serif-luxury"><span class="stat-num" data-target="268">268</span>+</div>
-          <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-300 mt-2">Happy Clients</div>
-        </div>
-        <div class="py-6 px-4 group reveal-on-scroll reveal-fade-up reveal-delay-400">
-          <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-white font-serif-luxury"><span class="stat-num" data-target="340">340</span>+</div>
-          <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-300 mt-2">Awards Won</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Floating CTA Card + Footer -->
-    <!-- ==========================================
-       SECTION 14: FLOATING CTA & FOOTER
-       Source: https://risingtheme.com/html/demo-newvilla/newvilla/index-2.html & image14
+  <!-- ==========================================
+       OUR MISSION & OUR VISION (FROM MARSSTRUCTURELTD.COM/ABOUT.PHP)
        ========================================== -->
-    <!-- ==========================================
-       GLOBAL FOOTER (MATCHING HOME PAGE LUXURY DESIGN)
+  <section class="py-20 lg:py-24 bg-[#FAF7F2] relative border-y border-[#E8DFD3]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal-on-scroll reveal-fade-up">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#7B1824]/10 text-[#7B1824] text-xs font-bold uppercase tracking-widest rounded-full mb-3 border border-[#7B1824]/20">
+          <i class="fa-solid fa-bullseye text-[#E5A922]"></i>
+          <span>Core Philosophy</span>
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#14080B] tracking-tight">
+          Our Purpose, Mission & Vision
+        </h2>
+        <p class="max-w-2xl mx-auto mt-4 text-sm sm:text-base text-[#6B6560] leading-relaxed">
+          Guiding every blueprint, concrete pour, and homeowner relationship across our landmark developments.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+        
+        <!-- Mission Card -->
+        <div class="about-service-card p-8 sm:p-10 flex flex-col justify-between reveal-on-scroll reveal-fade-up reveal-delay-100">
+          <div class="card-top-bar"></div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-[#7B1824]/10 border border-[#7B1824]/20 flex items-center justify-center text-[#7B1824] text-2xl mb-6 shadow-sm">
+              <i class="fa-solid fa-flag-checkered"></i>
+            </div>
+            <div class="inline-block px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#7B1824]/8 text-[#7B1824] border border-[#7B1824]/15 mb-3">
+              Purpose & Execution
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-[#14080B] mb-4">
+              Our Mission
+            </h3>
+            <p class="text-sm sm:text-base text-[#6B6560] leading-relaxed font-normal mb-6">
+              At <strong>MARS Structure Limited</strong>, we are committed to delivering exceptional property experiences by offering tailored solutions, leveraging cutting-edge technology, and upholding integrity in every transaction. Our goal is to create long-term value for clients, investors, and communities while promoting sustainable and ethical real estate practices.
+            </p>
+          </div>
+
+          <div class="pt-6 border-t border-[#E8DFD3]/70 space-y-2 text-xs font-bold text-[#184E42]">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+              <span>Tailored client-centric property solutions</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+              <span>Cutting-edge construction engineering & tech</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+              <span>Sustainable and ethical community stewardship</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vision Card -->
+        <div class="about-service-card p-8 sm:p-10 flex flex-col justify-between reveal-on-scroll reveal-fade-up reveal-delay-200">
+          <div class="card-top-bar"></div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-[#E5A922]/15 border border-[#E5A922]/30 flex items-center justify-center text-[#7B1824] text-2xl mb-6 shadow-sm">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <div class="inline-block px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#E5A922]/15 text-[#7B1824] border border-[#E5A922]/30 mb-3">
+              Future Aspiration
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-[#14080B] mb-4">
+              Our Vision
+            </h3>
+            <p class="text-sm sm:text-base text-[#6B6560] leading-relaxed font-normal mb-6">
+              To be the most trusted and innovative real estate company, transforming communities through sustainable and customer-centric property solutions across Bangladesh and beyond.
+            </p>
+          </div>
+
+          <div class="pt-6 border-t border-[#E8DFD3]/70 space-y-2 text-xs font-bold text-[#184E42]">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+              <span>Industry benchmark for trust, quality & safety</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+              <span>Transformative architectural landmarks for Dhaka</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-[#7B1824]"></i>
+              <span>Eco-conscious, climate-resilient residential ecosystems</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       WHAT WE OFFER / SERVICES (FROM MARSSTRUCTURELTD.COM/ABOUT.PHP)
+       ========================================== -->
+  <section class="py-20 lg:py-28 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title -->
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll reveal-fade-up">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#7B1824]/10 text-[#7B1824] text-xs font-bold uppercase tracking-widest rounded-full mb-3 border border-[#7B1824]/20">
+          <i class="fa-solid fa-layer-group text-[#E5A922]"></i>
+          <span>What We Offer</span>
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#14080B] tracking-tight leading-tight">
+          Upgrade To a Smarter Living Experience With Home Automation
+        </h2>
+        <p class="mt-4 text-sm sm:text-base text-[#6B6560] leading-relaxed font-normal">
+          From first-time homebuyers to established real estate investors, our bespoke services provide certainty and elevated living at every stage.
+        </p>
+      </div>
+
+      <!-- 4 Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        
+        <!-- 1. Buying A Home -->
+        <div class="about-service-card group p-7 flex flex-col justify-between cursor-pointer reveal-on-scroll reveal-fade-up reveal-delay-50">
+          <div class="card-top-bar"></div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-[#FAF7F2] border border-[#E8DFD3] flex items-center justify-center text-[#7B1824] text-2xl mb-5 group-hover:bg-[#7B1824] group-hover:text-white group-hover:border-[#7B1824] transition-all duration-300 shadow-sm">
+              <i class="fa-solid fa-house-chimney"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-extrabold text-xl text-[#14080B] group-hover:text-[#7B1824] transition-colors">
+                Buying A Home
+              </h3>
+              <span class="text-xs font-bold text-gray-300 group-hover:text-[#E5A922] transition-colors">01</span>
+            </div>
+            <p class="text-xs sm:text-sm text-[#6B6560] leading-relaxed font-normal mb-6">
+              At MARS, we understand that buying a home is one of the most significant investments you'll ever make. Our experienced agents are here to guide you through every step of the home-buying process.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-[#E8DFD3]/70 flex items-center justify-between">
+            <span class="text-xs font-bold text-[#184E42]">Verified Portfolios</span>
+            <a href="property.html" class="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#E8DFD3] flex items-center justify-center text-[#7B1824] group-hover:bg-[#7B1824] group-hover:text-white transition-colors">
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Selling A Home -->
+        <div class="about-service-card group p-7 flex flex-col justify-between cursor-pointer reveal-on-scroll reveal-fade-up reveal-delay-100">
+          <div class="card-top-bar"></div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-[#FAF7F2] border border-[#E8DFD3] flex items-center justify-center text-[#7B1824] text-2xl mb-5 group-hover:bg-[#7B1824] group-hover:text-white group-hover:border-[#7B1824] transition-all duration-300 shadow-sm">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-extrabold text-xl text-[#14080B] group-hover:text-[#7B1824] transition-colors">
+                Selling A Home
+              </h3>
+              <span class="text-xs font-bold text-gray-300 group-hover:text-[#E5A922] transition-colors">02</span>
+            </div>
+            <p class="text-xs sm:text-sm text-[#6B6560] leading-relaxed font-normal mb-6">
+              Selling your home can be a complex and emotional process, but it doesn’t have to be. Our team at MARS is dedicated to making your home-selling experience as smooth and profitable as possible.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-[#E8DFD3]/70 flex items-center justify-between">
+            <span class="text-xs font-bold text-[#184E42]">Maximized Value</span>
+            <a href="contact.html" class="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#E8DFD3] flex items-center justify-center text-[#7B1824] group-hover:bg-[#7B1824] group-hover:text-white transition-colors">
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. Renting A Home -->
+        <div class="about-service-card group p-7 flex flex-col justify-between cursor-pointer reveal-on-scroll reveal-fade-up reveal-delay-150">
+          <div class="card-top-bar"></div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-[#FAF7F2] border border-[#E8DFD3] flex items-center justify-center text-[#7B1824] text-2xl mb-5 group-hover:bg-[#7B1824] group-hover:text-white group-hover:border-[#7B1824] transition-all duration-300 shadow-sm">
+              <i class="fa-solid fa-key"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-extrabold text-xl text-[#14080B] group-hover:text-[#7B1824] transition-colors">
+                Renting A Home
+              </h3>
+              <span class="text-xs font-bold text-gray-300 group-hover:text-[#E5A922] transition-colors">03</span>
+            </div>
+            <p class="text-xs sm:text-sm text-[#6B6560] leading-relaxed font-normal mb-6">
+              Finding the perfect rental property can be challenging, but with MARS, it’s a breeze. Whether you’re looking for a short-term lease or a long-term rental, we have a diverse selection of properties to meet.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-[#E8DFD3]/70 flex items-center justify-between">
+            <span class="text-xs font-bold text-[#184E42]">Curated Leases</span>
+            <a href="property.html" class="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#E8DFD3] flex items-center justify-center text-[#7B1824] group-hover:bg-[#7B1824] group-hover:text-white transition-colors">
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. Property Management -->
+        <div class="about-service-card group p-7 flex flex-col justify-between cursor-pointer reveal-on-scroll reveal-fade-up reveal-delay-200">
+          <div class="card-top-bar"></div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-[#FAF7F2] border border-[#E8DFD3] flex items-center justify-center text-[#7B1824] text-2xl mb-5 group-hover:bg-[#7B1824] group-hover:text-white group-hover:border-[#7B1824] transition-all duration-300 shadow-sm">
+              <i class="fa-solid fa-building-shield"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-extrabold text-xl text-[#14080B] group-hover:text-[#7B1824] transition-colors">
+                Property Management
+              </h3>
+              <span class="text-xs font-bold text-gray-300 group-hover:text-[#E5A922] transition-colors">04</span>
+            </div>
+            <p class="text-xs sm:text-sm text-[#6B6560] leading-relaxed font-normal mb-6">
+              Owning rental properties can be a lucrative investment, but it also comes with responsibilities. Our property management services are designed to maximize your investment returns while minimizing the hassles.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-[#E8DFD3]/70 flex items-center justify-between">
+            <span class="text-xs font-bold text-[#184E42]">Hassle-Free ROI</span>
+            <a href="contact.html" class="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#E8DFD3] flex items-center justify-center text-[#7B1824] group-hover:bg-[#7B1824] group-hover:text-white transition-colors">
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       VISIT OUR OFFICE / LOCATION (FROM MARSSTRUCTURELTD.COM/ABOUT.PHP)
+       ========================================== -->
+  <section class="py-20 lg:py-24 bg-[#FAF7F2] border-t border-[#E8DFD3] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal-on-scroll reveal-fade-up">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#7B1824]/10 text-[#7B1824] text-xs font-bold uppercase tracking-widest rounded-full mb-3 border border-[#7B1824]/20">
+          <i class="fa-solid fa-building-user text-[#E5A922]"></i>
+          <span>Visit Our Office</span>
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#14080B] tracking-tight">
+          Come and Visit One Of Our Offices
+        </h2>
+        <p class="max-w-2xl mx-auto mt-4 text-sm sm:text-base text-[#6B6560] leading-relaxed">
+          Meet our architectural advisors and executive leadership in person at our dedicated regional development center.
+        </p>
+      </div>
+
+      <!-- Office Showcase Card -->
+      <div class="max-w-4xl mx-auto bg-white rounded-2xl border border-[#E8DFD3] p-8 sm:p-12 shadow-xl relative overflow-hidden reveal-on-scroll reveal-fade-up">
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#7B1824] via-[#E5A922] to-[#7B1824]"></div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-7 space-y-6">
+            <div>
+              <span class="text-xs font-extrabold text-[#7B1824] bg-[#7B1824]/10 px-3 py-1 rounded-full uppercase tracking-wider">
+                Corporate Regional Office
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#14080B] mt-2">
+                Jolshiri Abashon, Narayangonj
+              </h3>
+            </div>
+
+            <div class="space-y-4 text-sm text-[#2B2B2B]">
+              <div class="flex items-start gap-3.5">
+                <div class="w-9 h-9 rounded-lg bg-[#FAF7F2] border border-[#E8DFD3] flex items-center justify-center text-[#7B1824] shrink-0 font-bold">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <div class="font-bold text-gray-900">Address</div>
+                  <div class="text-[#6B6560]">Plot: 005, Road: 409, Sector: 11, Jolshiri Abashon, Narayangonj, Bangladesh</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3.5">
+                <div class="w-9 h-9 rounded-lg bg-[#FAF7F2] border border-[#E8DFD3] flex items-center justify-center text-[#7B1824] shrink-0 font-bold">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <div class="font-bold text-gray-900">Direct Inquiries</div>
+                  <a href="tel:+8801844020600" class="text-[#7B1824] font-extrabold hover:underline">+880 1844 020600</a>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3.5">
+                <div class="w-9 h-9 rounded-lg bg-[#FAF7F2] border border-[#E8DFD3] flex items-center justify-center text-[#7B1824] shrink-0 font-bold">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <div class="font-bold text-gray-900">Official Email</div>
+                  <a href="mailto:info@marsstructureltd.com" class="text-[#7B1824] font-extrabold hover:underline">info@marsstructureltd.com</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-2 flex flex-wrap items-center gap-3">
+              <a href="contact.html" class="px-6 py-2.5 bg-[#7B1824] hover:bg-[#60111A] text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow transition-colors flex items-center gap-2">
+                <span>Book In-Person Appointment</span>
+                <i class="fa-solid fa-calendar-check text-[11px]"></i>
+              </a>
+              <a href="https://maps.google.com" target="_blank" class="px-6 py-2.5 bg-[#FAF7F2] hover:bg-gray-100 text-gray-800 text-xs font-bold uppercase tracking-wider rounded-lg border border-[#E8DFD3] transition-colors flex items-center gap-2">
+                <span>Open in Maps</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="md:col-span-5 relative">
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-[#E8DFD3]">
+              <img src="img/deal-property.png" alt="Office Building" class="w-full h-64 object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 14: FLOATING CTA CARD + FOOTER
+       Source: Matching Home Page (theme1/index.html)
        ========================================== -->
   <div class="relative w-full pt-16">
     <!-- Floating CTA Overlapping Card -->
@@ -462,9 +923,9 @@
             <!-- Social Links -->
             <div class="flex items-center space-x-3 pt-2">
               <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
-              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-twitter"></i></a>
-              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors"><i class="fa-brands fa-youtube"></i></a>
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="text-gray-400 hover:text-[#E5A922] transition-colors" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
             </div>
           </div>
 
@@ -509,32 +970,77 @@
             </ul>
           </div>
 
-          <!-- Column 5: Newsletter & Payment Badges -->
-          <div class="space-y-4 reveal-on-scroll reveal-fade-up reveal-delay-300">
-            <h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">
-              Newsletter
+          <!-- Column 5: Newsletter & Payment Methods -->
+          <div class="space-y-5 reveal-on-scroll reveal-fade-up reveal-delay-300">
+            <!-- Newsletter Subscription -->
+            <div>
+              <h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-2">
+                Newsletter
+              </h4>
+              <p class="text-xs text-gray-400 leading-relaxed mb-3">
+                Subscribe to our newsletter for exclusive luxury property updates and insights.
+              </p>
+              <form onsubmit="handleNewsletter(event)" class="newsletter-form shadow-sm">
+                <input type="email" placeholder="Enter your email" required class="text-gray-900 bg-white placeholder-gray-500">
+                <button type="submit" class="bg-[#7B1824] hover:bg-[#60111A] text-white font-semibold transition-colors">
+                  <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+              </form>
+            </div>
+
+            <!-- We Accept Payment Methods -->
+            <div>
+              <h4 class="text-white font-extrabold text-xs uppercase tracking-wider mb-2.5">
+              We Accept
             </h4>
             <p class="text-xs text-gray-400 leading-relaxed">
-              Subscribe to our weekly Newsletter and receive updates via email.
+              We accept official payment methods, secure wire transfers, and bank home loan financing.
             </p>
 
-            <form onsubmit="handleNewsletter(event)" class="newsletter-form flex items-stretch w-full h-11 rounded-lg overflow-hidden shadow-sm mt-3 border border-transparent focus-within:border-[#E5A922] bg-white">
-              <input type="email" required placeholder="Email*" class="flex-1 min-w-0 bg-white text-gray-900 px-4 text-xs focus:outline-none placeholder-gray-400 border-0 h-full m-0">
-              <button type="submit" aria-label="Subscribe" class="bg-[#7B1824] hover:bg-[#60111A] text-white px-5 flex items-center justify-center transition-colors h-full shrink-0 cursor-pointer border-0 m-0">
-                <i class="fa-solid fa-paper-plane text-xs"></i>
-              </button>
-            </form>
-
-            <div class="pt-3">
-              <div class="text-xs font-bold text-white mb-2">We Accept</div>
-              <div class="bg-white rounded-md p-2 flex items-center justify-between text-gray-700 text-lg px-3 shadow-sm">
-                <i class="fa-brands fa-paypal text-[#003087]"></i>
-                <i class="fa-brands fa-cc-visa text-[#1A1F71]"></i>
-                <i class="fa-brands fa-cc-discover text-[#FF6000]"></i>
-                <i class="fa-brands fa-cc-mastercard text-[#EB001B]"></i>
-                <i class="fa-brands fa-cc-amex text-[#006FCF]"></i>
+            <div class="grid grid-cols-3 gap-2 pt-1">
+              <!-- Visa -->
+              <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow" title="Visa">
+                <svg class="h-5 w-auto" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19.2 21H16.4L18.1 10.5H20.9L19.2 21ZM28.5 10.8C27.9 10.5 27.1 10.3 26 10.3C23.2 10.3 21.2 11.8 21.2 13.9C21.2 15.5 22.6 16.4 23.7 16.9C24.8 17.5 25.2 17.8 25.2 18.4C25.2 19.2 24.2 19.6 23.3 19.6C21.9 19.6 21.1 19.4 20.1 18.9L19.6 18.7L19.1 21C19.8 21.3 21.2 21.6 22.7 21.6C25.7 21.6 27.7 20.1 27.7 17.9C27.7 16.6 26.9 15.6 25.3 14.8C24.3 14.3 23.7 13.9 23.7 13.4C23.7 12.9 24.3 12.4 25.3 12.4C26.1 12.4 26.9 12.6 27.6 12.9L28 13.1L28.5 10.8ZM34.2 10.5H32C31.3 10.5 30.7 10.8 30.4 11.5L26 21H28.9L29.5 19.5H33L33.3 21H35.8L34.2 10.5ZM30.3 17.5L31.8 13.4C31.8 13.4 32.2 12.3 32.4 11.6L32.6 13.2L33.2 17.5H30.3ZM14.9 10.5L12.2 17.8L11.9 16.4C11.3 14.4 9.6 12.2 7.5 11.1L9.9 21H12.9L17.3 10.5H14.9Z" fill="#1A1F71"/>
+                </svg>
+              </div>
+              <!-- Mastercard -->
+              <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow" title="Mastercard">
+                <svg class="h-5 w-auto" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="19" cy="16" r="8" fill="#EB001B"/>
+                  <circle cx="29" cy="16" r="8" fill="#F79E1B"/>
+                  <path d="M24 10.4C25.4 11.8 26.3 13.8 26.3 16C26.3 18.2 25.4 20.2 24 21.6C22.6 20.2 21.7 18.2 21.7 16C21.7 13.8 22.6 11.8 24 10.4Z" fill="#FF5F00"/>
+                </svg>
+              </div>
+              <!-- American Express -->
+              <div class="bg-[#006FCF] rounded-lg p-2 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow" title="American Express">
+                <span class="text-white font-black text-[11px] tracking-wider font-mono">AMEX</span>
+              </div>
+              <!-- PayPal -->
+              <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow" title="PayPal">
+                <svg class="h-5 w-auto" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19.5 9.5H24.5C27 9.5 28.5 10.8 28.2 13.2C27.9 15.5 26.1 16.8 23.8 16.8H21.7L20.7 23H18L19.5 9.5Z" fill="#003087"/>
+                  <path d="M21.8 12.5H25.8C28 12.5 29.3 13.6 29 15.7C28.7 17.7 27.1 18.8 25 18.8H23.1L22.4 23H20.3L21.8 12.5Z" fill="#0079C1"/>
+                </svg>
+              </div>
+              <!-- Discover -->
+              <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow" title="Discover">
+                <span class="text-[#14080B] font-extrabold text-[9px] tracking-tight flex items-center">DISC<span class="w-2.5 h-2.5 rounded-full bg-[#FF6000] inline-block mx-0.5"></span>VER</span>
+              </div>
+              <!-- Bank Wire / Tripartite Financing -->
+              <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow" title="Bank Wire / Tripartite Loan">
+                <div class="flex items-center gap-1 text-[#7B1824] font-bold text-[9px]">
+                  <i class="fa-solid fa-building-columns text-xs"></i>
+                  <span>BANK</span>
+                </div>
               </div>
             </div>
+
+            <div class="pt-2 flex items-center gap-2 text-[11px] text-gray-400">
+              <i class="fa-solid fa-shield-halved text-[#E5A922] text-xs"></i>
+              <span>100% Encrypted & Title Verified</span>
+            </div>
+          </div>
           </div>
 
         </div>
@@ -563,7 +1069,6 @@
   <!-- Video Modal -->
   <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-md p-4">
     <div class="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl border border-gray-800 flex flex-col">
-      <!-- Modal Header Bar -->
       <div class="flex items-center justify-between px-4 sm:px-6 py-3 bg-neutral-900 border-b border-gray-800">
         <div class="flex items-center gap-2.5">
           <i class="fa-brands fa-youtube text-red-600 text-lg"></i>
@@ -580,7 +1085,6 @@
         </div>
       </div>
 
-      <!-- Video Player Container with Proper Referrer Policy & Fullscreen -->
       <div class="aspect-video w-full bg-black flex items-center justify-center">
         <iframe 
           id="video-tour-iframe"
@@ -620,18 +1124,53 @@
     </div>
   </div>
 
+  <!-- JavaScript Controllers -->
   <script>
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    // Smooth Mobile Drawer Navigation Controller
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobile-drawer');
+      const backdrop = document.getElementById('mobile-drawer-backdrop');
+      const icon = document.getElementById('mobile-menu-icon');
+      if (!drawer || !backdrop) return;
+
+      const isClosed = drawer.classList.contains('translate-x-full');
+      if (isClosed) {
+        backdrop.classList.remove('hidden');
+        setTimeout(() => {
+          backdrop.classList.remove('opacity-0');
+          backdrop.classList.add('opacity-100');
+          drawer.classList.remove('translate-x-full');
+        }, 15);
+        document.body.style.overflow = 'hidden';
+        if (icon) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-xmark');
+        }
+      } else {
+        drawer.classList.add('translate-x-full');
+        backdrop.classList.remove('opacity-100');
+        backdrop.classList.add('opacity-0');
+        setTimeout(() => backdrop.classList.add('hidden'), 300);
+        document.body.style.overflow = '';
+        if (icon) {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      }
     }
 
-    // Modal Toggle
-        function handleNewsletter(e) {
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const drawer = document.getElementById('mobile-drawer');
+        if (drawer && !drawer.classList.contains('translate-x-full')) {
+          toggleMobileMenu();
+        }
+      }
+    });
+
+    function handleNewsletter(e) {
       e.preventDefault();
-      alert('Thank you for subscribing to Mars Structure updates!');
+      alert('Thank you for subscribing to MARS Structure Limited updates!');
       e.target.reset();
     }
 
@@ -653,20 +1192,19 @@
         if (id === 'video-modal') {
           const iframe = document.getElementById('video-tour-iframe');
           if (iframe) {
-            iframe.src = 'about:blank'; // stop playback
+            iframe.src = 'about:blank';
           }
         }
       }
     }
 
-    // Close open dropdowns
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.group')) {
-        document.querySelectorAll('.group > div').forEach(d => {
-          if (!d.classList.contains('hidden') && d.classList.contains('absolute')) {
-            // keep standard hover behavior
-          }
-        });
+    // Scroll to Top Listener
+    const scrollBtn = document.getElementById('scroll-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+      } else {
+        scrollBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
       }
     });
 
