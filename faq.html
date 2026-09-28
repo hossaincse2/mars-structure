@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | Mars Structure Limited</title>
+  <meta name="description" content="Frequently Asked Questions about Mars Structure Limited luxury property services, booking, payment, and handover process.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body{font-family:'Plus Jakarta Sans',sans-serif!important;color:#2B2B2B;background:#fff;overflow-x:hidden;}
+    .fa,.fas,.far,.fal,.fa-solid,.fa-regular{font-family:"Font Awesome 6 Free"!important;}
+    .fab,.fa-brands{font-family:"Font Awesome 6 Brands"!important;}
+    [class^="ri-"],[class*=" ri-"]{font-family:remixicon!important;}
+    .glass-dark{background:rgba(20,8,11,0.92);backdrop-filter:blur(12px);}
+    .reveal-on-scroll{opacity:0;transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1);}
+    .reveal-fade-up{transform:translateY(40px);}
+    .reveal-on-scroll.is-revealed{opacity:1!important;transform:translate(0,0)!important;}
+    .faq-wrapper{display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.38s cubic-bezier(0.16,1,0.3,1);}
+    .faq-wrapper.is-open{grid-template-rows:1fr;}
+    .faq-inner{overflow:hidden;}
+    .newsletter-form{display:flex!important;height:44px!important;border-radius:8px!important;overflow:hidden!important;}
+    .newsletter-form input{flex:1 1 0%!important;border:none!important;outline:none!important;padding:0 16px!important;font-size:12px!important;}
+    .newsletter-form button{border:none!important;padding:0 20px!important;display:flex!important;align-items:center!important;cursor:pointer!important;}
+  </style>
+</head>
+<body class="antialiased selection:bg-[#7B1824] selection:text-white">
+
+  <header class="w-full relative z-40">
+    <div class="bg-white border-b border-[#E8DFD3] py-2.5 px-4 sm:px-8">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <a href="index.html"><img src="img/logo.jpeg" alt="Mars Structure Limited" class="h-11 w-auto object-contain"></a>
+        <div class="flex items-center flex-wrap gap-5 sm:gap-7 text-sm font-medium">
+          <a href="property.html" class="flex items-center gap-1.5 hover:text-[#7B1824]"><i class="fa-regular fa-heart text-[#7B1824]"></i><span>Favorite</span></a>
+          <span class="text-gray-300">|</span>
+          <a href="contact.html" class="flex items-center gap-1.5 hover:text-[#7B1824]"><i class="fa-solid fa-cloud-arrow-up text-[#7B1824]"></i><span>Submit Property</span></a>
+          <span class="text-gray-300">|</span>
+          <a href="property.html" class="flex items-center gap-1.5 hover:text-[#7B1824]"><i class="fa-solid fa-hotel text-[#7B1824]"></i><span>My Property</span></a>
+          <button onclick="toggleModal('login-modal')" class="bg-[#7B1824] hover:bg-[#60111A] text-white px-5 py-2 rounded-md font-semibold text-xs flex items-center gap-2 shadow-md cursor-pointer"><i class="fa-solid fa-user-circle"></i><span>Login / Register</span></button>
+        </div>
+      </div>
+    </div>
+    <nav class="sticky top-0 z-50 glass-dark border-b border-[#480B12]/40 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between h-14">
+        <div class="hidden lg:flex items-center space-x-9 text-[15px] font-bold">
+          <a href="index.html" class="text-white hover:text-[#E5A922] py-4">Home</a>
+          <a href="about.html" class="text-white hover:text-[#E5A922] py-4">About</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1.5 py-4 text-white hover:text-[#E5A922] cursor-pointer"><span>Property</span><i class="fa-solid fa-chevron-down text-xs"></i></button>
+            <div class="absolute left-0 top-full hidden group-hover:block w-52 bg-white rounded-lg shadow-2xl py-2.5 border border-gray-100 z-50">
+              <a href="property.html" class="block px-5 py-2.5 text-sm font-semibold text-[#184E42] hover:text-[#7B1824] hover:bg-[#FAF7F2]">Property</a>
+              <a href="property-location.html" class="block px-5 py-2.5 text-sm font-semibold text-[#184E42] hover:text-[#7B1824] hover:bg-[#FAF7F2]">Property Location</a>
+            </div>
+          </div>
+          <a href="contact.html" class="text-white hover:text-[#E5A922] py-4">Contact Us</a>
+        </div>
+        <div class="hidden lg:flex items-center space-x-3">
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] text-xs"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] text-xs"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] text-xs"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full border border-gray-600/60 flex items-center justify-center text-gray-300 hover:text-[#E5A922] hover:border-[#E5A922] text-xs"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+        <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="lg:hidden w-10 h-10 rounded-xl bg-white/10 hover:bg-[#7B1824] text-white flex items-center justify-center cursor-pointer"><i class="fa-solid fa-bars text-lg"></i></button>
+      </div>
+      <div id="mobile-menu" class="hidden lg:hidden bg-[#14080B] px-6 py-4 border-t border-[#480B12]/50 space-y-3 text-sm">
+        <a href="index.html" class="block text-white hover:text-[#E5A922] font-semibold py-1">Home</a>
+        <a href="about.html" class="block text-white hover:text-[#E5A922] font-semibold py-1">About</a>
+        <a href="property.html" class="block text-white hover:text-[#E5A922] font-semibold py-1">Property</a>
+        <a href="contact.html" class="block text-white hover:text-[#E5A922] font-semibold py-1">Contact Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative bg-[#14080B] py-20 lg:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#7B1824]/40 via-[#14080B] to-[#14080B]"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#E5A922]/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-flex items-center gap-2 bg-[#7B1824]/30 text-[#E5A922] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5 border border-[#E5A922]/20"><i class="fa-solid fa-circle-question"></i> Support Center</span>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">Frequently Asked <span class="text-[#E5A922]">Questions</span></h1>
+      <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto font-light">Find answers to the most common questions about our luxury properties, booking process, payment options, and more.</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="bg-[#FAF7F2] border-b border-[#E8DFD3] py-3 px-4 sm:px-8">
+    <div class="max-w-7xl mx-auto flex items-center gap-2 text-xs text-gray-500">
+      <a href="index.html" class="hover:text-[#7B1824] font-medium">Home</a>
+      <i class="fa-solid fa-chevron-right text-[10px] text-gray-400"></i>
+      <span class="text-[#7B1824] font-semibold">FAQ</span>
+    </div>
+  </div>
+
+  <main class="py-16 lg:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Category Filters -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5 mb-12 reveal-on-scroll reveal-fade-up">
+        <button onclick="filterFaq('all',this)" class="faq-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-[#7B1824] text-white border border-[#7B1824] cursor-pointer">All Questions</button>
+        <button onclick="filterFaq('booking',this)" class="faq-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-white text-gray-700 border border-gray-200 hover:border-[#7B1824] hover:text-[#7B1824] cursor-pointer">Booking</button>
+        <button onclick="filterFaq('payment',this)" class="faq-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-white text-gray-700 border border-gray-200 hover:border-[#7B1824] hover:text-[#7B1824] cursor-pointer">Payment</button>
+        <button onclick="filterFaq('property',this)" class="faq-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-white text-gray-700 border border-gray-200 hover:border-[#7B1824] hover:text-[#7B1824] cursor-pointer">Property</button>
+        <button onclick="filterFaq('handover',this)" class="faq-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-white text-gray-700 border border-gray-200 hover:border-[#7B1824] hover:text-[#7B1824] cursor-pointer">Handover</button>
+        <button onclick="filterFaq('legal',this)" class="faq-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-white text-gray-700 border border-gray-200 hover:border-[#7B1824] hover:text-[#7B1824] cursor-pointer">Legal</button>
+      </div>
+
+      <div class="space-y-4">
+
+        <div class="faq-card border border-gray-200 rounded-2xl overflow-hidden reveal-on-scroll reveal-fade-up" data-category="booking">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 sm:p-6 text-left cursor-pointer">
+            <div class="flex items-center gap-4"><span class="rounded-xl w-8 h-8 bg-gray-100 text-gray-600 text-xs font-bold flex items-center justify-center shrink-0">01</span><span class="font-bold text-sm sm:text-base text-[#14080B]">How do I book a property with Mars Structure Limited?</span></div>
+            <div class="faq-icon w-8 h-8 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center shrink-0 ml-4 transition-all"><i class="fa-solid fa-chevron-down text-xs"></i></div>
+          </button>
+          <div class="faq-wrapper"><div class="faq-inner px-5 sm:px-6 pb-6 text-sm text-gray-600 leading-relaxed pl-16 sm:pl-[72px]">Contact our sales team via phone, WhatsApp, or by visiting our sales office. Our advisors will guide you through project selection, unit availability, and help complete the booking form. A booking money amount (non-refundable) will be collected to formally reserve your preferred unit.</div></div>
+        </div>
+
+        <div class="faq-card border border-gray-200 rounded-2xl overflow-hidden reveal-on-scroll reveal-fade-up" data-category="booking">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 sm:p-6 text-left cursor-pointer">
+            <div class="flex items-center gap-4"><span class="rounded-xl w-8 h-8 bg-gray-100 text-gray-600 text-xs font-bold flex items-center justify-center shrink-0">02</span><span class="font-bold text-sm sm:text-base text-[#14080B]">Can I book a unit online?</span></div>
+            <div class="faq-icon w-8 h-8 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center shrink-0 ml-4 transition-all"><i class="fa-solid fa-chevron-down text-xs"></i></div>
+          </button>
+          <div class="faq-wrapper"><div class="faq-inner px-5 sm:px-6 pb-6 text-sm text-gray-600 leading-relaxed pl-16 sm:pl-[72px]">You can initiate your booking inquiry online through our Contact page. However, formal documentation and payment must be completed in person or through our authorized representatives for legal compliance and security.</div></div>
+        </div>
+
+        <div class="faq-card border border-gray-200 rounded-2xl overflow-hidden reveal-on-scroll reveal-fade-up" data-category="payment">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 sm:p-6 text-left cursor-pointer">
+            <div class="flex items-center gap-4"><span class="rounded-xl w-8 h-8 bg-gray-100 text-gray-600 text-xs font-bold flex items-center justify-center shrink-0">03</span><span class="font-bold text-sm sm:text-base text-[#14080B]">What payment methods are accepted?</span></div>
+            <div class="faq-icon w-8 h-8 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center shrink-0 ml-4 transition-all"><i class="fa-solid fa-chevron-down text-xs"></i></div>
+          </button>
+          <div class="faq-wrapper"><div class="faq-inner px-5 sm:px-6 pb-6 text-sm text-gray-600 leading-relaxed pl-16 sm:pl-[72px]">We accept bank transfers, pay orders, demand drafts, and cheques payable to Mars Structure Limited. We also facilitate tripartite loan agreements with leading banks. Cash payments above BDT 5 lakh are not accepted per Bangladesh Bank regulations.</div></div>
+        </div>
+
+        <div class="faq-card border border-gray-200 rounded-2xl overflow-hidden reveal-on-scroll reveal-fade-up" data-category="payment">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 sm:p-6 text-left cursor-pointer">
+            <div class="flex items-center gap-4"><span class="rounded-xl w-8 h-8 bg-gray-100 text-gray-600 text-xs font-bold flex items-center justify-center shrink-0">04</span><span class="font-bold text-sm sm:text-base text-[#14080B]">Is home loan / bank financing available?</span></div>
+            <div class="faq-icon w-8 h-8 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center shrink-0 ml-4 transition-all"><i class="fa-solid fa-chevron-down text-xs"></i></div>
+          </button>
+          <div class="faq-wrapper"><div class="faq-inner px-5 sm:px-6 pb-6 text-sm text-gray-600 leading-relaxed pl-16 sm:pl-[72px]">Yes, we work with multiple nationalized and private banks for tripartite home loan financing. Our advisors assist in document preparation and loan processing. Typical financing covers 70-80% of property value based on eligibility.</div></div>
+        </div>
+
+        <div class="faq-card border border-gray-200 rounded-2xl overflow-hidden reveal-on-scroll reveal-fade-up" data-category="payment">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 sm:p-6 text-left cursor-pointer">
+            <div class="flex items-center gap-4"><span class="rounded-xl w-8 h-8 bg-gray-100 text-gray-600 text-xs font-bold flex items-center justify-center shrink-0">05</span><span class="font-bold text-sm sm:text-base text-[#14080B]">What is the installment payment schedule?</span></div>
+            <div class="faq-icon w-8 h-8 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center shrink-0 ml-4 transition-all"><i class="fa-solid fa-chevron-down text-xs"></i></div>
+          </button>
+          <div class="faq-wrapper"><div class="faq-inner px-5 sm:px-6 pb-6 text-sm text-gray-600 leading-relaxed pl-16 sm:pl-[72px]">Schedules are tied to construction milestones: Booking Money → Down Payment (upon Sale Agreement) → 6-12 quarterly installments linked to construction progress → Final payment before possession. The exact schedule is confirmed in your Sale Agreement.</div></div>
+        </div>
+
+        <div class="faq-card border border-gray-200 rounded-2xl overflow-hidden reveal-on-scroll reveal-fade-up" data-category="property">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 sm:p-6 text-left cursor-pointer">
+            <div class="flex items-center gap-4"><span class="rounded-xl w-8 h-8 bg-gray-100 text-gray-600 text-xs font-bold flex items-center justify-center shrink-0">06</span><span class="font-bold text-sm sm:text-base text-[#14080B]">Where are Mars Structure Limited's properties located?</span></div>
+            <div class="faq-icon w-8 h-8 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center shrink-0 ml-4 transition-all"><i class="fa-solid fa-chevron-down text-xs"></i></div>
+          </button>
+          <div class="faq-wrapper"><div class="faq-inner px-5 sm:px-6 pb-6 text-sm text-gray-600 leading-relaxed pl-16 sm:pl-[72px]">Our flagship project — Nur-Anu Oasis — is in Jolshiri Abashon Smart City, Purbachal, Dhaka. We also develop properties in Gulshan, Banani, and Baridhara. Visit our <a href="property-location.html" class="text-[#7B1824] font-semibold hover:underline">Property Locations</a> page for a detailed map.</div></div>
+        </div>
+
+        <div class="faq-card border border-gray-200 rounded-2xl overflow-hidden reveal-on-scroll reveal-fade-up" data-category="property">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 sm:p-6 text-left cursor-pointer">
+            <div class="flex items-center gap-4"><span class="rounded-xl w-8 h-8 bg-gray-100 text-gray-600 text-xs font-bold flex items-center justify-center shrink-0">07</span><span class="font-bold text-sm sm:text-base text-[#14080B]">Can I customize the interior layout of my apartment?</span></div>
+            <div class="faq-icon w-8 h-8 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center shrink-0 ml-4 transition-all"><i class="fa-solid fa-chevron-down text-xs"></i></div>
+          </button>
+          <div class="faq-wrapper"><div class="faq-inner px-5 sm:px-6 pb-6 text-sm text-gray-600 leading-relaxed pl-16 sm:pl-[72px]">Yes, during the pre-construction phase, buyers can request customizations including flooring, fixtures, wall finishes, kitchen cabinets, and bathroom fittings. Structural modifications are subject to architectural approval. Our concierge team coordinates all custom requests.</div></div>
+        </div>
+
+        <div class="faq-card border border-gray-200 rounded-2xl overflow-hidden reveal-on-scroll reveal-fade-up" data-category="property">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 sm:p-6 text-left cursor-pointer">
+            <div class="flex items-center gap-4"><span class="rounded-xl w-8 h-8 bg-gray-100 text-gray-600 text-xs font-bold flex items-center justify-center shrink-0">08</span><span class="font-bold text-sm sm:text-base text-[#14080B]">What amenities are included in the development?</span></div>
+            <div class="faq-icon w-8 h-8 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center shrink-0 ml-4 transition-all"><i class="fa-solid fa-chevron-down text-xs"></i></div>
+          </button>
+          <div class="faq-wrapper"><div class="faq-inner px-5 sm:px-6 pb-6 text-sm text-gray-600 leading-relaxed pl-16 sm:pl-[72px]">Amenities include: rooftop garden &amp; sky lounge, infinity swimming pool, fully equipped gymnasium, business center, prayer hall, multi-cuisine restaurant, children's playland, 24/7 CCTV &amp; security, covered parking, and generator backup. Availability varies by project.</div></div>
+        </div>
+
+        <div class="faq-card border border-gray-200 rounded-2xl overflow-hidden reveal-on-scroll reveal-fade-up" data-category="handover">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 sm:p-6 text-left cursor-pointer">
+            <div class="flex items-center gap-4"><span class="rounded-xl w-8 h-8 bg-gray-100 text-gray-600 text-xs font-bold flex items-center justify-center shrink-0">09</span><span class="font-bold text-sm sm:text-base text-[#14080B]">When will my property be handed over?</span></div>
+            <div class="faq-icon w-8 h-8 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center shrink-0 ml-4 transition-all"><i class="fa-solid fa-chevron-down text-xs"></i></div>
+          </button>
+          <div class="faq-wrapper"><div class="faq-inner px-5 sm:px-6 pb-6 text-sm text-gray-600 leading-relaxed pl-16 sm:pl-[72px]">The estimated handover date is specified in your Sale Agreement. We provide regular construction updates and scheduled site visits. While we strive to meet all timelines, force majeure events may cause delays, which we communicate transparently to all buyers.</div></div>
+        </div>
+
+        <div class="faq-card border border-gray-200 rounded-2xl overflow-hidden reveal-on-scroll reveal-fade-up" data-category="handover">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 sm:p-6 text-left cursor-pointer">
+            <div class="flex items-center gap-4"><span class="rounded-xl w-8 h-8 bg-gray-100 text-gray-600 text-xs font-bold flex items-center justify-center shrink-0">10</span><span class="font-bold text-sm sm:text-base text-[#14080B]">What documents will I receive at handover?</span></div>
+            <div class="faq-icon w-8 h-8 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center shrink-0 ml-4 transition-all"><i class="fa-solid fa-chevron-down text-xs"></i></div>
+          </button>
+          <div class="faq-wrapper"><div class="faq-inner px-5 sm:px-6 pb-6 text-sm text-gray-600 leading-relaxed pl-16 sm:pl-[72px]">You will receive: Registered Sale Deed, Possession Certificate, Occupation Certificate, Utility connection documents, As-Built floor plans, Warranty cards for all appliances and fixtures, and a maintenance handbook.</div></div>
+        </div>
+
+        <div class="faq-card border border-gray-200 rounded-2xl overflow-hidden reveal-on-scroll reveal-fade-up" data-category="legal">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 sm:p-6 text-left cursor-pointer">
+            <div class="flex items-center gap-4"><span class="rounded-xl w-8 h-8 bg-gray-100 text-gray-600 text-xs font-bold flex items-center justify-center shrink-0">11</span><span class="font-bold text-sm sm:text-base text-[#14080B]">Is the project RAJUK / government approved?</span></div>
+            <div class="faq-icon w-8 h-8 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center shrink-0 ml-4 transition-all"><i class="fa-solid fa-chevron-down text-xs"></i></div>
+          </button>
+          <div class="faq-wrapper"><div class="faq-inner px-5 sm:px-6 pb-6 text-sm text-gray-600 leading-relaxed pl-16 sm:pl-[72px]">Yes, all Mars Structure Limited projects have proper RAJUK building plan approvals, Jolshiri Abashon Authority clearances, environmental clearances, and fire safety certifications. All approval documents can be provided upon request during due diligence.</div></div>
+        </div>
+
+        <div class="faq-card border border-gray-200 rounded-2xl overflow-hidden reveal-on-scroll reveal-fade-up" data-category="legal">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 sm:p-6 text-left cursor-pointer">
+            <div class="flex items-center gap-4"><span class="rounded-xl w-8 h-8 bg-gray-100 text-gray-600 text-xs font-bold flex items-center justify-center shrink-0">12</span><span class="font-bold text-sm sm:text-base text-[#14080B]">Can I transfer my booking to another person?</span></div>
+            <div class="faq-icon w-8 h-8 rounded-full bg-[#FAF7F2] text-gray-700 flex items-center justify-center shrink-0 ml-4 transition-all"><i class="fa-solid fa-chevron-down text-xs"></i></div>
+          </button>
+          <div class="faq-wrapper"><div class="faq-inner px-5 sm:px-6 pb-6 text-sm text-gray-600 leading-relaxed pl-16 sm:pl-[72px]">Transfer to a third party is possible subject to written approval from Mars Structure Limited and a nominal transfer fee. Both parties must be present for documentation. Transfer is not permitted during the initial 6-month lock-in period.</div></div>
+        </div>
+
+      </div>
+
+      <!-- Still Have Questions -->
+      <div class="mt-16 bg-gradient-to-br from-[#14080B] to-[#7B1824] rounded-2xl p-8 sm:p-12 text-center reveal-on-scroll reveal-fade-up">
+        <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-5"><i class="fa-solid fa-headset text-[#E5A922] text-2xl"></i></div>
+        <h3 class="text-xl sm:text-2xl font-extrabold text-white mb-2">Still Have Questions?</h3>
+        <p class="text-gray-300 text-sm mb-6 max-w-md mx-auto">Our experienced client advisors are ready to help you personally.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="contact.html" class="px-7 py-3 bg-[#E5A922] hover:bg-[#F3C843] text-[#14080B] font-bold text-sm rounded-lg shadow-lg transition-all flex items-center gap-2"><i class="fa-solid fa-envelope"></i> Send Message</a>
+          <a href="tel:+8801700000000" class="px-7 py-3 bg-white/10 hover:bg-white/20 text-white font-bold text-sm rounded-lg transition-all flex items-center gap-2"><i class="fa-solid fa-phone"></i> Call Us Now</a>
+        </div>
+      </div>
+
+      <!-- Related Pages -->
+      <div class="mt-10 grid sm:grid-cols-3 gap-4 reveal-on-scroll reveal-fade-up">
+        <a href="terms.html" class="group flex items-center gap-3 p-4 bg-[#FAF7F2] rounded-xl border border-[#E8DFD3] hover:border-[#7B1824] hover:shadow-md transition-all">
+          <div class="w-9 h-9 rounded-lg bg-[#7B1824]/10 text-[#7B1824] flex items-center justify-center group-hover:bg-[#7B1824] group-hover:text-white transition-all"><i class="fa-solid fa-file-contract text-sm"></i></div>
+          <div><div class="text-xs font-bold text-[#14080B]">Terms &amp; Conditions</div><div class="text-[11px] text-gray-500">Read our legal terms</div></div>
+        </a>
+        <a href="privacy.html" class="group flex items-center gap-3 p-4 bg-[#FAF7F2] rounded-xl border border-[#E8DFD3] hover:border-[#7B1824] hover:shadow-md transition-all">
+          <div class="w-9 h-9 rounded-lg bg-[#7B1824]/10 text-[#7B1824] flex items-center justify-center group-hover:bg-[#7B1824] group-hover:text-white transition-all"><i class="fa-solid fa-shield-halved text-sm"></i></div>
+          <div><div class="text-xs font-bold text-[#14080B]">Privacy &amp; Policy</div><div class="text-[11px] text-gray-500">How we protect your data</div></div>
+        </a>
+        <a href="claim.html" class="group flex items-center gap-3 p-4 bg-[#FAF7F2] rounded-xl border border-[#E8DFD3] hover:border-[#7B1824] hover:shadow-md transition-all">
+          <div class="w-9 h-9 rounded-lg bg-[#7B1824]/10 text-[#7B1824] flex items-center justify-center group-hover:bg-[#7B1824] group-hover:text-white transition-all"><i class="fa-solid fa-file-pen text-sm"></i></div>
+          <div><div class="text-xs font-bold text-[#14080B]">Claim</div><div class="text-[11px] text-gray-500">Submit a formal claim</div></div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#14080B] text-gray-300 pt-16 pb-10 border-t border-[#480B12]/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-gray-800">
+        <div class="lg:col-span-1 space-y-4">
+          <a href="index.html" class="inline-block bg-white p-2 rounded-md shadow"><img src="img/logo.jpeg" alt="Mars Structure Limited" class="h-9 w-auto object-contain"></a>
+          <p class="text-xs text-gray-400 leading-relaxed font-light">Pioneering luxury real estate development with uncompromising integrity.</p>
+          <div class="space-y-2 text-xs text-gray-400">
+            <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-[#E5A922] w-4"></i><span>Plot 007, Road 409A, Sector 12, Jolshiri Abashon, Dhaka</span></div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-phone text-[#E5A922] w-4"></i><span>+880 1700-000000</span></div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-envelope text-[#E5A922] w-4"></i><span>info@marsproperties.com</span></div>
+          </div>
+          <div class="flex items-center space-x-3 pt-2">
+            <a href="#" class="text-gray-400 hover:text-[#E5A922]"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-[#E5A922]"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-[#E5A922]"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-[#E5A922]"><i class="fa-brands fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        <div><h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">Company</h4><ul class="space-y-2.5 text-xs text-gray-400"><li><a href="about.html" class="hover:text-[#E5A922]">About Us</a></li><li><a href="property.html" class="hover:text-[#E5A922]">All Products</a></li><li><a href="property-location.html" class="hover:text-[#E5A922]">Locations Map</a></li><li><a href="contact.html" class="hover:text-[#E5A922]">Contact us</a></li></ul></div>
+        <div><h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">Services</h4><ul class="space-y-2.5 text-xs text-gray-400"><li><a href="property.html" class="hover:text-[#E5A922]">Luxury Houses</a></li><li><a href="property.html" class="hover:text-[#E5A922]">Floor Plans</a></li><li><a href="terms.html" class="hover:text-[#E5A922]">Terms &amp; Conditions</a></li><li><a href="privacy.html" class="hover:text-[#E5A922]">Privacy Policy</a></li></ul></div>
+        <div><h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-5">Customer Care</h4><ul class="space-y-2.5 text-xs text-gray-400"><li><a href="contact.html" class="hover:text-[#E5A922]">Private Tour Booking</a></li><li><a href="contact.html" class="hover:text-[#E5A922]">VIP Consultation</a></li><li><a href="faq.html" class="text-[#E5A922]">FAQ</a></li><li><a href="claim.html" class="hover:text-[#E5A922]">Submit a Claim</a></li></ul></div>
+        <div><h4 class="text-white font-extrabold text-sm uppercase tracking-wider mb-2">Newsletter</h4><p class="text-xs text-gray-400 mb-3">Subscribe for exclusive property updates.</p><form onsubmit="event.preventDefault();alert('Thank you!');" class="newsletter-form bg-white shadow-sm"><input type="email" placeholder="Enter your email" required class="text-gray-900 bg-white placeholder-gray-500"><button type="submit" class="bg-[#7B1824] hover:bg-[#60111A] text-white transition-colors"><i class="fa-solid fa-paper-plane text-xs"></i></button></form></div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+        <div>All Rights Reserved @ Mars Structure Limited 2026</div>
+        <div class="flex items-center space-x-6"><a href="terms.html" class="hover:text-white">Terms &amp; Conditions</a><a href="claim.html" class="hover:text-white">Claim</a><a href="privacy.html" class="hover:text-white">Privacy &amp; Policy</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scroll-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed right-6 bottom-6 z-50 w-11 h-11 bg-[#7B1824] hover:bg-[#60111A] text-white rounded-md shadow-2xl flex items-center justify-center transition-all opacity-0 pointer-events-none transform translate-y-4 cursor-pointer"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <div id="login-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+    <div class="relative w-full max-w-md bg-white rounded-2xl p-8 shadow-2xl">
+      <button onclick="toggleModal('login-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
+      <h3 class="text-2xl font-extrabold text-gray-900 mb-2">Client Portal</h3>
+      <form onsubmit="event.preventDefault();alert('Signed in!');toggleModal('login-modal');" class="space-y-4 text-xs mt-4">
+        <div><label class="block font-bold text-gray-700 mb-1">Email</label><input type="email" required placeholder="name@domain.com" class="w-full px-3.5 py-2.5 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#7B1824]"></div>
+        <div><label class="block font-bold text-gray-700 mb-1">Password</label><input type="password" required placeholder="••••••••" class="w-full px-3.5 py-2.5 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#7B1824]"></div>
+        <button type="submit" class="w-full py-3 bg-[#7B1824] hover:bg-[#60111A] text-white font-bold rounded-lg cursor-pointer uppercase tracking-wider">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function toggleModal(id){const m=document.getElementById(id);if(m){m.classList.toggle('hidden');m.classList.toggle('flex');}}
+    function toggleFaq(btn){const card=btn.closest('.faq-card');if(!card)return;const wrapper=card.querySelector('.faq-wrapper');const icon=card.querySelector('.faq-icon');const isOpen=wrapper&&wrapper.classList.contains('is-open');document.querySelectorAll('.faq-card').forEach(c=>{c.classList.remove('border-[#7B1824]','border-2','ring-2','ring-[#7B1824]/10','shadow-lg');c.classList.add('border','border-gray-200');const num=c.querySelector('button span.rounded-xl');if(num){num.classList.remove('bg-[#7B1824]','text-white');num.classList.add('bg-gray-100','text-gray-600');}const w=c.querySelector('.faq-wrapper');if(w)w.classList.remove('is-open');const icn=c.querySelector('.faq-icon');if(icn){icn.classList.remove('rotate-180','bg-[#7B1824]','text-white');icn.classList.add('bg-[#FAF7F2]','text-gray-700');}});if(!isOpen&&wrapper){wrapper.classList.add('is-open');card.classList.remove('border-gray-200');card.classList.add('border-2','border-[#7B1824]','ring-2','ring-[#7B1824]/10','shadow-lg');const num=card.querySelector('button span.rounded-xl');if(num){num.classList.remove('bg-gray-100','text-gray-600');num.classList.add('bg-[#7B1824]','text-white');}if(icon){icon.classList.add('rotate-180','bg-[#7B1824]','text-white');icon.classList.remove('bg-[#FAF7F2]','text-gray-700');}}}
+    function filterFaq(cat,btn){document.querySelectorAll('.faq-filter-btn').forEach(b=>{b.className='faq-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-white text-gray-700 border border-gray-200 hover:border-[#7B1824] hover:text-[#7B1824] cursor-pointer';});if(btn)btn.className='faq-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-[#7B1824] text-white border border-[#7B1824] cursor-pointer';document.querySelectorAll('.faq-card').forEach(c=>{const a=c.getAttribute('data-category');if(cat==='all'||a===cat){c.classList.remove('hidden');}else{c.classList.add('hidden');}});}
+    const scrollBtn=document.getElementById('scroll-to-top');
+    window.addEventListener('scroll',()=>{if(window.scrollY>300){scrollBtn.classList.remove('opacity-0','pointer-events-none','translate-y-4');scrollBtn.classList.add('opacity-100','pointer-events-auto','translate-y-0');}else{scrollBtn.classList.add('opacity-0','pointer-events-none','translate-y-4');scrollBtn.classList.remove('opacity-100','pointer-events-auto','translate-y-0');}});
+    function initScrollReveal(){const els=document.querySelectorAll('.reveal-on-scroll');if('IntersectionObserver' in window){const obs=new IntersectionObserver((entries,o)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-revealed');o.unobserve(e.target);}});},{threshold:0.08});els.forEach(el=>obs.observe(el));}else{els.forEach(el=>el.classList.add('is-revealed'));}}
+    document.addEventListener('DOMContentLoaded',initScrollReveal);
+  </script>
+</body>
+</html>
